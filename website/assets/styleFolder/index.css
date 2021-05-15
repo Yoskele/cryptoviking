@@ -1,0 +1,63 @@
+.curved{
+	background-color: #0070ba;
+    background-image: linear-gradient(100deg,#0070ba,#1546a0);
+	opacity:0.8;
+	color:#fff;
+	text-align:center;
+}
+
+
+.curved h3 {
+  font-size: 4rem;
+}
+.curved p {
+  font-size: 1rem;
+  margin:0 5rem 0 5rem;
+ }
+.curved svg {
+  display: block;
+}
+
+.three-step-guid-content-container{
+	border:1px solid red;
+	background: rgb(85, 85, 85, 0.8);
+}
+
+.three-step-container{
+	width:75%;
+	margin:0 auto 0 auto;
+	padding:25px;
+	border-radius:20px;
+	background:rgb(85, 85, 85, 0.5);
+	box-shadow: 0 1px 20px 0 rgb(0 0 0 / 10%);
+}
+.three-step-container-flex{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-around;
+}
+.three-step-container-flex ul{
+	list-style-type: none;
+	padding:0;
+}
+.three-step-container-reverse{
+	display:flex;
+	flex-wrap:wrap-reverse;
+	justify-content:space-around;
+}
+.three-step-container-reverse ul{
+	list-style-type: none;
+	padding:0;
+}
+.flex-child{
+	flex:1;
+	min-width:320px;
+	max-width:600px;
+}
+
+@media (max-width:780px){
+	.three-step-container{
+		width:95%;
+		padding:5px;
+	}
+}

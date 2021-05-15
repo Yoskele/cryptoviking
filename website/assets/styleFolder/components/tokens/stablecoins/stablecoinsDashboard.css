@@ -1,0 +1,13 @@
+.stablecoin-wall{
+	width:55%;
+	padding:15px;
+	margin:0px auto 0px auto;
+	border-radius:20px;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-around;
+	background:rgb(85, 85, 85, 0.5);
+}
+.stablecoin-wall img{
+	margin:10px;
+}
