@@ -5,11 +5,11 @@ def index(request):
 	return render(request, 'index.html')
 
 def Kryptovaluta(request):
-	return render(request, 'static/Kryptovaluta.html')
+	return render(request, 'statichtml/Kryptovaluta.html')
 
 def ExchangeVsHardwareWallet(request):
-	return render(request, 'static/Exchange-vs-HardwareWallet.html')
+	return render(request, 'statichtml/Exchange-vs-HardwareWallet.html')
 
 
 def Stablecoins(request):
-	return render(request, 'static/Stablecoins.html')
+	return render(request, 'statichtml/Stablecoins.html')
