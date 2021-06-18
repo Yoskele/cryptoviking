@@ -110,15 +110,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '/assets/'
+STATIC_ROOT = '/staticfiles/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'assets'),
 )
 
-
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-MEDIA_URL ='/media/'
 
 # Where to store the images from admin dashboard.
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
