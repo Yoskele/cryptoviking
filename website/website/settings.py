@@ -110,7 +110,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = 'home/yoseflotter/cryptoviking/static'
+STATIC_ROOT = 'myFiles'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'assets'),
