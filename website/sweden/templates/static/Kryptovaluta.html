@@ -1,0 +1,275 @@
+
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block extra_htmt_head %}
+<title> Kryptovaluta: vad är det? | digital valuta | Cryptoviking.se </title>
+<meta name="description" content="Handla säkert med kryptovaluta! I det kontantlösa samhället får
+virtuella valutor än större betydelse. Tryggt digitalt betalningssystem med full anonymitet." >
+<link rel="canonical" href="" />
+
+<!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css?family=Almendra+SC" rel="stylesheet"> -->
+
+<link rel="stylesheet" href="{% static 'styleFolder/components/crypto-exchange/exchange-vs-hardwarewallet.css' %}">
+
+{% endblock %}
+{% load static %}
+{% block content_container %}
+
+<div class="container-wrapper mt-3">
+	<div class="container-flex">
+		<div class="main-container">
+			<div class="container mt-3 pl-lg-5">
+				<h1> Vad är kryptovaluta?</h1>
+				<hr>
+				<div class="cover-image">
+					<img src="https://cdna.artstation.com/p/assets/images/images/019/904/670/large/jesus-sanchez-city-viking.jpg?1565523310"
+					class="img-fluid rounded">
+				</div>
+
+				<div class="container mt-4">
+					<p class="pl-2">
+						Kryptovaluta kallas även för digitala pengar, virtuell valuta och internetpengar. Det speciella
+						med den här valutan är att den inte är fysisk, med andra ord kan du inte ha pengarna i handen
+						eller stoppa ner dem i din fysiska plånbok. Men du kan du idka peer-to peer-handel (person
+						till person) med kryptovaluta utan att en tredje part behöver involveras.
+						<br><br>
+						Tanken bakom kryptovalutan var från första början att skapa en valuta som skulle vara
+						självständig och inte behövde processas av finansiella institut, riksbanker eller regeringar.
+						Kryptovalutan är programmerad på mjukvara och ägarna till den virtuella valutan ansvarar
+						själva för förvaringen av den. Det har tillkommit Crypto Exchanges på marknaden som
+						erbjuder förvaringstjänster för kryptovaluta åt personer som av olika anledningar inte vill eller
+						kan lagra sina kryptomynt.
+					</p>
+				</div>
+				<hr/>
+				<div class="container mt-5">
+					<h2 style="text-align:center;"> Hur och var används kryptovalutor idag?</h2>
+					<p class="pl-2">
+						Kryptovalutan har slagit igenom hos alla samhällsklasser världen över. Kryptovaluta används:
+					</p>
+					<div class="row justify-content-center">
+
+						<div class="col-sm-4 m-3 p-2 rounded d-flex justify-content-between align-items-center"
+							style="background:rgb(85, 85, 85, 0.5);"
+						>
+							<h6> Som ett betalmedel </h6>
+							<img src="{% static 'images/icons/payment-method.png' %}" style="width:50px; height:50px"/>
+						</div>
+
+						<div class="col-sm-4 m-3 p-2 rounded d-flex justify-content-between align-items-center"
+							style="background:rgb(85, 85, 85, 0.5);"
+						>
+							<h6> Som ett sparkonto </h6>
+							<img src="{% static 'images/icons/savings.png' %}" style="width:50px; height:50px"/>
+						</div>
+
+						<div class="col-sm-4 m-3 p-2 rounded d-flex justify-content-between align-items-center"
+							style="background:rgb(85, 85, 85, 0.5);"
+						>
+							<h6> För överföringar </h6>
+							<img src="{% static 'images/icons/lending.png' %}" style="width:50px; height:50px"/>
+						</div>
+						<div class="col-sm-4 m-3 p-2 rounded d-flex justify-content-between align-items-center"
+							style="background:rgb(85, 85, 85, 0.5);"
+						>
+							<h6> Som investering objekt </h6>
+							<img src="{% static 'images/icons/investment.png' %}" style="width:50px; height:50px"/>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="container mt-5">
+					<h3>Vilka är de vanligaste kryptovalutorna?</h3>
+					<p class="pl-2">
+						Det lanseras nya kryptovalutor med nya funktioner och nätverk nästan dagligen. En del av
+						dem försvinner efter en kort tid utan att få fäste på marknaden medan en del blir bestående
+						inslag på den finansiella digitala marknaden. Ingen vet exakt hur många kryptovalutor det
+						finns för närvarande. 
+						<br>
+						Här nedan är bara exempel på några stycken.
+					</p>
+					<ul>
+						<li class="mt-2">
+							<b> Bitcoin (BTC) – </b> Den första decentraliserade kryptovalutan som skapades (2009) och är även
+							den största idag. Bitcoin har blivit en värdebärare och betraktas som digitalt guld.
+  						</li>
+  						<li class="mt-2">
+  							<b> Ethereum (ETH) – </b> Den här kryptovalutan är den näst största efter Bitcoin. Ethereum används bland annat för att betala interaktionsavgifter vid smarta kontrakt och decentraliserade
+							finansavtal.
+  						</li>
+  						<li class="mt-2">
+  							<b> XRP – </b> Fördelen med XRP är att den är snabb och billig. Vid transaktioner är XRP en av de
+							snabbaste och billigaste transaktionsmetoderna mellan två parter.
+  						</li>
+  						<li class="mt-2">
+							<b> Cardano – </b> Charles Hutchinson var en av åtta grundarna till Ethereum, men han lämnade det
+							för att istället skapa Cardano
+  						</li>
+  						<li class="mt-2">
+							<b> Polkadot - </b> Polkadot Ecosystems External Networks programmerades så att nätverket kan
+							kommunicera med andra kryptonätverk. Polkadots grundare har också förflutet på Ethereum.
+  						</li>
+					</ul>
+				</div>
+
+				<div class="d-flex justify-content-around mt-5">
+
+					<a href="" class="d-flex flex-column justify-content-center">
+						<img src="{% static 'images/tokens/btc-token.png' %}" style="width:60px; height:60px"/>
+						<div class="price-token" style="text-align:center;">
+							<b id="bitcoin-price-container"></b>
+						</div>
+					</a>
+					<a href="" class="d-flex flex-column justify-content-center">
+						<img src="{% static 'images/tokens/eth.png' %}" style="width:60px; height:60px; margin:0 auto 0 auto;"/>
+						<div class="price-token" style="text-align:center;">
+							<b id="ethereum-price-container"></b>
+						</div>
+					</a>
+					<a href="" class="d-flex flex-column justify-content-center">
+						<img src="{% static 'images/tokens/xrp.png' %}" style="width:60px; height:60px; margin:0 auto 0 auto;"/>
+						<div class="price-token" style="text-align:center;">
+							<b id="ripple-price-container"></b>
+						</div>
+					</a>
+					<a href="" class="d-flex flex-column justify-content-center">
+						<img src="{% static 'images/tokens/cardano.png' %}" style="width:60px; height:60px;"/>
+						<div class="price-token" style="text-align:center;">
+							<b id="cardano-price-container"></b>
+						</div>
+					</a>
+					<a href="" class="d-flex flex-column justify-content-center">
+						<img src="{% static 'images/tokens/dot.png' %}" style="width:60px; height:60px; margin:0 auto 0 auto;"/>
+						<div class="price-token" style="text-align:center;">
+							<b id="polkadot-price-container"></b>
+						</div>
+					</a>
+				</div>
+
+
+				<div class="container mt-5">
+					<h3>Behövs kryptovaluta?</h3>
+					<p>
+						En fråga som många ställer sig är om kryptovalutan verkligen behövs eller om vi skulle kunna
+						vara utan den. Sanningen är att kryptovaluta är och sannolikt kommer att bli än viktigare inom
+						både handel och privatlivet i framtiden.
+						Många länder är på god väg att bli kontantlösa och kryptovalutan får då en större roll inom
+						den finansiella världen. 
+					</p>
+					<p>
+						Handel idkas med länder på andra sidan jorden och i den snabba
+						konkurrensen måste pengaöverföringarna fungera snabbt. En kryptovalutatransaktion görs på
+						några sekunder jämfört med en transaktion med fiatpengar som tar några dagar i anspråk och
+						på det tillkommer tredje parts höga kommissioner.
+						Även människor i fattiga länder som inte har bankkonto, men som oftast har mobil, kan enkelt
+						föra över och ta emot pengar utan att stora avgifter äter upp de sända beloppen.
+					</p>
+				</div>
+
+				<div class="container mt-5">
+					<h3>Är kryptovaluta lagligt?</h3>
+					<p>
+						I Sverige såväl som i många andra länder är innehav, köp och sälj av kryptovaluta lagligt. Det
+						som är bra att komma ihåg är att om du gör vinster på kryptovalutahandel så måste vinsten
+						beskattas i Sverige. Du kan även gör avdrag i din deklaration om du har gjort förluster.
+						Men det finns länder som vill och försöker förbjuda sina medborgare från att använda
+						kryptovaluta på grunda av politiska skäl och som ett sätt att minska folkets kontakter med
+						utländska aktörer.
+					</p>
+					<p>
+						Ett land kan dock inte stänga ner en kryptovaluta då den är internetbaserad och skapas i
+						blockchains. Genom att skapa lagar som förbjuder ägande och investering i kryptovaluta och
+						genom att spärra åtkomsten till crypto exchanges och webbplatser som handlar om
+						kryptovaluta försöker en del länder att hålla sina medborgare ifrån de digitala valutan.
+					</p>
+				</div>
+
+				<div class="container mt-5">
+					<h3>Vad kan jag göra med krypto?</h3>
+					<p>
+						I framtiden kommer nog de flesta att ha krypto antingen som investering, sparande eller för att
+						handla med. Det är bara att jämföra med dagens sedlar som i sig inte har något värde (pappret
+						som en hundra kronors-sedel är tryckt på är inte värd hundra kronor, men alla har accepterat
+						att värdet som står på en sedel är värt det). När fler och fler accepterar kryptovalutan som en
+						värdebärare kommer den att bli en självklar del av samhället.
+					</p>
+					<p>
+						Om du känner att du redan nu vill hoppa på tåget och följa med kryptovalutan in i framtiden
+						finns det ett brett utbud av olika kryptovalutor som du kan investera i. Och om du är nybörjare
+						är en Crypto Exchange att föredra tills du blir mer säker på hur kryptohandel går till. Du
+						kanske vill sätta undan en slant och köpa krypto och låta dem vara för framtida behov och i
+						det fallet kan ett staking konto som ger ränta vara ett alternativ. Nu när shoppingen online har
+						ökat och många bolag accepterar kryptovaluta kan det vara smart att betala med kryptovaluta
+						och slippa dyra mellanhandsavgifter.
+					</p>
+				</div>
+				<div class="container mt-5">
+					<h3>Sammanfattning</h3>
+					<p>
+						Kryptovalutan har inte existerat länge och är därför fortfarande känslig för fluktuationer vilket
+						påverkar allmänhetens förtroende. Men i takt med att det kontantlösa samhället närmar sig
+						ökar behovet av en betalningsmetod utan dyra transaktionskostnader som samtidigt klarar av
+						snabba överföringar mellan sändare och mottagare.
+						Konsumenter är inte heller längre hänvisade till att handla i närområdets butiker utan kan i
+						stället logga in sig på en handels webbplats på andra sidan jorden och välja de varor man
+						önskar få hemskickat. I dessa fall spelar en pålitlig och snabb överföring en stor roll om köpet
+						ska bli av.
+					</p>
+					<p>
+						En annan fördel med virtuella valutor är dess transparens. I kryptovalutans blockchain finns
+						alla transaktioner sparade så att alla kan se dem, men de ser inte vilka som är avsändarna och
+						mottagarna. Denna transparens möjliggör för alla att följa till exempel Bitcoins spår ända
+						sedan det bröts fram till dags dato. Trots transparensen har kryptovalutor total anonymitet och
+						myndigheter kan inte påverka valutan för att driva sina egna intressen.
+					</p>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="side-container">
+			{% include 'components/crypto-exchange/banners/Exchange-Banner-350-330.html' %}
+		</div>
+
+	</div>
+
+
+</div>
+
+<div class="curved mt-5">
+
+	<svg viewBox="0 0 1440 319">
+		<path fill="rgb(85, 85, 85, 0.8)" fill-opacity="1" d="M0,32L48,80C96,128,192,224,288,224C384,224,480,128,576,90.7C672,53,768,75,864,96C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+	</svg>
+</div>
+
+<script>
+
+// 	const getPrice = async event => {
+// 	let string = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ccardano%2Cripple%2Cpolkadot&vs_currencies=usd&include_market_cap=false&include_24hr_vol=false&include_24hr_change=false&include_last_updated_at=false";
+// 	await fetch(string)
+// 	.then(res => res.json())
+// 	.then((data) => {
+
+// 	for (const [key, value] of Object.entries(data)) {
+// 	  console.log(key, value);
+// 	  // Grab the price container 
+// 	  document.querySelector(`#${key}-price`).innerText = `$${value.usd}`;
+// 	  console.log('Done...')
+// 	}
+// console.log('yeeees')
+
+
+// 	});
+
+
+
+// }
+
+
+// getPrice();
+</script>
+{% endblock %}
+

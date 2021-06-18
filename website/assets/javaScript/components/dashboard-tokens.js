@@ -12,20 +12,17 @@ const getHistoricalPrice = async event => {
 	await fetch(string)
 	.then(res => res.json())
 	.then((data) => {
-
-	for (const [key, value] of Object.entries(data)) {
-	  console.log(key, value);
-	  // Grab the price container 
-	  document.querySelector(`#${key}-price-container`).innerText = `$${value.usd}`;
-	  console.log('Done...')
-	}
-
-
-
+		for (const [key, value] of Object.entries(data)) {
+		  console.log(key, value);
+		  // Grab the price container 
+		  try{
+		  	document.querySelector(`#${key}-price-container`).innerText = `$${value.usd}`;
+		  	console.log('Done...')
+		  }catch(err){
+		  	console.log(err, "error")
+		  }
+		}
 	});
-
-
-
 }
 
 

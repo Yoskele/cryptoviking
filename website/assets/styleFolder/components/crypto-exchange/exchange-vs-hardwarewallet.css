@@ -1,0 +1,25 @@
+h2{
+	color:#414141;
+	font-style:italic;
+}
+h3{
+	color:#414141;
+	font-style:italic;
+}
+.cover-image{
+	max-width:717px;
+	max-height:470px;
+	margin:15px;
+}
+
+.cover-image img{
+	width:100%;
+	box-shadow: 0 1px 20px 0 rgb(0 0 0 / 10%);
+}
+
+
+@media(max-width:550px){
+	.side-container{
+		max-width:100%;
+	}
+}

@@ -1,0 +1,145 @@
+
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block extra_htmt_head %}
+<title> CryptoViking </title>
+<meta name="description" content="Exchange vs Hardware Wallet" >
+<link rel="canonical" href="" />
+
+<!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css?family=Almendra+SC" rel="stylesheet"> -->
+
+<link rel="stylesheet" href="{% static 'styleFolder/components/crypto-exchange/exchange-vs-hardwarewallet.css' %}">
+
+{% endblock %}
+{% load static %}
+{% block content_container %}
+
+<div class="container-wrapper mt-3">
+	<div class="container-flex">
+		<div class="main-container">
+			<div class="container mt-3 pl-lg-5">
+				<h1> Vad är en Crypto wallet alias kryptovalutaplånbok? </h1>
+				<hr>
+				<div class="cover-image">
+					<img src="https://i.pinimg.com/originals/0a/e9/bb/0ae9bb7f1606d0bdb523932136b35315.png"
+					class="img-fluid rounded">
+				</div>
+
+				<div class="container mt-4">
+					<p class="pl-2">
+						När du har köpt kryptovaluta behöver du en plånbok/konto för att förvara dem i, precis så som
+						du gör med dina riktiga pengar. Då kryptovalutan är virtuell kan du inte stoppa dem i din
+						vanliga plånbok utan behöver en digital plånbok, en så kallad Crypto wallet, även kallad för
+						Bitcoin wallet. Det finns två varianter av kryptovalutaplånböcker: en Hot wallet och en Cold
+						wallet. Enkelt förklarat är Hot wallet kopplad till internet medan Cold wallet lagrar
+						cryptovalutan offline.
+					</p>
+				</div>
+				<hr/>
+				<div class="container mt-5s">
+					<h2> Exchange Wallet vs Hardware Wallet </h2>
+					<p class="pl-2">
+						Efter att ha investerat i kryptovaluta gäller det att förvara dem på bästa sätt och för det finns
+						det flera olika sätt. De vanligaste och populäraste metoderna bland investerarna att förvara
+						crypto tokens är Exchange wallet, som är kopplad till internet, och Hardware Wallet, som
+						lagrar cryptovalutan offline. En hel del skiljer sig åt mellan dessa digitala plånböcker.
+						Båda plånböckerna har både för- och nackdelar och därför är det bra att vara påläst på de
+						viktigaste skillnaderna och välja den plånboken som passar dina behov.
+					</p>
+				</div>
+
+				<div class="container mt-5">
+					<h3>Vad är en Exchange wallet?</h3>
+					<p class="pl-2">
+						En Exchange är en service eller webbplats, till exempel Crypto.com och Binance.com, där du
+						kan köpa och sälja krypto och konvertera fiat-valuta, fysisk valuta, till krypto. Varje
+						kryptovaluta handlas till det aktuella värdet. Webbplatser som har en wallet att erbjuda i
+						samband med köp är enkla att upprätta. En Exchange wallet kallas även för en hot wallet.
+					</p>
+				</div>
+
+				<div class="container mt-5">
+					<h3>Vilka är fördelarna med Exchange wallet?</h3>
+					<p class="pl-2">
+						En Exchange fungerar som en bank och har ta hand om nyckeln till din wallet, vilket gör att
+						du inte behöver ta ansvar för nyckelkoder för att komma åt din kryptovaluta. I en del fall kan
+						företaget erbjuda kunden att ta hand om sin egen nyckel.
+						På in- och utgående transaktioner tar Exchange-företaget en kommission medan transaktioner
+						mellan dina konton på företaget är för det mesta gratis. En ytterligare fördel med Exchange
+						wallet är staking-funktionen som ger ränta på beloppet som finns på kontot. Det är även
+						enkelt att komma åt all information som finns på kontot som saldo, köp och sälj. En Exchange
+						wallets kundsupport är också mer personlig än hos Hard wallet.
+					</p>
+				</div>
+
+				<div class="container mt-5">
+					<h3>Nackdelarna med en Exchange wallet</h3>
+					<p class="pl-2">
+						Nackdelen med Exchange är att nyckeln till din cryptovaluta kan hamna i hackers händer som
+						år 2019 då hackare lyckades komma åt 7 000 Bitcoins till ett värde av över 40 miljoner $ från
+						Binance Exchange. Webbplatserna kan även vara otillgängliga på grund av för många
+						besökande på hemsidan.
+						Inom cryptovärlden hör man ofta uttrycket ”Not your key – not your coin” och med detta
+						menar anhängarna av Hardware wallet att om en investerare inte har kontroll över sin egen
+						nyckelkod, har han heller ingen kontroll över sina crypto tokens.
+					</p>
+				</div>
+
+				<div class="container mt-5">
+					<h3>Vad är en Hardware wallet?</h3>
+					<p class="pl-2">
+						Hardware wallet går även under benämningen cold wallet och är ett offline konto.
+						Hårdvaruplånboken är en extern enhet som kopplas till din dator, mobil och surfplatta och
+						detta gör det omöjligt för utomstående att komma in på. De två populäraste leverantörer av
+						Hardware wallets är Trezor och Ledger. Investerare som överväger att ha cryptovalutan under
+						en längre tid föredrar oftast Hardware wallet då de själva 		bygger upp säkerheten genom
+						koder. Investeraren har också ansvaret över den upprättade säkerhetskoden.
+					</p>
+				</div>
+
+				<div class="container mt-5">
+					<h3>Vilka fördelar har en Hardware wallet?</h3>
+					<p class="pl-2">
+						Den största fördelen med en Hardware wallet är utan tvekan att ingen kan komma åt
+						kryptovalutan förutom du själv. Inte ens handelsplatsen där kryptovalutan köptes har tillgång
+						till nycklarna. Det finns ingen som kan hjälpa dig att få fram koden om du tappar bort den.
+						Genom att endast du vet koden kan ingen obehörig komma åt cryptovalutan.
+					</p>
+				</div>
+
+				<div class="container mt-5">
+					<h3>Vilka nackdelar har en Hardware wallet</h3>
+					<p class="pl-2">
+						Hardware wallets största svaghet är att om man tappar bort sina nyckelkoder är kryptovalutan
+						otillgänglig. Uppskattningsvis sägs cirka 20 % av Bitcoin vara låsta då ägarna har tappat bort
+						koderna och det finns inga sätt att komma åt sina crypto tokens förrän koderna hittas.
+						Hardware wallet erbjuder också staking, men är tekniskt komplicerat.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="side-container">
+
+			{% include 'components/news-articles/News-articles.html' %}
+
+			{% include 'components/crypto-exchange/banners/Exchange-Banner-350-330.html' %}
+		</div>
+
+	</div>
+
+
+</div>
+
+<div class="curved mt-5">
+
+	<svg viewBox="0 0 1440 319">
+		<path fill="rgb(85, 85, 85, 0.8)" fill-opacity="1" d="M0,32L48,80C96,128,192,224,288,224C384,224,480,128,576,90.7C672,53,768,75,864,96C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+	</svg>
+</div>
+
+<script>
+</script>
+{% endblock %}
+

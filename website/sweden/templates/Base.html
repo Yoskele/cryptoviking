@@ -36,7 +36,9 @@
 	<!-- End of Language Tag -->
   	<link rel="stylesheet" href="{% static 'styleFolder/base.css' %}">
 
-
+  	<!-- Crypto style text link -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css?family=Almendra+SC" rel="stylesheet">
 </head>
 <body>
 	<!-- Google Tag Manager FOR TRADECFD (noscript) -->
@@ -44,11 +46,11 @@
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 	<!-- End Google Tag Manager (noscript) -->
 	{% include 'navbar/Navbar.html' %}
-
+		<div class="block-wrapper">
 			{% block content_container %}
 
 			{% endblock %}
-	
+		</div>
 		{% include 'components/Footer.html' %}
 
 
