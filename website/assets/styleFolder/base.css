@@ -7,6 +7,10 @@ body{
 	min-height:100vh;
 }
 
+a{
+	color:#29A3D2;
+	font-weight:bold;
+}
 p{
 	line-height: 1.8rem; 
 }
