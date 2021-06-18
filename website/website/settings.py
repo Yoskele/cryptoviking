@@ -13,7 +13,7 @@ SECRET_KEY = 'c@h(eov%$+40i3#&7kn@p(r(m*vxq*z#ykf+tp+is$nxy4_$gc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cryptoviking.se']
 
 
 # Application definition
