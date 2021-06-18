@@ -11,3 +11,11 @@
 .stablecoin-wall img{
 	margin:10px;
 }
+
+@media (max-width:780px){
+	.stablecoin-wall{
+		margin:5 auto 5 auto;
+		width:95%;
+	}
+
+}
