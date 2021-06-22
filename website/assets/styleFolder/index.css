@@ -1,6 +1,32 @@
+.moonWall{
+		background: url("/static/images/walls/moonmorestars.png");
+		height:693px;
+		width:100%;
+		margin:0;
+		padding:0;
+		position:relative;
+		background-size: cover;
+/*  background-position: center;
+    background-attachment: fixed;*/
+}
+.viking_astronout{
+		width:300px;
+		position:absolute;
+		right:250px;
+		top:50px;
+}
+
+.space-contanier{
+	position: absolute;
+	color:white;
+	width:80%;
+	height:75%;
+	margin:20px auto	20px auto	;
+
+}
 .curved{
 	background-color: #0070ba;
-    background-image: linear-gradient(100deg,#0070ba,#1546a0);
+  background-image: linear-gradient(100deg,#0070ba,#1546a0);
 	opacity:0.8;
 	color:#fff;
 	text-align:center;
@@ -59,5 +85,46 @@
 	.three-step-container{
 		width:95%;
 		padding:5px;
+	}
+
+	.viking_astronout{
+			width:280px;
+			position:absolute;
+			right:1px;
+			top:80px;
+	}
+
+}
+
+@media (max-width:740px){
+.moonWall{
+		height:850px;
+	}
+		.viking_astronout{
+			width:220px;
+			position:absolute;
+			right:1px;
+			top:10px;
+	}
+}
+
+@media (max-width:450px){
+.moonWall{
+		height:1000px;
+	}
+	.viking_astronout{
+		width:220px;
+		position:absolute;
+		right:1px;
+		top:5px;
+	}
+	.space-contanier{
+		margin:0 auto 0 auto;
+		width:98%;
+	}
+	.space-gray-backround-mobile{
+		background:rgb(85, 85, 85, 0.5);
+		padding:5px;
+		border-radius:5px;
 	}
 }

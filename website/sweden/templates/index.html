@@ -22,13 +22,28 @@
 	<div class="container-flex">
 		<div class="main-container">
 			{% include 'components/tokens/Dashboard-Tokens.html' %}
-			<div class="container mt-5 pl-lg-5">
+			
+		</div>
+
+		<div class="side-container">
+			{% include 'components/crypto-exchange/banners/Exchange-Banner-350-330.html' %}
+		</div>
+
+	</div>
+
+
+</div>
+<div class="moonWall">
+	<img  class="viking_astronout" src="{% static 'images/mascot/viking-astronout.png' %}" />
+	<div class="space-contanier">
+
+		<div class="container mt-5 pl-lg-5 space-gray-backround-mobile">
 				<h2> Bitcoin </h2>
-				<p class="pl-2">
+				<p class="pl-2 ">
 					Digitala valutan <a href=""> Bitcoin </a> fungerar som en betalningsmetod utan en tredje parts inblandning,
 					transaktionerna genomförs snabbt och utan inblandning av några myndigheter. Det speciella
 					med Bitcoins är att det har ett tak på 21 miljoner. Idag är Bitcoin en värdebärare och kallas av
-					många för dFet digitala guldet.
+					många för det digitala guldet.
 				</p>
 			</div>
 
@@ -52,21 +67,11 @@
 				</p>
 			</div>
 
-			
-
-
-
-		</div>
-
-		<div class="side-container">
-			{% include 'components/crypto-exchange/banners/Exchange-Banner-350-330.html' %}
-		</div>
-
 	</div>
 
-
 </div>
-<div class="curved mt-5">
+
+<div class="curved">
 {% include 'components/tokens/4-Stablecoins.html' %}
 <h3> Krypto snabbguide </h3>
 <p class="container m-auto">
@@ -87,9 +92,9 @@
 
 					<li class="mt-3">
 						Det finns många olika sorters aktörer inom krypto och tyvärr finns där även en del bedrägeribolag
-					som man måste se upp med. Innan du bestämmer dig för en Crypto Exchange ta reda på så
-					mycket du kan om bolaget. Vi själva på CryptoViking använder Binance.com och Crypto.com
-					och som vi hittills är nöjda med.
+						som man måste se upp med. Innan du bestämmer dig för en Crypto Exchange ta reda på så
+						mycket du kan om bolaget. Vi själva på CryptoViking använder Binance.com och Crypto.com
+						och som vi hittills är nöjda med.
 					</li>
 
 					<li class="mt-3">
@@ -105,7 +110,7 @@
 
 			</div>
 
-			<div class="flex-child d-flex flex-column justify-content-around">
+			<div class="flex-child d-flex flex-column justify-content-around m-sm-2">
 				<div class="image-holder ">
 					<img src="{% static 'images/crypto-exchanges/binace-vs-crypto.png' %}" class="img-fluid" style="border-radius:10px;"/>
 				</div>
