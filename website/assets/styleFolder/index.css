@@ -48,6 +48,12 @@
 	border:1px solid red;
 	background: rgb(85, 85, 85, 0.8);
 }
+.orange-viking-title{
+	  font-family: "Almendra SC", serif;
+    color:#F69516;
+    font-weight:bold;
+    letter-spacing:2px;
+}
 
 .three-step-container{
 	width:75%;
