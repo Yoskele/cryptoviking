@@ -15,13 +15,63 @@
 {% load static %}
 
 {% block content_container %}
+<div class="space-wall">
 
 {% include 'components/IntroImageContainer.html' %}
 
-
+</div>
 <div class="space-earth-wall">
 	<div class="token-container ">
-		a
+
+		<div class="token-earth-container">
+			<img src="{% static 'images/tokens/btc-token.png' %}" />
+			<p>Bitcoin</p>
+			<div class="price-token">
+				<p id="bitcoin-price-container"> </p>
+			</div>
+		</div>
+
+
+		<div class="token-earth-container">
+			<img src="{% static 'images/tokens/eth.png' %}" />
+			<p>Ethereum</p>
+			<div class="price-token">
+				<p id="ethereum-price-container"> </p>
+			</div>
+		</div>
+
+
+
+		<div class="token-earth-container">
+			<img src="{% static 'images/tokens/xrp.png' %}" />
+			<p>Xrp</p>
+			<div class="price-token">
+				<p id="ripple-price-container"> </p>
+			</div>
+		</div>
+
+
+
+		<div class="token-earth-container">
+			<img src="{% static 'images/tokens/cardano.png' %}" />
+			<p>Cardano</p>
+			<div class="price-token">
+				<p  id="cardano-price-container"> </p>
+			</div>
+		</div>
+
+
+
+		<div class="token-earth-container">
+			<img src="{% static 'images/tokens/dot.png' %}" />
+			<p>Polkadot</p>
+			<div class="price-token">
+				<p id="polkadot-price-container"></p>
+			</div>
+		</div>
+
+
+
 	</div>
 	
 </div>
