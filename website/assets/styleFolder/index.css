@@ -58,7 +58,7 @@
 }
 
 .button-container-exchange{
-	min-width:400px;
+	width:400px;
 	display:flex;
 	flex-direction:column;
 	justify-content:space-around;
@@ -122,7 +122,6 @@
 }
 
 .three-step-guid-content-container{
-	border:1px solid red;
 	background: rgb(85, 85, 85, 0.8);
 }
 .orange-viking-title{
@@ -214,6 +213,12 @@
 		position:absolute;
 		right:1px;
 		top:10px;
+	}
+
+}
+@media (max-width:550px){
+	.button-container-exchange{
+		width:250px;
 	}
 }
 
