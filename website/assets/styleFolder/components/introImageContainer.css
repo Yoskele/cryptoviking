@@ -137,9 +137,9 @@
 		height:100%;
 	}
 	.intro-image-bottom-mascot{
-		height:100%;
-		width:50%;
-		height:250px;
+		border:1px solid red;
+		width:100%;
+		height:180px;
 		margin:0 auto 0 auto;
 	}
 }
@@ -149,15 +149,17 @@
 		width:100%;
 	}
 	.heightImageWrapper{
-		height:250px;
+		height:160px;
 	}
 	.heightImageWrapper img{
-		height:250px;
+		height:150px;
 		padding:0px;
 		margin-top:10px;
 		width:100%;
 	}
-
+	.image-title-container{
+		top:10px;
+	}
 	.image-title-width-container{
 		bottom:15px;
 		right:5px;
@@ -165,12 +167,14 @@
 	}
 	.widthImageWrapper.first img{
 		margin-top:20px;
-		height:250px;
+		height:180px;
 		width:100%;
 	}
 	.widthImageWrapper.second img{
-		height:250px;
+		height:180px;
 		width:100%;
 		margin:10px auto 10px auto;
 	}
+
+
 }
