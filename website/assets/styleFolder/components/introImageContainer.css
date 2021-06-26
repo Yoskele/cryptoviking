@@ -130,6 +130,21 @@
 	}
 
 }
+
+@media(max-width:780px){
+	.heightImageWrapper{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+	
+	}
+	.heightImageWrapper img{
+		width:350px;
+		height:350px;
+		border-radius:20px;
+	}
+}
+
 @media(max-width:550px){
 	.intro-bottom-container{
 		display:flex;
@@ -141,8 +156,6 @@
 		height:180px;
 		margin:0 auto 0 auto;
 	}
-}
-@media(max-width:550px){
 	.ImageWrapper{
 		height:100%;
 		width:100%;
