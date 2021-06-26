@@ -1,14 +1,28 @@
 {% load static from staticfiles %}
 <link rel="stylesheet" href="{% static 'styleFolder/components/introImageContainer.css' %}">
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="row ImageWrapper" style="margin:auto;">
-	<a class="col-lg-4 heightImageWrapper mt-1" href="/Kryptovaluta" style="padding:0.9px;">
+	<a class="col-lg-6 heightImageWrapper mt-1" href="/Kryptovaluta" style="padding:0.9px;">
 		<img  src="{% static 'images/cover-images/kryptovaluta.png' %}" class="rounded img-fluid" />
 		<div class="image-title-container">
 			<h6> Vad är Crypto? </h6>
 		</div>
 	</a>
-	<div class="col-lg-8 d-flex flex-column aling-center twoImageContainer" style="">
+	<div class="col-lg-6 d-flex flex-column aling-center twoImageContainer" style="">
 		<a class="widthImageWrapper first" href="/Stablecoins">
 			<img  src="{% static 'images/cover-images/stablecoins.png' %}"
 			class="rounded">
@@ -17,13 +31,25 @@
 			</div>
 		</a>
 		
-		<a class="widthImageWrapper second" href="/Exchange-Vs-HardwareWallet">
-			<img   class=" rounded" src="{% static 'images/cover-images/cartoon-nature.png' %}" />
-			<div class="image-title-width-container">
-				<h6> Exchange Wallet Vs HardWare-Wallet </h6>
+		<div class="intro-bottom-container">
+
+			<a class="widthImageWrapper second" href="/Exchange-Vs-HardwareWallet">
+				<img   class=" rounded" src="{% static 'images/cover-images/cartoon-nature.png' %}" />
+				<div class="image-title-width-container">
+					<h6> Exchange Wallet Vs HardWare-Wallet </h6>
+				</div>
+			</a>
+			<div class="intro-image-bottom-mascot ">
+				<div class="astroid-binance-crypto-container">
+					<img class="astroid-crypto-planet" src="{% static 'images/crypto-exchanges/crypto-com.png' %}" style="width:50px;" />
+
+					<img class="astroid-binance-planet" src="{% static 'images/crypto-exchanges/binance.png' %}" style="width:50px;" />
+
+					<img class="astroid-mascot-planet" src="{% static 'images/mascot/cryptoviking-se.png' %}" style="width:60px;" />
+				</div>
 			</div>
-			
-		</a>
+
+		</div>
 	</div>
 </div>
 

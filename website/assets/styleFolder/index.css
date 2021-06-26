@@ -71,7 +71,7 @@
 
 
 .moonWall{
-		background: url("/static/images/walls/moonmorestars.png");
+		background: url("/static/images/walls/space-basic-moon-wall.png");
 		height:693px;
 		width:100%;
 		margin:0;
@@ -97,11 +97,12 @@
 
 }
 .curved{
-	background-color: #0070ba;
-  background-image: linear-gradient(100deg,#0070ba,#1546a0);
-	opacity:0.8;
+/*	background-color: #0070ba;
+  background-image: linear-gradient(100deg,#0070ba,#1546a0);*/
+	opacity:0.9;
 	color:#fff;
 	text-align:center;
+	background: url("/static/images/walls/space-star-wall.png");
 }
 
 
@@ -158,6 +159,21 @@
 	min-width:320px;
 	max-width:600px;
 }
+.flex-child p{
+	width:95%;
+	margin:0 auto 0 auto;
+}
+
+
+@media (max-width:1590px){
+	.space-gray-backround-mobile{
+		background:rgb(85, 85, 85, 0.5);
+		padding:5px;
+		border-radius:5px;
+		margin:0 auto 0 auto;
+	}
+}
+
 
 @media (max-width:780px){
 	.three-step-container{
@@ -171,28 +187,28 @@
 			right:1px;
 			top:80px;
 	}
-
 }
 
 @media (max-width:740px){
 	.token-earth-container{
-	border:1px solid lightgray;
-	border-radius:20px;
-	width:90px;
-	height:120px;
-	margin:5px;
+		border:1px solid lightgray;
+		border-radius:20px;
+		width:90px;
+		height:120px;
+		margin:5px;
 
-}
-.moonWall{
+	}
+	.moonWall{
 		height:850px;
 	}
-		.viking_astronout{
-			width:220px;
-			position:absolute;
-			right:1px;
-			top:10px;
+	.viking_astronout{
+		width:220px;
+		position:absolute;
+		right:1px;
+		top:10px;
 	}
 }
+
 
 @media (max-width:450px){
 .moonWall{
@@ -208,9 +224,5 @@
 		margin:0 auto 0 auto;
 		width:98%;
 	}
-	.space-gray-backround-mobile{
-		background:rgb(85, 85, 85, 0.5);
-		padding:5px;
-		border-radius:5px;
-	}
+
 }

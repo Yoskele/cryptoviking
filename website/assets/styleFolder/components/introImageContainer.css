@@ -1,6 +1,15 @@
+
+
+
+
+
+
+
+
 .ImageWrapper{
-	height:580px;
-	width:80%;
+	height:550px;
+	width:65%;
+	padding:20px;
 }
 .heightImageWrapper{
 	position:relative;
@@ -9,13 +18,13 @@
 }
 .heightImageWrapper img{
 	height:520px;
-	width:100%;
+
 }
 .heightImageWrapper:hover{
 	transform:scale(0.99);
 }
 .twoImageContainer{
-	padding:0;
+	padding:10px;
 	margin:0;
 	height:100%; 
 }
@@ -39,9 +48,50 @@
 }
 
 
+.intro-bottom-container{
+	display:flex;
+	height:190px;
+}
+.astroid-binance-crypto-container{
+	width:200px;
+	height:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	color: white;
+	position:relative;
+}
+.astroid-crypto-planet{
+	position:absolute;
+	top:13px;
+	left:15px;
+	opacity:0.9;
+	box-shadow:0 0 10px #fff;
+	border-radius:40px;
+}
+.astroid-binance-planet{
+	position:absolute;
+	top:30px;
+	right:10px;
+	box-shadow:0 0 5px #fff;
+	border-radius:40px;
+}
+
+
+.astroid-mascot-planet{
+	position:absolute;
+	bottom:20px;
+	right:50px;
+	opacity:0.9;
+	box-shadow:0 0 20px #fff;
+	border-radius:30px;
+}
+
+
 .image-title-container{
 	position:absolute;
-	bottom: 2px;
+	bottom:2px;
 	left:5px;
 	background:rgba(254, 211, 25, 1);
 	text-align:center;
@@ -80,16 +130,29 @@
 		width:95%;
 	}
 }
-@media(max-width:500px){
+@media(max-width:550px){
+	.intro-bottom-container{
+		display:flex;
+		flex-wrap:wrap;
+		height:100%;
+	}
+	.intro-image-bottom-mascot{
+		height:100%;
+		width:50%;
+		height:250px;
+		margin:0 auto 0 auto;
+	}
+}
+@media(max-width:550px){
 	.ImageWrapper{
 		height:100%;
 		width:100%;
 	}
 	.heightImageWrapper{
-		height:380px;
+		height:250px;
 	}
 	.heightImageWrapper img{
-		height:380px;
+		height:250px;
 		padding:0px;
 		margin-top:10px;
 		width:100%;
@@ -100,15 +163,13 @@
 		right:5px;
 	
 	}
-
-
 	.widthImageWrapper.first img{
 		margin-top:20px;
-		height:380px;
+		height:250px;
 		width:100%;
 	}
 	.widthImageWrapper.second img{
-		height:350px;
+		height:250px;
 		width:100%;
 		margin:10px auto 10px auto;
 	}
