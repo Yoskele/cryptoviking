@@ -164,14 +164,17 @@
 	
 	}
 	.widthImageWrapper.first img{
-		margin-top:20px;
+		margin-top:5px;
 		height:180px;
 		width:100%;
 	}
 	.widthImageWrapper.second img{
 		height:180px;
 		width:100%;
-		margin:10px auto 10px auto;
+		margin:5px auto 5px auto;
+	}
+	.twoImageContainer{
+		padding:5px;
 	}
 
 
