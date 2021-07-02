@@ -7,7 +7,7 @@ app_name = 'sweden'
 urlpatterns = [
 	path('', views.index, name='index'),
 	path('Kryptovaluta', views.Kryptovaluta, name="Kryptovaluta"),
-	path('Exchange-Vs-HardwareWallet', views.ExchangeVsHardwareWallet, name="ExchangeVsHardwareWallet"),
+	path('kryptovalutaplanbok', views.kryptovalutaplanbok, name="kryptovalutaplanbok"),
 	path('Stablecoins', views.Stablecoins, name="Stablecoins"),
 	# path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
 

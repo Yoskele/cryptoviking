@@ -2,14 +2,24 @@
 {% extends 'Base.html' %}
 {% load static from staticfiles %}
 {% block extra_htmt_head %}
-<title> CryptoViking </title>
-<meta name="description" content="Exchange vs Hardware Wallet" >
-<link rel="canonical" href="" />
+<title> Crypto Wallet | kryptovalutaplånbok | Cryptoviking.se</title>
+<meta name="description" content="Spara din kryptovaluta smart och säkert i en kryptovalutaplånbok! Välj
+mellan Exchange Wallet och Hardware Wallet. Läs vad som är skillnaderna mellan dem!
+" >
+<link rel="canonical" href="/kryptovalutaplanbok " />
 
-<!-- <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css?family=Almendra+SC" rel="stylesheet"> -->
 
-<link rel="stylesheet" href="{% static 'styleFolder/components/crypto-exchange/exchange-vs-hardwarewallet.css' %}">
+<meta property="og:title" content="Crypto Wallet | kryptovalutaplånbok | Cryptoviking.se" />
+<meta property="og:url" content="https://www.cryptoviking.se/Kryptovaluta" />
+<meta property="og:description" content="Spara din kryptovaluta smart och säkert i en kryptovalutaplånbok! Välj
+mellan Exchange Wallet och Hardware Wallet. Läs vad som är skillnaderna mellan dem!">
+
+<meta property="og:image" itemprop="image" content="{% static 'images/cover-images/hardwarewalletvsexchangewallet.png' %}">
+
+<link rel="canonical" href="/kryptovalutaplanbok" />
+
+
+<link rel="stylesheet" href="{% static 'styleFolder/components/static-pages/static-pages-base.css' %}">
 
 {% endblock %}
 {% load static %}
@@ -19,7 +29,7 @@
 	<div class="container-flex">
 		<div class="main-container">
 			<div class="container mt-3 pl-lg-5">
-				<h1> Vad är en Crypto wallet alias kryptovalutaplånbok? </h1>
+				<h1 class="orange-viking-title"> Vad är en Crypto wallet alias kryptovalutaplånbok? </h1>
 				<hr>
 				<div class="cover-image">
 					<img class="img-fluid rounded" src="{% static 'images/cover-images/hardwarewalletvsexchangewallet.png' %}" />
@@ -37,7 +47,7 @@
 				</div>
 				<hr/>
 				<div class="container mt-5s">
-					<h2> Exchange Wallet vs Hardware Wallet </h2>
+					<h2 class="orange-viking-title"> Exchange Wallet vs Hardware Wallet </h2>
 					<p class="pl-2">
 						Efter att ha investerat i kryptovaluta gäller det att förvara dem på bästa sätt och för det finns
 						det flera olika sätt. De vanligaste och populäraste metoderna bland investerarna att förvara

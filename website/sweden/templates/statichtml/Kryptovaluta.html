@@ -1,16 +1,22 @@
-
 {% extends 'Base.html' %}
 {% load static from staticfiles %}
 {% block extra_htmt_head %}
+
 <title> Kryptovaluta: vad är det? | digital valuta | Cryptoviking.se </title>
 <meta name="description" content="Handla säkert med kryptovaluta! I det kontantlösa samhället får
 virtuella valutor än större betydelse. Tryggt digitalt betalningssystem med full anonymitet." >
-<link rel="canonical" href="" />
 
-<!-- <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css?family=Almendra+SC" rel="stylesheet"> -->
+<meta property="og:title" content="Kryptovaluta: vad är det? | digital valuta | Cryptoviking.se" />
+<meta property="og:url" content="https://www.cryptoviking.se/Kryptovaluta" />
+<meta property="og:description" content="Handla säkert med kryptovaluta! I det kontantlösa samhället får
+virtuella valutor än större betydelse. Tryggt digitalt betalningssystem med full anonymitet.">
 
-<link rel="stylesheet" href="{% static 'styleFolder/components/crypto-exchange/exchange-vs-hardwarewallet.css' %}">
+<meta property="og:image" itemprop="image" content="{% static 'images/cover-images/kryptovaluta.png' %}">
+
+<link rel="canonical" href="/Kryptovaluta" />
+
+
+<link rel="stylesheet" href="{% static 'styleFolder/components/static-pages/static-pages-base.css' %}">
 
 {% endblock %}
 {% load static %}
@@ -20,7 +26,7 @@ virtuella valutor än större betydelse. Tryggt digitalt betalningssystem med fu
 	<div class="container-flex">
 		<div class="main-container">
 			<div class="container mt-3 pl-lg-5">
-				<h1> Vad är kryptovaluta?</h1>
+				<h1 class="orange-viking-title"> Vad är kryptovaluta?</h1>
 				<hr>
 				<div class="cover-image">
 					<img src="{% static 'images/cover-images/kryptovaluta.png' %}" class="rounded img-fluid" />
@@ -43,7 +49,7 @@ virtuella valutor än större betydelse. Tryggt digitalt betalningssystem med fu
 				</div>
 				<hr/>
 				<div class="container mt-5">
-					<h2 style="text-align:center;"> Hur och var används kryptovalutor idag?</h2>
+					<h2 style="text-align:center;" class="orange-viking-title"> Hur och var används kryptovalutor idag?</h2>
 					<p class="pl-2">
 						Kryptovalutan har slagit igenom hos alla samhällsklasser världen över. Kryptovaluta används:
 					</p>
@@ -52,27 +58,27 @@ virtuella valutor än större betydelse. Tryggt digitalt betalningssystem med fu
 						<div class="col-sm-4 m-3 p-2 rounded d-flex justify-content-between align-items-center"
 							style="background:rgb(85, 85, 85, 0.5);"
 						>
-							<h6> Som ett betalmedel </h6>
+							<h6 style="text-align:center;" class="orange-viking-title"> Som ett betalmedel </h6>
 							<img src="{% static 'images/icons/payment-method.png' %}" style="width:50px; height:50px"/>
 						</div>
 
 						<div class="col-sm-4 m-3 p-2 rounded d-flex justify-content-between align-items-center"
 							style="background:rgb(85, 85, 85, 0.5);"
 						>
-							<h6> Som ett sparkonto </h6>
+							<h6 style="text-align:center;" class="orange-viking-title"> Som ett sparkonto </h6>
 							<img src="{% static 'images/icons/savings.png' %}" style="width:50px; height:50px"/>
 						</div>
 
 						<div class="col-sm-4 m-3 p-2 rounded d-flex justify-content-between align-items-center"
 							style="background:rgb(85, 85, 85, 0.5);"
 						>
-							<h6> För överföringar </h6>
+							<h6 style="text-align:center;" class="orange-viking-title"> För överföringar </h6>
 							<img src="{% static 'images/icons/lending.png' %}" style="width:50px; height:50px"/>
 						</div>
 						<div class="col-sm-4 m-3 p-2 rounded d-flex justify-content-between align-items-center"
 							style="background:rgb(85, 85, 85, 0.5);"
 						>
-							<h6> Som investering objekt </h6>
+							<h6 style="text-align:center;" class="orange-viking-title"> Som investering objekt </h6>
 							<img src="{% static 'images/icons/investment.png' %}" style="width:50px; height:50px"/>
 						</div>
 					</div>
@@ -80,7 +86,7 @@ virtuella valutor än större betydelse. Tryggt digitalt betalningssystem med fu
 				</div>
 
 				<div class="container mt-5">
-					<h3>Vilka är de vanligaste kryptovalutorna?</h3>
+					<h3 >Vilka är de vanligaste kryptovalutorna?</h3>
 					<p class="pl-2">
 						Det lanseras nya kryptovalutor med nya funktioner och nätverk nästan dagligen. En del av
 						dem försvinner efter en kort tid utan att få fäste på marknaden medan en del blir bestående
@@ -113,7 +119,7 @@ virtuella valutor än större betydelse. Tryggt digitalt betalningssystem med fu
 					</ul>
 				</div>
 
-				<div class="d-flex justify-content-around  flex-wrap border rounded mt-5">
+				<div class="d-flex justify-content-around  flex-wrap rounded mt-5">
 
 					<a href="" class="d-flex flex-column align-items-center m-2" style="min-width:150px;">
 						<img src="{% static 'images/tokens/btc-token.png' %}" style="width:60px; height:60px"/>
@@ -145,8 +151,18 @@ virtuella valutor än större betydelse. Tryggt digitalt betalningssystem med fu
 							<b id="polkadot-price-container"></b>
 						</div>
 					</a>
-				</div>
 
+					<div class="button-container-exchange d-flex flex-column w-100 align-items-center mt-3">
+						<a href="https://crypto.com/app/kd26d8skzr" target="_blank" class="m-1">
+							Handla hos Crypto.com
+						</a>
+
+						<a href="https://www.binance.com/en/register?ref=JTZNNQHD" target="_blank" class="m-1">
+							Handla hos Binance.com
+						</a>
+					</div>
+				</div>
+				
 
 				<div class="container mt-5">
 					<h3>Behövs kryptovaluta?</h3>

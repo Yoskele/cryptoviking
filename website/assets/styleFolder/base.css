@@ -30,7 +30,6 @@ p{
 .main-container{
 	width:800px;
 	flex-grow:1;
-	border-right:2px solid lightgray;
 }
 
 .side-container{

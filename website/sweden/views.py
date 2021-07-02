@@ -7,8 +7,8 @@ def index(request):
 def Kryptovaluta(request):
 	return render(request, 'statichtml/Kryptovaluta.html')
 
-def ExchangeVsHardwareWallet(request):
-	return render(request, 'statichtml/Exchange-vs-HardwareWallet.html')
+def kryptovalutaplanbok(request):
+	return render(request, 'statichtml/kryptovalutaplanbok.html')
 
 
 def Stablecoins(request):
