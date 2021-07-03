@@ -1,3 +1,11 @@
+.image-planets-container{
+	width:80%;
+	height:150px;
+	margin:10px auto 10px auto;
+	position:relative;
+}
+
+
 .exchange-container-350px-330px{
 	width:350px;
 	height:120px;
@@ -5,9 +13,6 @@
 	position:relative;
 	
 }
-
-
-
 .exchange-container-350px-330px img{
 	width:100%;
 	height:120px;

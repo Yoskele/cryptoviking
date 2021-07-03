@@ -1,0 +1,46 @@
+
+body{
+	background: url("/static/images/walls/space-star-wall.png");
+}
+
+.container-wrapper{
+	background:rgb(85, 85, 85, 0.5);
+	color: white;
+	
+	border-radius:10px;
+}
+.orange-viking-title{
+	font-family: "Almendra SC", serif;
+    color:#F69516;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+
+h3{
+	font-family: "Almendra SC", serif;
+    color:#F69516;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+h3 span{
+	font-family: "Almendra SC", serif;
+    color:#F69516 !important;
+    letter-spacing:2px;
+}
+.container p span{
+	color: white !important;
+}
+
+
+
+.cover-image img{
+	width:100%;
+}
+
+
+@media(max-width:550px){
+	.side-container{
+		max-width:100%;
+	}
+}

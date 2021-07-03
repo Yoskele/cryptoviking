@@ -1,0 +1,21 @@
+.cover-image-wapper{
+	max-width:717px;
+	height:470px;
+	background: url("/static/images/walls/space-token-wall.png")no-repeat;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	
+}
+.token-info-container{
+	height:200px;
+  	width:220px;
+  	display:flex;
+  	flex-direction: column;
+  	align-items:center;
+  	justify-content:space-around;
+  	padding:10px;
+  	border-radius:10px;
+  	box-shadow:0 0 30px #fff;
+}

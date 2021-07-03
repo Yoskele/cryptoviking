@@ -27,7 +27,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sweden'
+    'sweden',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +122,5 @@ STATICFILES_DIRS = (
 # Where to store the images from admin dashboard.
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL ='/media/'
+
+CKEDITOR_UPLOAD_PATH = 'uploads/ckeditorImages'
