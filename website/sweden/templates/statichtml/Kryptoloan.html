@@ -1,0 +1,225 @@
+{% extends 'Base.html' %}
+{% load static from staticfiles %}
+{% block extra_htmt_head %}
+
+<title> Kryptolån online | Bitcoinlån: BTC i pant | Cryptoviking.se </title>
+<meta name="description" content="En ny lånemetod har blivit allt populärare i takt med att allt fler äger
+digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillbaka." >
+
+<meta property="og:title" content="Kryptolån online | Bitcoinlån: BTC i pant | Cryptoviking.se" />
+<meta property="og:url" content="https://www.cryptoviking.se/kryptolan" />
+<meta property="og:description" content="En ny lånemetod har blivit allt populärare i takt med att allt fler äger
+digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillbaka.">
+
+<meta property="og:image" itemprop="image" content="{% static 'images/cover-images/cryptoloan.png' %}">
+
+<link rel="canonical" href="/kryptolan" />
+
+
+<link rel="stylesheet" href="{% static 'styleFolder/components/static-pages/static-pages-base.css' %}">
+
+{% endblock %}
+{% load static %}
+{% block content_container %}
+
+<div class="container-wrapper mt-3">
+	<div class="container-flex">
+		<div class="main-container">
+			<div class="container mt-3 pl-lg-5">
+				<h1 class="orange-viking-title"> Kryptolån </h1>
+				<hr>
+				<div class="cover-image">
+					<img src="{% static 'images/cover-images/cryptoloan.png' %}" class="rounded img-fluid" alt="Krypto lån" />
+				</div>
+
+				<div class="container mt-4">
+					<p class="pl-2">
+						Ibland är man i behov av en mindre summa pengar och för att slippa gå igenom
+						låneansökningar hos bankerna som tar lite tid kan ett kryptolån vara svaret. Kryptolån eller
+						Bitcoin-lån som några kallar det är en relativt ny företeelse på lånemarknaden.
+					</p>
+				</div>
+
+				<div class="container mt-5">
+					<h3>Vad är kryptolån?</h3>
+					<p class="pl-2">
+						För att få ett lån ger du långivaren <a href="/Kryptovaluta">krypto</a> som säkerhet (collateral). Detta kan liknas vid en
+						pantbank: För att låna pengar under en viss tid ger du någon form av värdeföremål i pant. När
+						du kommer tillbaka med pengarna får du tillbaka panten. I fall där du inte kommer och löser
+						in den inlämnade saken kan pantbanken sälja värdeföremålet för att täcka sina kostnader. Ett
+						kryptolån fungerar på samma sätt.
+					</p>
+				</div>
+
+				<div class="container mt-5">
+					<h3>Hur ansöker man om ett kryptolån?</h3>
+					<p class="pl-2">
+						För att låna pengar behöver du skicka in en låneansökan till kryptolångivare som till exempel
+						<a href="https://crypto.com/app/kd26d8skzr" target="_blank">Crypto.com</a> och <a href="https://www.binance.com/en/register?ref=JTZNNQHD" target="_blank">Binance.com</a>. Vid ansökningen uppger du hur mycket du vill låna och
+						vilken kryptovaluta du tänker ge som säkerhet. Du ser direkt på ansökan hur mycket krypto
+						du behöver ge som säkerhet. Att få lånehandlingen behandlad och godkänd tar inte lång tid
+						eftersom det finns en säkerhet som backar upp lånet. När lånet är beviljat är det bara att föra
+						över det överenskomna antalet krypto till långivaren och sedan får du lånet insatt på ditt
+						konto.
+					</p>
+					<div class="exchange-container-wrapper d-flex justify-content-around p-3">
+						<a href="https://crypto.com/app/kd26d8skzr" target="_blank" class="border d-flex flex-column align-items-center justify-content-center" style="border-radius:20px; width:100px; box-shadow:0 0 3px #fff;">
+							<img src="{% static 'images/crypto-exchanges/crypto-com.png' %}" style="width:50px;"/>
+							 Ansök 
+						</a>
+						<a href="https://www.binance.com/en/register?ref=JTZNNQHD" target="_blank" class="border d-flex flex-column align-items-center justify-content-center" style="border-radius:20px; width:100px; box-shadow:0 0 3px #fff;">
+								<img src="{% static 'images/crypto-exchanges/binance.png' %}" style="width:50px;"/>
+							 Ansök 
+						</a>
+					</div>
+				</div>
+
+				<div class="container mt-5">
+					<h3>Hur stor är belåningsgraden?</h3>
+					<p class="pl-2">
+						Belåningsgraden, alltså lånets storlek i jämförelse till dina kryptos marknadsvärde, brukar
+						ligga på 50 %. Det betyder att om du vill låna 2000 kr behöver värdet på dina krypto vara på
+						4000 kr. Med andra behöver du ge en kryptosäkerhet som motsvarar hundra procent på det
+						belopp du vill låna.
+					</p>
+				</div>
+
+				<div class="container mt-5">
+					<h3>Vad händer om värdet på mina krypto ändras under lånetiden?</h3>
+					<p class="pl-2">
+						Om värdet på dina krypto tokens ökar under lånetiden händer ingenting eftersom långivaren
+						inte riskerar någonting ifall det skulle visa sig att du inte kan betala tillbaka lånet.
+						<br>
+						Men om värdet på dina krypto tokens skulle sjunka sätter det långivaren i besvärligt läge ifall
+						du inte skulle kunna betala tillbaka ditt kryptolån. I dessa fall kontaktar långivaren dig och du
+						kan betala av på lånet eller överföra mer krypto som täcker långivarens säkerhetsgräns. Om
+						du inte betalar av på kryptolånet eller för över mer krypto har kryptolångivaren rätt att sälja av
+						dina krypto.
+					</p>
+				</div>
+
+				<div class="container mt-5">
+					<h3>Får jag tillbaka mina krypto när lånet är avbetalat?</h3>
+					<p class="pl-2">
+						När du har betalat av hela ditt lån överförs dina krypto som du lämnat som pant hos
+						långivaren tillbaka till dig. Om du lämnade x antal mynt som pant får du tillbaka samma antal
+						mynt oavsett det aktuella marknadsvärdet.
+					</p>
+				</div>
+
+
+				<div class="d-flex justify-content-around  flex-wrap rounded mt-5">
+
+					<a href="/handla/bitcoin" class="d-flex flex-column align-items-center m-2" style="min-width:150px;">
+						<img src="{% static 'images/tokens/btc-token.png' %}" style="width:60px; height:60px"/>
+						<div class="price-token" style="text-align:center;">
+							<b id="bitcoin-price-container"></b>
+						</div>
+					</a>
+					<a href="" class="d-flex flex-column align-items-center m-2" style="min-width:150px;">
+						<img src="{% static 'images/tokens/eth.png' %}" style="width:60px; height:60px; margin:0 auto 0 auto;"/>
+						<div class="price-token" style="text-align:center;">
+							<b id="ethereum-price-container"></b>
+						</div>
+					</a>
+					<a href="" class="d-flex flex-column align-items-center m-2" style="min-width:150px;">
+						<img src="{% static 'images/tokens/xrp.png' %}" style="width:60px; height:60px; margin:0 auto 0 auto;"/>
+						<div class="price-token" style="text-align:center;">
+							<b id="ripple-price-container"></b>
+						</div>
+					</a>
+					<a href="" class="d-flex flex-column align-items-center m-2" style="min-width:150px;">
+						<img src="{% static 'images/tokens/cardano.png' %}" style="width:60px; height:60px;"/>
+						<div class="price-token" style="text-align:center;">
+							<b id="cardano-price-container"></b>
+						</div>
+					</a>
+					
+
+					<div class="button-container-exchange d-flex flex-column w-100 align-items-center mt-3">
+
+						<a href="https://www.binance.com/en/register?ref=JTZNNQHD" target="_blank" class="m-1">
+							Handla hos Binance.com
+						</a>
+					</div>
+				</div>
+
+
+
+
+
+				<div class="container mt-5">
+					<h3>Vilka är fördelarna med kryptolån?</h3>
+					<ul>
+						<li>
+							Det är lättare att få lån eftersom du ger en en säkerhet/pant (vilket betyder att du inte
+							behöver ha en inkomst.)
+						</li>
+						<li>
+							Dina krypto tillhör fortfarande dig och du får tillbaka dem när lånet är avbetalat, även
+							om värdet har ökat.
+						</li>
+						<li> 
+							Du behöver en mindre summa under en kort tid (kryptolån har en högre effektiv ränta
+							än fysiska banker.)
+						</li>
+						<li> 
+							Du kan låna pengar och slippa betalningsanmärkningar om det visar sig att du inte kan
+							betala tillbaka lånet.
+						</li>
+						<li>
+							Man kan belåna sitt krypto för att köpa fler. Man är fortfarande ägare till sitt belånade
+							krypto. Med pengarna som man får kan man köpa fler krypto. Sedan när kryptots
+							värde har gått upp säljer man det och betalar av lånet och behåller vinsten (och man
+							får tillbaka det krypto som man lämnade som säkerhet). Om kryptot förlorar i värde
+							behöver man betala ränta och om man inte klarar av att betala det mister man sitt
+							krypto som fungerade som säkerhet. Att köpa krypto på lån är ytterst riskfyllt då
+							kryptovalutans värde svänger kraftigt och vi rekommenderar inte detta. Riskerna är för
+							höga. Även om man är insatt i hur krypto fungerar är det svårt att sia om hur värdet
+							kommer att utvecklas under en viss tid.
+						</li>
+					</ul>
+				</div>
+
+				<div class="container mt-5">
+					<h3>Vilka är riskerna med kryptolån?</h3>
+					<ul>
+						<li> Hög ränta </li>
+						<li> Tvångsförsäljning</li>
+						<li> Ingen statlig insättningsgaranti vid konkurs </li>
+					</ul>
+				</div>
+
+				<div class="container mt-5">
+					<h3>Sammanfattning</h3>
+					<p>
+						Att kunna ta ett lån utan att gå igenom en kreditupplysning kan vara en lättnad, speciellt när
+						man är i behov av pengar. Möjligheten att ta kryptolån utan att behöva sälja av sina crypto
+						tokens och istället lämna dem som säkerhet tills man betalar tillbaka lånet kan i vissa
+						situationer vara en räddning. Vi vill poängtera att det alltid är viktigt att tänka igenom innan
+						man bestämmer sig för att ta lån.
+					</p>
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="side-container">
+			{% include 'components/crypto-exchange/banners/Exchange-Banner-350-330.html' %}
+		</div>
+	</div>
+</div>
+
+<div class="curved mt-5">
+	<svg viewBox="0 0 1440 319">
+		<path fill="rgb(85, 85, 85, 0.8)" fill-opacity="1" d="M0,32L48,80C96,128,192,224,288,224C384,224,480,128,576,90.7C672,53,768,75,864,96C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+	</svg>
+</div>
+
+<script>
+
+
+</script>
+{% endblock %}
+

@@ -7,9 +7,12 @@ def index(request):
 def Kryptovaluta(request):
 	return render(request, 'statichtml/Kryptovaluta.html')
 
+
+def Kryptoloan(request):
+	return render(request, 'statichtml/Kryptoloan.html')
+
 def kryptovalutaplanbok(request):
 	return render(request, 'statichtml/kryptovalutaplanbok.html')
-
 
 def Stablecoins(request):
 	return render(request, 'statichtml/Stablecoins.html')
