@@ -62,7 +62,9 @@ digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillb
 						över det överenskomna antalet krypto till långivaren och sedan får du lånet insatt på ditt
 						konto.
 					</p>
-					<div class="exchange-container-wrapper d-flex justify-content-around p-3">
+
+
+					<!-- <div class="exchange-container-wrapper d-flex justify-content-around p-3">
 						<a href="https://crypto.com/app/kd26d8skzr" target="_blank" class="border d-flex flex-column align-items-center justify-content-center" style="border-radius:20px; width:100px; box-shadow:0 0 3px #fff;">
 							<img src="{% static 'images/crypto-exchanges/crypto-com.png' %}" style="width:50px;"/>
 							 Ansök 
@@ -71,7 +73,31 @@ digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillb
 								<img src="{% static 'images/crypto-exchanges/binance.png' %}" style="width:50px;"/>
 							 Ansök 
 						</a>
+					</div> -->
+
+					<div class="binance-loan-wrapper d-flex flex-wrap p-1">
+
+						<div class="flex-grow-1  d-flex flex-column align-items-center" style="min-width:290px;">
+
+							<img name="slideShow"
+								style="border-radius:20px;"
+								id="binance-loan-image" 
+							/>
+
+							<div class="button-image-container-loan m-4 p-2 d-flex justify-content-around " style="width:200px;">
+								<!-- <div onclick="backWardsButton();"> Left </div> -->
+								<h5 onclick="forwardButton();"> Nästa steg </h5>
+							</div>
+
+						</div>
+
+
+						<div class="flex-grow-1 " style="min-width:290px;">
+							
+						</div>
+
 					</div>
+					
 				</div>
 
 				<div class="container mt-5">
@@ -144,10 +170,6 @@ digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillb
 					</div>
 				</div>
 
-
-
-
-
 				<div class="container mt-5">
 					<h3>Vilka är fördelarna med kryptolån?</h3>
 					<ul>
@@ -218,6 +240,59 @@ digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillb
 </div>
 
 <script>
+
+
+	var i = 0;
+	var images = [];
+	
+
+	images[0] = `{% static 'images/crypto-exchanges/Loan/binance-loan-step-1.png' %}`
+	images[1] = `{% static 'images/crypto-exchanges/Loan/binance-loan-step-2.png' %}`
+	images[2] = `{% static 'images/crypto-exchanges/Loan/binance-loan-step-3.png' %}`
+
+
+	let currentImage = document.getElementById('binance-loan-image');
+	currentImage.setAttribute('src', images[i])
+
+	function forwardButton(){
+		console.log('forwardButton')
+		slideImage('Forward')
+	}
+
+	function backWardsButton(){
+		console.log('forwardButton')
+		slideImage('Backwards')
+	}
+
+	function slideImage(e){
+		let x = e;
+		console.log('currentImage  ', currentImage.src)
+		if( x === "Forward"){
+			console.log(' Forward')
+			if( i < images.length - 1 ){
+				i++;
+				currentImage.setAttribute('src', images[i])
+			} else {
+				i = 0;
+				currentImage.setAttribute('src', images[0])
+			}	
+		} 
+
+
+
+		if( x === 'Backwards'){
+			console.log('Backwards please', )
+			
+
+
+		} 
+
+		
+
+	}
+
+
+
 
 
 </script>
