@@ -94,23 +94,23 @@ virtuella valutor än större betydelse. Tryggt digitalt betalningssystem med fu
 						Här nedan är bara exempel på några stycken.
 					</p>
 					<ul>
-						<li class="mt-2">
-							<a href="/handla/bitcoin"> Bitcoin (BTC) – </a> Den första decentraliserade kryptovalutan som skapades (2009) och är även
+						<li class="mt-4">
+							<a href="/handla/bitcoin"> Bitcoin (BTC) – </a> Den första decentraliserade kryptovalutan som skapades (4009) och är även
 							den största idag. Bitcoin har blivit en värdebärare och betraktas som digitalt guld.
   						</li>
-  						<li class="mt-2">
+  						<li class="mt-4">
   							<b> Ethereum (ETH) – </b> Den här kryptovalutan är den näst största efter Bitcoin. Ethereum används bland annat för att betala interaktionsavgifter vid smarta kontrakt och decentraliserade
 							finansavtal.
   						</li>
-  						<li class="mt-2">
+  						<li class="mt-4">
   							<b> XRP – </b> Fördelen med XRP är att den är snabb och billig. Vid transaktioner är XRP en av de
 							snabbaste och billigaste transaktionsmetoderna mellan två parter.
   						</li>
-  						<li class="mt-2">
+  						<li class="mt-4">
 							<b> Cardano – </b> Charles Hutchinson var en av åtta grundarna till Ethereum, men han lämnade det
 							för att istället skapa Cardano
   						</li>
-  						<li class="mt-2">
+  						<li class="mt-4">
 							<b> Polkadot - </b> Polkadot Ecosystems External Networks programmerades så att nätverket kan
 							kommunicera med andra kryptonätverk. Polkadots grundare har också förflutet på Ethereum.
   						</li>
@@ -240,9 +240,12 @@ virtuella valutor än större betydelse. Tryggt digitalt betalningssystem med fu
 
 
 </div>
-
-<div class="curved mt-5">
-
+<div class="author-container container d-flex justify-content-center align-items-center">
+	<div class="d-flex flex-column align-items-center ">
+		<img src="{% static 'images/mascot/viking-contet-writer.png' %}" style="width:300px;">
+	</div>
+</div>
+<div class="curved mt-3">
 	<svg viewBox="0 0 1440 319">
 		<path fill="rgb(85, 85, 85, 0.8)" fill-opacity="1" d="M0,32L48,80C96,128,192,224,288,224C384,224,480,128,576,90.7C672,53,768,75,864,96C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
 	</svg>
@@ -250,29 +253,6 @@ virtuella valutor än större betydelse. Tryggt digitalt betalningssystem med fu
 
 <script>
 
-// 	const getPrice = async event => {
-// 	let string = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ccardano%2Cripple%2Cpolkadot&vs_currencies=usd&include_market_cap=false&include_24hr_vol=false&include_24hr_change=false&include_last_updated_at=false";
-// 	await fetch(string)
-// 	.then(res => res.json())
-// 	.then((data) => {
-
-// 	for (const [key, value] of Object.entries(data)) {
-// 	  console.log(key, value);
-// 	  // Grab the price container 
-// 	  document.querySelector(`#${key}-price`).innerText = `$${value.usd}`;
-// 	  console.log('Done...')
-// 	}
-// console.log('yeeees')
-
-
-// 	});
-
-
-
-// }
-
-
-// getPrice();
 </script>
 {% endblock %}
 

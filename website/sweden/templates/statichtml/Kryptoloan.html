@@ -12,10 +12,7 @@ digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillb
 digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillbaka.">
 
 <meta property="og:image" itemprop="image" content="{% static 'images/cover-images/cryptoloan.png' %}">
-
 <link rel="canonical" href="/kryptolan" />
-
-
 <link rel="stylesheet" href="{% static 'styleFolder/components/static-pages/static-pages-base.css' %}">
 
 {% endblock %}
@@ -62,44 +59,22 @@ digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillb
 						över det överenskomna antalet krypto till långivaren och sedan får du lånet insatt på ditt
 						konto.
 					</p>
-
-
-					<!-- <div class="exchange-container-wrapper d-flex justify-content-around p-3">
-						<a href="https://crypto.com/app/kd26d8skzr" target="_blank" class="border d-flex flex-column align-items-center justify-content-center" style="border-radius:20px; width:100px; box-shadow:0 0 3px #fff;">
-							<img src="{% static 'images/crypto-exchanges/crypto-com.png' %}" style="width:50px;"/>
-							 Ansök 
-						</a>
-						<a href="https://www.binance.com/en/register?ref=JTZNNQHD" target="_blank" class="border d-flex flex-column align-items-center justify-content-center" style="border-radius:20px; width:100px; box-shadow:0 0 3px #fff;">
-								<img src="{% static 'images/crypto-exchanges/binance.png' %}" style="width:50px;"/>
-							 Ansök 
-						</a>
-					</div> -->
-
 					<div class="binance-loan-wrapper d-flex flex-wrap p-1">
-
 						<div class="flex-grow-1  d-flex flex-column align-items-center" style="min-width:290px;">
-
 							<img name="slideShow"
 								style="border-radius:20px;"
 								id="binance-loan-image" 
 							/>
 
 							<div class="button-image-container-loan m-4 p-2 d-flex justify-content-around " style="width:200px;">
-								<!-- <div onclick="backWardsButton();"> Left </div> -->
-								<h5 onclick="forwardButton();"> Nästa steg </h5>
+								<h5 onclick="forwardButton();" style="cursor:pointer;"> Nästa steg </h5>
 							</div>
-
 						</div>
-
-
 						<div class="flex-grow-1 " style="min-width:290px;">
 							
 						</div>
-
 					</div>
-					
 				</div>
-
 				<div class="container mt-5">
 					<h3>Hur stor är belåningsgraden?</h3>
 					<p class="pl-2">
@@ -109,7 +84,6 @@ digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillb
 						belopp du vill låna.
 					</p>
 				</div>
-
 				<div class="container mt-5">
 					<h3>Vad händer om värdet på mina krypto ändras under lånetiden?</h3>
 					<p class="pl-2">
@@ -123,7 +97,6 @@ digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillb
 						dina krypto.
 					</p>
 				</div>
-
 				<div class="container mt-5">
 					<h3>Får jag tillbaka mina krypto när lånet är avbetalat?</h3>
 					<p class="pl-2">
@@ -132,10 +105,7 @@ digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillb
 						mynt oavsett det aktuella marknadsvärdet.
 					</p>
 				</div>
-
-
 				<div class="d-flex justify-content-around  flex-wrap rounded mt-5">
-
 					<a href="/handla/bitcoin" class="d-flex flex-column align-items-center m-2" style="min-width:150px;">
 						<img src="{% static 'images/tokens/btc-token.png' %}" style="width:60px; height:60px"/>
 						<div class="price-token" style="text-align:center;">
@@ -160,36 +130,32 @@ digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillb
 							<b id="cardano-price-container"></b>
 						</div>
 					</a>
-					
-
 					<div class="button-container-exchange d-flex flex-column w-100 align-items-center mt-3">
-
 						<a href="https://www.binance.com/en/register?ref=JTZNNQHD" target="_blank" class="m-1">
 							Handla via Binance.com
 						</a>
 					</div>
 				</div>
-
 				<div class="container mt-5">
 					<h3>Vilka är fördelarna med kryptolån?</h3>
 					<ul>
-						<li>
+						<li class="mt-3">
 							Det är lättare att få lån eftersom du ger en en säkerhet/pant (vilket betyder att du inte
 							behöver ha en inkomst.)
 						</li>
-						<li>
+						<li class="mt-3">
 							Dina krypto tillhör fortfarande dig och du får tillbaka dem när lånet är avbetalat, även
 							om värdet har ökat.
 						</li>
-						<li> 
+						<li class="mt-3"> 
 							Du behöver en mindre summa under en kort tid (kryptolån har en högre effektiv ränta
 							än fysiska banker.)
 						</li>
-						<li> 
+						<li class="mt-3"> 
 							Du kan låna pengar och slippa betalningsanmärkningar om det visar sig att du inte kan
 							betala tillbaka lånet.
 						</li>
-						<li>
+						<li class="mt-3">
 							Man kan belåna sitt krypto för att köpa fler. Man är fortfarande ägare till sitt belånade
 							krypto. Med pengarna som man får kan man köpa fler krypto. Sedan när kryptots
 							värde har gått upp säljer man det och betalar av lånet och behåller vinsten (och man
@@ -202,16 +168,14 @@ digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillb
 						</li>
 					</ul>
 				</div>
-
 				<div class="container mt-5">
 					<h3>Vilka är riskerna med kryptolån?</h3>
 					<ul>
-						<li> Hög ränta </li>
-						<li> Tvångsförsäljning</li>
-						<li> Ingen statlig insättningsgaranti vid konkurs </li>
+						<li class="mt-3"> Hög ränta </li>
+						<li class="mt-3"> Tvångsförsäljning</li>
+						<li class="mt-3"> Ingen statlig insättningsgaranti vid konkurs </li>
 					</ul>
 				</div>
-
 				<div class="container mt-5">
 					<h3>Sammanfattning</h3>
 					<p>
@@ -222,18 +186,19 @@ digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillb
 						man bestämmer sig för att ta lån.
 					</p>
 				</div>
-
-
 			</div>
 		</div>
-
 		<div class="side-container">
 			{% include 'components/crypto-exchange/banners/Exchange-Banner-350-330.html' %}
 		</div>
 	</div>
 </div>
-
-<div class="curved mt-5">
+<div class="author-container container d-flex justify-content-center align-items-center">
+	<div class="d-flex flex-column align-items-center ">
+		<img src="{% static 'images/mascot/viking-contet-writer.png' %}" style="width:300px;">
+	</div>
+</div>
+<div class="curved mt-3">
 	<svg viewBox="0 0 1440 319">
 		<path fill="rgb(85, 85, 85, 0.8)" fill-opacity="1" d="M0,32L48,80C96,128,192,224,288,224C384,224,480,128,576,90.7C672,53,768,75,864,96C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
 	</svg>
@@ -259,14 +224,9 @@ digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillb
 		slideImage('Forward')
 	}
 
-	function backWardsButton(){
-		console.log('forwardButton')
-		slideImage('Backwards')
-	}
-
 	function slideImage(e){
+		// E is value from Forward function.
 		let x = e;
-		console.log('currentImage  ', currentImage.src)
 		if( x === "Forward"){
 			console.log(' Forward')
 			if( i < images.length - 1 ){
@@ -277,23 +237,7 @@ digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillb
 				currentImage.setAttribute('src', images[0])
 			}	
 		} 
-
-
-
-		if( x === 'Backwards'){
-			console.log('Backwards please', )
-			
-
-
-		} 
-
-		
-
 	}
-
-
-
-
 
 </script>
 {% endblock %}
