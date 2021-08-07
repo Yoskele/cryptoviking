@@ -26,12 +26,7 @@
 	<div class="container-flex">
 		<div class="main-container">
 			<div class="container mt-3 pl-lg-5">
-				<h1 class="orange-viking-title"> {{token.article_title}}</h1>
-				<hr>
-
 				<div class="cover-image-wapper">
-
-					
 					<div class=" token-info-container">
 						<img src="{{ token.logo.url}}" alt="{{token.token_name}}" />
 						<h6 class=""> {{ token.token_name }} </h6>
@@ -44,21 +39,17 @@
 							</a>
 						</div>
 					</div>
-
 				</div>
-
-				<div class="container mt-4">
-					<p class="pl-2">
-						
-					</p>
-				</div>
-				<hr/>
-
+				<a href="#kryptograf" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;">
+					<div class=" d-flex flex-column m-0" style="border-radius:20px; cursor:pointer;">
+						<p class="m-0" style="margin:0px;"> Till {{ token.token_name }} graf </p>
+						<div class="m-0" style="margin:0px;"> 🡻 </div>
+					</div>
+				</a>
+				<h1 class="orange-viking-title"> {{token.article_title}}</h1>
 				<div class="container">
 					{{ token.content | safe }}
 				</div>
-				
-				
 			</div>
 		</div>
 
@@ -70,7 +61,16 @@
 
 
 </div>
-<div class="container d-flex justify-content-center align-items-center ">
+
+<h3 style="text-align:center; margin:0; margin-top:50px;" id="kryptograf"> Bitcoin kurs </h3>
+<div class="curved" >
+	<div class="card-body container">
+		<div class="tradingview-widget-container tech_analysis">
+  			<div id="tradingview_3418f"></div>
+  			<div class="tradingview-widget-copyright"></div>
+		</div>
+	</div>
+	<div class="container d-flex justify-content-center align-items-center ">
 
 	<a href="https://www.binance.com/en/register?ref=JTZNNQHD" class="m-2" target="_blank">
 		Handla via Binance
@@ -81,14 +81,6 @@
 	</a>
 
 </div>
-
-<div class="curved mt-5">
-	<div class="card-body container">
-		<div class="tradingview-widget-container tech_analysis">
-  			<div id="tradingview_3418f"></div>
-  			<div class="tradingview-widget-copyright"></div>
-		</div>
-	</div>
 	<svg viewBox="0 0 1440 319">
 		<path fill="rgb(85, 85, 85, 0.8)" fill-opacity="1" d="M0,32L48,80C96,128,192,224,288,224C384,224,480,128,576,90.7C672,53,768,75,864,96C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
 	</svg>
@@ -99,7 +91,7 @@
 			new TradingView.widget(
 			{
 			"width": "100%", 
-			"height" : 610,
+			"height" : 600,
 			"symbol": "{{token.ticket_name}}",
 			"interval": "D",
 			"timezone": "Etc/UTC",

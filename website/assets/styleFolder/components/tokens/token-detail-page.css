@@ -1,11 +1,12 @@
 .cover-image-wapper{
 	max-width:717px;
-	height:470px;
+	height:430px;
 	background: url("/static/images/walls/space-token-wall.png")no-repeat;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
 	justify-content:center;
+	margin:0 auto 0 auto;
 	
 }
 .token-info-container{
