@@ -31,7 +31,7 @@
 						<img src="{{ token.logo.url}}" alt="{{token.token_name}}" />
 						<h6 class=""> {{ token.token_name }} </h6>
 						<div class="price-token ">
-							<span class="d-flex"> <p class="mr-1"> Pris: </p> <p id="bitcoin-price-container"> </p> </span>
+							<span class="d-flex"> <p class="mr-1"> Pris: </p> <p id="{{token.slug}}-price-container"> </p> </span>
 						</div>
 						<div class="where-to-buy-container">
 							<a href="https://www.binance.com/en/register?ref=JTZNNQHD" target="_blank">
@@ -62,7 +62,7 @@
 
 </div>
 
-<h3 style="text-align:center; margin:0; margin-top:50px;" id="kryptograf"> Bitcoin kurs </h3>
+<h3 style="text-align:center; margin:0; margin-top:50px;" id="kryptograf"> {{ token.token_name }} kurs </h3>
 <div class="curved" >
 	<div class="card-body container">
 		<div class="tradingview-widget-container tech_analysis">
