@@ -17,9 +17,10 @@ def kryptovalutaplanbok(request):
 def Stablecoins(request):
 	return render(request, 'statichtml/Stablecoins.html')
 
+def MetamaskGuide(request):
+	return render(request, 'statichtml/wallets/Metamask-guide-page.html')
 
 def token(request, slug):
-
 	token = Token.objects.get(slug=slug)
 	context = {
 		'token' : token

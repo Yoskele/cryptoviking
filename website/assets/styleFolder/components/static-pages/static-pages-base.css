@@ -35,6 +35,9 @@ h3{
 }
 
 
+/*For BootStrap arrows on the carousel*/
+
+
 @media(max-width:550px){
 	.side-container{
 		max-width:100%;
