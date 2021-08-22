@@ -9,6 +9,7 @@ urlpatterns = [
 	path('Kryptovaluta', views.Kryptovaluta, name="Kryptovaluta"),
 	path('Stablecoins', views.Stablecoins, name="Stablecoins"),
 	path('kryptolan', views.Kryptoloan, name="Kryptoloan"),
+	path('tjana-krypto', views.Kryptoearn, name="Kryptoearn"),
 	path('kryptovalutaplanbok', views.kryptovalutaplanbok, name="kryptovalutaplanbok"),
 	path('metamask-guide', views.MetamaskGuide, name="MetamaskGuide"),
 	path('handla/<slug>', views.token, name='token'),

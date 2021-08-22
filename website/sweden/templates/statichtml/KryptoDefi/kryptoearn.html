@@ -1,0 +1,408 @@
+{% extends 'Base.html' %}
+{% load static from staticfiles %}
+{% block extra_htmt_head %}
+
+<title> Kryptolån online | Bitcoinlån: BTC i pant | Cryptoviking.se </title>
+<meta name="description" content="En ny lånemetod har blivit allt populärare i takt med att allt fler äger
+digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillbaka." />
+
+<meta property="og:title" content="Kryptolån online | Bitcoinlån: BTC i pant | Cryptoviking.se" />
+<meta property="og:url" content="https://www.cryptoviking.se/kryptolan" />
+<meta property="og:description" content="En ny lånemetod har blivit allt populärare i takt med att allt fler äger
+digital valuta: kryptolån! Kryptot fungerar som pant tills lånet betalas tillbaka.">
+
+<meta property="og:image" itemprop="image" content="{% static 'images/cover-images/cryptoloan.png' %}">
+<link rel="canonical" href="/kryptolan" />
+<link rel="stylesheet" href="{% static 'styleFolder/components/static-pages/static-pages-base.css' %}">
+
+{% endblock %}
+{% load static %}
+{% block content_container %}
+
+<div class="container-wrapper mt-3">
+	<div class="container-flex">
+		<div class="main-container">
+			<div class="container mt-3 pl-lg-5">
+				<div class="cover-image">
+					<img src="{% static 'images/cover-images/cryptoloan.png' %}" alt="cryptoloan" class="rounded img-fluid" alt="Krypto lån" />
+				</div>
+				<div class="container mt-4">
+					<h1 class="orange-viking-title"> Hur kan man tjäna mera krypto? </h1>
+					<p class="pl-2">
+						Det finns olika sätt att tjäna mera krypto på sina krypto. I denna guiden så kommer jag lägga ut flera olika sätt att tjäna enkelt och smidigt extra krypto. Men som sagt det finns alltid en chans att man kan förlora allt. Så ha det i backtanken. 
+					</p>
+
+					<p class="pl-2">
+						Under denna guiden så kommer det även förklaras vilka risker det finns.
+					</p>
+
+
+					<p class="pl-2">
+						Tack vare smarta contract så har man kunnat bygga upp flera olika tjänster som har underlättat oss att göra finansiella affärer med varandra.
+					</p>
+				</div>
+				<br>
+
+				<div class="container mt-5">
+					<hr>
+					<h5 class="text-center" style="color:#F69516; font-style:italic; font-weight:normal;"> SnabbGuide </h5>
+
+					<div class="row p-2">
+						<div class="col-sm-6">
+							<ul>
+								<li class="mt-3">
+									<a href="#skapa-metamask" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;"> Proof of Stake
+									</a> 
+								</li>
+								<li class="mt-3">
+									<a href="#kryptograf" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;"> Staking-pool
+									</a> 
+								</li>
+								<li class="mt-3">
+									<a href="#kryptograf" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;">Staking Rewards
+									</a> 
+								</li>
+							</ul>
+						</div>
+						<div class="col-sm-6" id="display-desktop">
+							<ul>
+								<li class="mt-3">
+									<a href="#skapa-metamask" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;"> Krypto ränta
+									</a> 
+								</li>
+								<li class="mt-3">
+									<a href="#kryptograf" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;"> Yield Farming
+									</a> 
+								</li>
+								<li class="mt-3">
+									<a href="#kryptograf" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;"> Sammanfattning
+									</a> 
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<button id="Metamask-snabb-guide-show-more-button" 
+						class="btn rounded"
+					 	onclick="toogleSnabbGuideContainer()"
+						style="background:#85bb65; color:#DCDCDC">
+						Mera
+					</button>
+					<hr>
+				</div>
+				<br>
+
+
+
+
+				<div class="container mt-5">
+					<h3>Proof of Stake</h3>
+						<p class="pl-2">
+							Proof of Stake (PoS) är en mekanism
+							Ethereum gick från att vara ett Proof of Work krypto till Proof of Stake, vilket är
+							miljövänligare och lämnar mindre koldioxidavtryck efter sig än energislukande Proof of
+							Work.
+						</p>
+						<p class="pl-2">
+							 I PoS utvinner man nya block genom att validera blocktransaktioner med hjälp av sin
+							krypto. När kryptoägaren låser upp krypto i t. ex. en staking-pool kan poolen väljas ut för att
+							användas till att skapa nya block. Eftersom det är kryptoägarnas kryptotillgångar som
+							möjliggör skapandet av block får kryptoägarna belöning i form av staking reward.
+						</p>
+				</div>
+
+				<div class="container mt-5">
+					<h3> Vad är en staking-pool? </h3>
+					<p class="pl-2">
+						En staking-pool är en grupp av kryptoägare som har gått samman för att få större chans att
+						väljas ut för att skapa nästa nya block. Ju fler kryptomynt poolen har desto större är chansen
+						att den väljs ut.
+					</p>
+				</div>
+				<div class="container mt-5">
+					<h3> Vad är Staking Rewards </h3>
+					<p class="pl-2">
+						Varje stakingleverantör har sina egna regler kring staking, men det är inte ovanligt att den
+						betalas ut var sjunde dag. Utbetalningen får du i samma valuta som du har satt in i staking-
+						poolen. Om dina låsta tokens är till exempel i Ethereum får du din staking i Ethereum.
+					</p>
+				</div>
+				<div class="container mt-5">
+					<h3> Risker med Staking </h3>
+					<p class="pl-2">
+						Project failure Finally, there's also always the risk that you may lose your funds if you don't pay enough attention, for example through scams.  Falling cryptocurrency prices
+
+
+					</p>
+				</div>
+				<hr/>
+				<div class="container mt-5">
+					<h3>Hur kommer man igång med Staking?</h3>
+					<p class="pl-2">
+						Att komma igång med staking kan vara lite klurigt i början, men när man har väll lärt sig så går det väldigt smidigt. Det första man måste göra är att välja ut vilken staking-pool du vill börja tjäna utebetalningar i, sedan så måste du ha äga de mytent som poolen kräver. Exempale Cardano, Polkadot, Ethereum är en av de mest kända ute i crypto världen.
+						<br/>
+						Finns även visa krav för att kunna komma in i en Staking-pool.
+					</p>
+
+					<div class="row w-80 mx-auto">
+						<div class="col-sm-6 d-flex flex-column align-items-center justify-content-center">
+							<div style="max-width:150px;" class="m-2 text-center">
+								<img src="{% static 'images/Defi/CryptoEarn/space-ship.png' %}" alt="" style="border-radius:20px;" class="img-fluid" />
+								<a href=""> Till Binance </a>
+							</div>
+							<label style="font-size:0.68rem; color:#F47174;" class=" m-0 ">
+								Investera inte mer än vad du har råd att förlora.
+							</label>
+						</div>
+						<div class="col-sm-6 d-flex flex-column align-items-center">
+							<div style="max-width:350px;" class="m-2">
+								<img src="{% static 'images/Defi/CryptoEarn/cardano-staking-pool.png' %}" style="border-radius:20px;"  alt="" class="img-fluid" />
+							</div>
+						</div>
+					</div>
+
+					<p class="pl-2 mt-3">
+						Du skulle kunna gå och hitta dina egna staking pools i nätet och koppla upp dig med din MetaMask wallet. Men man ska vara försiktig när man väljer sina staking pools. 
+					</p>
+					<p class="pl-2">
+						Personligen så använder jag mig utav av Binace.com som är centralized exchange.
+						Dem underlättar väldigt mycket hela proccesen allt från handla krypto till förvara sina krypto eller gå med i en staking pool.
+					</p>
+					<p class="pl-2">
+						Om du skulle öppna upp ett konto via oss så kommer vi på CryptoViking få en bonus.
+					</p>
+				</div>
+				<hr/>
+				<div class="container mt-5">
+					<h3> Hur mycket kan man få i staking? </h3>
+					<p class="pl-2">
+						Nivån på staking beror på vilket krypto det handlar om. Den bästa staking får man av mindre,
+						okända tokens de är de mest riskabla att binda upp. Att binda dessa okända
+						kryptovalutor är en stor risk då de kan ha system fel och cyber attaker som kan leda till att dem  försvinner från marknaden.
+					</p>
+					<p class="pl-2">
+						Pålitliga, kända och populära krypton som Ethereum och Cardano har lägre staking än okända
+						små krypton.
+					</p>
+					<p class="pl-2">
+						Om du ska låsa upp dina krypto via en Staking pool så är det viktigt att du väljer en säker
+						och seriös mäklare.
+					</p>
+				</div>
+
+
+				
+
+
+
+				<div class="d-flex justify-content-around  flex-wrap rounded mt-5">
+					<a href="/handla/bitcoin" class="d-flex flex-column align-items-center m-2" style="min-width:150px;">
+						<img src="{% static 'images/tokens/btc-token.png' %}" alt="token-small-image" style="width:60px; height:60px"/>
+						<div class="price-token" style="text-align:center;">
+							<b id="bitcoin-price-container"></b>
+						</div>
+					</a>
+					<a href="/handla/ethereum" class="d-flex flex-column align-items-center m-2" style="min-width:150px;">
+						<img src="{% static 'images/tokens/eth.png' %}" alt="token-small-image" style="width:60px; height:60px; margin:0 auto 0 auto;"/>
+						<div class="price-token" style="text-align:center;">
+							<b id="ethereum-price-container"></b>
+						</div>
+					</a>
+					<a href="" class="d-flex flex-column align-items-center m-2" style="min-width:150px;">
+						<img src="{% static 'images/tokens/xrp.png' %}" alt="token-small-image" style="width:60px; height:60px; margin:0 auto 0 auto;"/>
+						<div class="price-token" style="text-align:center;">
+							<b id="ripple-price-container"></b>
+						</div>
+					</a>
+					<a href="" class="d-flex flex-column align-items-center m-2" style="min-width:150px;">
+						<img src="{% static 'images/tokens/cardano.png' %}" alt="token-small-image" style="width:60px; height:60px;"/>
+						<div class="price-token" style="text-align:center;">
+							<b id="cardano-price-container"></b>
+						</div>
+					</a>
+				</div>
+				<br/>
+				<div class="container mt-5">
+					<h3> Kan jag avbryta bindningstiden? </h3>
+					<p class="pl-2">
+						Innan man väljer att binda sina tokens gäller det att läsa kontraktet och se vad företaget har för
+						policy om man av någon anledning blir tvungen att avbryta bindningstiden. 
+						
+					</p>
+
+					<p class="pl-2">
+						Det bästa är att i förväg planera och tänka igenom din situation och se om du kan låta kryptovalutan vara bunden en tid. Bindningstiderna brukar vara mellan två veckor upp till 90 dagar. En del bolag kan även erbjuda bindningstid på endast en vecka.
+					</p>
+
+
+					<p class="pl-2">
+						Bind inte upp alla dina krypto om du vet att du är i en ekonomisk prekär situation, oavsett kort
+						tid bindningstiden är!
+					</p>
+
+				</div>
+				<hr/>
+				<div class="container mt-5">
+					<h3> Tjäna ränta på dina krypto tillgångar</h3>
+
+					<p class="pl-2">
+						Som sagt alla krypto stödjer inte Proof of stake teknologin. Men kan kan ändå tjäna extra krypto via sina krypto tillgångar. Många krypto exchanges erbjuder även valmöjligheten att låna ut sina krypto example som Bitcoin och Xrp.
+					</p>
+					<p class="pl-2">
+						Vad som händer bakom kulliserna är att krypto exchanges tar dina pengar och lånar ut dem till folk
+						<a href="/kryptolan">Läs mer om kryptolån</a>.
+					</p>
+					<p class="pl-2">
+						Det possetiva med dessa crypto earn konton eller krypto sparkonton vissa kallar det. Är att dem är väldigt flexibla. Menas med att du kan ta utt dina krypto tillgångar när du vill.
+					</p>
+					<p class="pl-2">
+						Det negativa är att det är låg ränta.
+					</p>
+				</div>
+					<div class="mx-auto d-flex flex-column align-items-center">
+						<div style="max-width:150px;" class="m-2 text-center">
+							<img src="{% static 'images/Defi/CryptoEarn/space-ship-crypto.png' %}" alt="" style="border-radius:20px;" class="img-fluid" />
+							<a href=""> Till Crypto.com </a>
+						</div>
+						<label style="font-size:0.68rem; color:#F47174;" class=" m-0 ">
+							Investera inte mer än vad du har råd att förlora.
+						</label>
+					</div>
+
+				<!-- <label style="font-size:0.68rem; color:#F47174;" class="pl-4 m-0 ">
+						Handla inte mer än vad du har råd att förlora.
+				</label> -->
+				<hr/>
+				<div class="container mt-5">
+					<h3>Yield Farming</h3>
+					<p class="pl-2">
+						Yield farming, also referred to as liquidity mining är inget vi rekommenderar för en nybörjare. Tack vare Defi Protocols så kan man få ut en otroligt hög avkastning.
+						Genom att lägga in dina tokens i en liquidity pool.
+						It’s basically a smart contract that contains funds. In return for providing liquidity to the pool, LPs get a reward. That reward may come from fees generated by the underlying DeFi platform, or some other source.
+					</p>
+
+					<p class="pl-2">
+						På grund av smart kontrakt så kan vi bygga upp alla slags vilkor i våran Defi protocol.
+						I dessa protocol så kan det även finnas leverage som kan vara en av annledningar att man få en otroligt hög utbetalning. Yield farming can be incredibly complex and carries significant financial risk for both borrowers and lenders
+					</p>
+					
+
+				</div>
+
+				<!-- https://academy.binance.com/en/articles/what-is-yield-farming-in-decentralized-finance-defi -->
+				<div class="container mt-5">
+					<h3>Hur kommer man igång med Yield farming? </h3>
+					<p>
+						Man kan gå via en centralized exchange eller så kan man gå via decentralized platform som till example Pancakeswap. Om du skulle nu vilja gå via en decentralized exchange så kan det finnas lite högre risker. Men vad du behöver en är en smidig plånbok som <a href="/metamask-guide">MetaMask</a> för att kunna koppla upp sig om du nu väljer att gå via en decentralized platform.
+						När du ha kopplat upp dig så kommer du kunna se vad för utbud dem har.
+					</p>
+					<p class="pl-2 text-center" style="color:#F47174;">
+						Finns väldigt många risker med Yield farming allt från bugs i systemet till cyber attacks etc.
+					</p>
+					<!-- Carousl Container Yield Farming Pancake images  -->
+					<div id="carouselYieldFarmingImages" class="carousel slide m-5 mx-auto" 
+						style=" width:100%;
+						border-radius:20px; box-shadow:0 0 10px #fff;" data-ride="carousel" data-interval="false">
+					  <ol class="carousel-indicators">
+					    <li data-target="#carouselYieldFarmingImages" data-slide-to="0" class="active"></li>
+					    <li data-target="#carouselYieldFarmingImages" data-slide-to="1"></li>
+					  </ol>
+
+					  <div class="carousel-inner" style="height:100%;">
+
+					    <div class="carousel-item active" style="height:100%;">
+					      <img class="d-block mx-auto img-fluid mt-lg-2" style="border-radius:10px;" src="{% static 'images/tokens/wallet-icons/pancakelogin.png' %}" alt="First slide">
+					    </div>
+
+					    <div class="carousel-item" style="height:100%;">
+					      <img class="d-block mx-auto img-fluid mt-lg-2" style="border-radius:10px;" src="{% static 'images/tokens/wallet-icons/pancakefarm.png' %}" alt="Second slide">
+					    </div>
+					  </div>
+					  <a class="carousel-control-prev"  href="#carouselYieldFarmingImages" role="button" data-slide="prev">
+					    <span class="carousel-control-prev-icon"   aria-hidden="true"></span>
+					    <span class="sr-only">Previous</span>
+					  </a>
+					  <a class="carousel-control-next" href="#carouselYieldFarmingImages" role="button" data-slide="next">
+					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					    <span class="sr-only">Next</span>
+					  </a>
+					</div>
+				</div>
+				<!-- End of Carousle Steg PancakeSwap -->
+				<hr/>
+
+				<div class="container mt-5">
+					<h3> Sammanfattning </h3>
+					<p  class="pl-2">
+						Man kan tjäna extra allt från staking pools till krypto ränta till yield farming. Men hur ska man ta väga och vilket sätt är det säkraste?
+						
+					</p>
+					<p class="pl-2">
+						Att gå via en pålitlig centralized exchange skulle nog vara det lättaste och det säkraste, se till att välja rätt platform. 
+						<br/>
+						När du har valt och lagt in lite krypto tillgångar så kan du testa dig runt lite med att lägga dem i en slags sparkonto och få ut en liten ränta. Oftast så är dessa sparkonton utan bidnings tid.
+					</p>
+					<p class="pl-2">
+						När du har börjat förstå conceptet så kan man börja leta efter staking pools och bli en node validator. 
+						Kan vara lite krångligt i början men när man väll har lärt sig så är det enkelt. Man kan även gå via en centralized exchange som binance, dem underlättar hela proccesen.
+					</p>
+					<p class="pl-2">
+						Yield farming är något vi inte rekommenderar någon att göra. High rewards comes with high risk. Man kan få ut en bra utbetalning via yield farming men som sagt <span style="color:#F47174;"> man kan även förlora allt.</span>
+					</p>
+				</div>
+				<br/>
+
+			</div>
+		</div>
+		<div class="side-container">
+			{% include 'components/crypto-exchange/banners/Exchange-Banner-350-330.html' %}
+		</div>
+	</div>
+</div>
+<div class="author-container container d-flex justify-content-center align-items-center">
+	<div class="d-flex flex-column align-items-center ">
+		<img src="{% static 'images/mascot/viking-contet-writer.png' %}" alt="cryptoloan-cryptoviking.se" style="width:300px;">
+	</div>
+</div>
+<div class="curved mt-3">
+	<svg viewBox="0 0 1440 319">
+		<path fill="rgb(85, 85, 85, 0.8)" fill-opacity="1" d="M0,32L48,80C96,128,192,224,288,224C384,224,480,128,576,90.7C672,53,768,75,864,96C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+	</svg>
+</div>
+
+<script>
+function toogleSnabbGuideContainer() {
+  var x = document.getElementById("display-desktop");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+if(window.screen.width < 500){
+ 	// Mobile Phone view activated!
+ 	let box = document.getElementById('display-desktop');
+ 	box.style.display = "none";
+} else{
+	// Remove the show more button for desktop view
+ 	document.getElementById("Metamask-snabb-guide-show-more-button").remove();
+}
+
+
+
+</script>
+
+<style type="text/css">
+
+#carouselYieldFarmingImages{
+	height:420px;
+}
+@media(max-width:450px){
+	#carouselYieldFarmingImages{
+		height:250px;
+	}
+
+</style>
+{% endblock %}
+
