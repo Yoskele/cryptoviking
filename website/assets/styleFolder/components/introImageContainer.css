@@ -5,10 +5,10 @@
 }
 .heightImageWrapper{
 	position:relative;
-	height:520px;
+	height:500px;
 }
 .heightImageWrapper img{
-	height:520px;
+	height:480px;
 
 }
 .heightImageWrapper:hover{
@@ -27,7 +27,7 @@
 
 }
 .widthImageWrapper.first img{
-	height:320px;
+	height:300px;
 	width:100%;
 }
 .widthImageWrapper.second img{
@@ -131,7 +131,7 @@
 	}
 	.heightImageWrapper img{
 		width:400px;
-		height:400px;
+		height:450px;
 		border-radius:20px;
 	}
 }
@@ -152,10 +152,10 @@
 		width:100%;
 	}
 	.heightImageWrapper{
-		height:160px;
+		height:250px;
 	}
 	.heightImageWrapper img{
-		height:150px;
+		height:230px;
 		padding:0px;
 		margin-top:10px;
 		width:100%;
