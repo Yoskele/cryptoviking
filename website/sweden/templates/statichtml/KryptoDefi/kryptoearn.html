@@ -46,15 +46,15 @@
 						<div class="col-sm-6">
 							<ul>
 								<li class="mt-3">
-									<a href="#skapa-metamask" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;"> Staking
+									<a href="#staking" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;"> Staking
 									</a> 
 								</li>
 								<li class="mt-3">
-									<a href="#kryptograf" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;"> Staking-pool
+									<a href="#staking-pool" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;"> Staking-pool
 									</a> 
 								</li>
 								<li class="mt-3">
-									<a href="#kryptograf" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;">Staking Rewards
+									<a href="#staking-rewards" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;">Staking Rewards
 									</a> 
 								</li>
 							</ul>
@@ -62,15 +62,15 @@
 						<div class="col-sm-6" id="display-desktop">
 							<ul>
 								<li class="mt-3">
-									<a href="#skapa-metamask" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;"> Krypto ränta
+									<a href="#krypto-ranta" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;"> Krypto ränta
 									</a> 
 								</li>
 								<li class="mt-3">
-									<a href="#kryptograf" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;"> Yield Farming
+									<a href="#yield-farming" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;"> Yield Farming
 									</a> 
 								</li>
 								<li class="mt-3">
-									<a href="#kryptograf" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;"> Sammanfattning
+									<a href="#sammanfattning" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;"> Sammanfattning
 									</a> 
 								</li>
 							</ul>
@@ -85,7 +85,7 @@
 					</button>
 					<hr>
 				</div>
-				<div class="container mt-5">
+				<div class="container mt-5" id="staking">
 					<h3> Vad är Staking</h3>
 					<p class="pl-2">
 						Endast kryptovaluta med Proof of Stake-mekanism (PoS) är aktuell för staking. Den näst
@@ -96,13 +96,13 @@
 					</p>
 				</div>
 
-				<div class="container mt-5">
+				<div class="container mt-5" id="staking-pool">
 					<h3> Vad är en staking-pool? </h3>
 					<p class="pl-2">
 						Genom att du sätter in dina kryptopolleter i en stakingpool är du med och verifierar transaktioner och underhåller säkerheten och driften i blockkedjan. För detta får du belöning som kan jämföras med ränta på insatta pengar i en vanlig bank.
 					</p>
 				</div>
-				<div class="container mt-5">
+				<div class="container mt-5" id="staking-rewards">
 					<h3> Vad är Staking Rewards </h3>
 					<p class="pl-2">
 						Staking Reward är en sorts belöning som kryptoägaren får ut efter att ha bundit upp sina kryptotillgångar. 
@@ -163,7 +163,7 @@
 						</div>
 						<div class="col-sm-6 d-flex flex-column align-items-center">
 							<div style="max-width:350px;" class="m-2">
-								<img src="{% static 'images/Defi/CryptoEarn/cardano-staking-pool.png' %}" style="border-radius:20px;"  alt="" class="img-fluid" />
+								<img src="{% static 'images/Defi/CryptoEarn/pool-image.png' %}" style="border-radius:20px;"  alt="" class="img-fluid" />
 							</div>
 						</div>
 					</div>
@@ -271,7 +271,7 @@
 					<img src="{% static 'images/Defi/CryptoEarn/space-ship-crypto.png' %}" alt="" style="width:100px;border-radius:20px;" class="img-fluid" />
 					<a href="" style="text-align:center; font-size:0.9rem; font-weight:normal; font-style:italic;"> Till Crypt.com Earn </a>
 				</div>
-				<div class="container mt-3">
+				<div class="container mt-3" id="krypto-ranta">
 					<h3> Tjäna ränta på dina krypto tillgångar</h3>
 					<p class="pl-2">
 						Det går även att tjäna extra med kryptovalutor som inte stödjs av Proof of Stake-teknologin.
@@ -295,7 +295,7 @@
 				<label style="font-size:0.68rem; color:#EBA937; text-align:center;" class="pl-4 m-0">
 					Compound interest = Ränta på ränta
 				</label> 
-				<hr/>
+				<hr/ id="Yield-Farming">
 				<div class="container mt-5">
 					<h3>Yield Farming</h3>
 					<p class="pl-2">
@@ -370,7 +370,7 @@
 				<hr/>
 
 				<div class="container mt-5">
-					<h3> Sammanfattning </h3>
+					<h3 id="Sammanfattning"> Sammanfattning </h3>
 					<p  class="pl-2">
 						I stället för att bara låta kryptovalutan ligga i en virtuell plånbok kan du få en passiv inkomst
 						från den i form av staking pooler, kryptoränta och yield farming. För att du ska kunna sova
