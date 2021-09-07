@@ -1,0 +1,50 @@
+<div class="cookieContainer" id="cookie_container">
+	<div class="cookieWrapper text-center d-flex flex-column align-items-center p-2 m-2 mx-auto">
+		<p class="">
+			CryptoViking.se använder cookies för säkerställa att våra användare har bästa möjliga upplevelsen.
+			<br>
+		</p>
+		<button class="cookieButton" onclick="removeCookieContainer()" class=""> Ok </button>
+	</div>
+</div>
+<style type="text/css">
+.cookieContainer{
+	position:fixed;
+	bottom:0;
+	width:100%;
+	background:#21212E;
+	color:#fff;z-index:1;
+	opacity:0.9;
+}
+.cookieWrapper{
+	width:60%;
+	height:100%;
+}
+
+.cookieButton{
+	margin:0;
+	background:#F47174;
+	color:white;
+	border-radius:20px;
+	width:140px;
+	height:35px;
+	cursor:pointer;
+}
+@media (max-width:500px){
+	.cookieContainer{
+		max-height:100%
+	}
+	.cookieWrapper{
+		width:100%
+	}
+	.cookieWrapper p{
+		padding:2px;
+		margin:3px
+	}
+	.cookieButton{
+		height:100%;
+		margin:0;
+	}
+}
+
+</style>
