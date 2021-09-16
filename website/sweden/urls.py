@@ -8,6 +8,7 @@ urlpatterns = [
 	path('', views.index, name='index'),
 	path('Kryptovaluta', views.Kryptovaluta, name="Kryptovaluta"),
 	path('Stablecoins', views.Stablecoins, name="Stablecoins"),
+	path('non-fungible-token', views.NftBase, name="NftBase"),
 	path('kryptolan', views.Kryptoloan, name="Kryptoloan"),
 	path('tjana-krypto', views.Kryptoearn, name="Kryptoearn"),
 	path('kryptovalutaplanbok', views.kryptovalutaplanbok, name="kryptovalutaplanbok"),

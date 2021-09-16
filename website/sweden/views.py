@@ -19,6 +19,9 @@ def kryptovalutaplanbok(request):
 def Stablecoins(request):
 	return render(request, 'statichtml/Stablecoins.html')
 
+def NftBase(request):
+	return render(request, 'statichtml/Nft/nftbase.html')
+
 def MetamaskGuide(request):
 	return render(request, 'statichtml/wallets/Metamask-guide-page.html')
 
