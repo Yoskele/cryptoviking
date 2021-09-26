@@ -41,11 +41,15 @@ p{
 	align-items:center;
 }
 h1{
-	font-size: 2rem;
-	color:#414141;
-	font-style:italic;
+	font-size: 2.2rem;
+	font-family: "Almendra SC", serif;
+	 color:#F69516;
+	 font-weight:bold;
+   letter-spacing:2px;
 }
-
+ 
+   
+   
 
 /*Scrollbar styling*/
 body::-webkit-scrollbar {

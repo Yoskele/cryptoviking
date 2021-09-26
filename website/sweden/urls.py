@@ -13,6 +13,7 @@ urlpatterns = [
 	path('tjana-krypto', views.Kryptoearn, name="Kryptoearn"),
 	path('kryptovalutaplanbok', views.kryptovalutaplanbok, name="kryptovalutaplanbok"),
 	path('metamask-guide', views.MetamaskGuide, name="MetamaskGuide"),
+	path('crypto-exchange', views.CryptoExchange, name="CryptoExchange"),
 	path('handla/<slug>', views.token, name='token'),
 	# path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
 

@@ -22,6 +22,9 @@ def Stablecoins(request):
 def NftBase(request):
 	return render(request, 'statichtml/Nft/nftbase.html')
 
+def CryptoExchange(request):
+	return render(request, 'statichtml/Crypto-Exchange/Crypto-exchange.html')
+
 def MetamaskGuide(request):
 	return render(request, 'statichtml/wallets/Metamask-guide-page.html')
 
