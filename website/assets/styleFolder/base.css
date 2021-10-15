@@ -14,6 +14,9 @@ a{
 p{
 	line-height: 1.8rem; 
 }
+.hover-function:hover{
+	transform:scale(0.99);
+}
 .container-wrapper{
     max-width: 1210px;
     margin:0 auto 0 auto;
