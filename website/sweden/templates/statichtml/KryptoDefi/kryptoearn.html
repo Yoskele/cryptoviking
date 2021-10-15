@@ -67,7 +67,7 @@
 									</a> 
 								</li>
 								<li class="mt-3">
-									<a href="#yield-farming" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;"> Yield Farming
+									<a href="#risk-staking" class="container m-0" style="color:white; text-decoration:none; font-weight:normal;"> Risker med Staking
 									</a> 
 								</li>
 								<li class="mt-3">
@@ -83,9 +83,9 @@
 						style="background:#85bb65; color:#DCDCDC">
 						Mera
 					</button>
-					<hr>
+					<hr id="staking">
 				</div>
-				<div class="container mt-5" id="staking">
+				<div class="container mt-5">
 					<h1 class="orange-viking-title text-md-left text-center"> Vad är Staking</h1>
 					<p class="pl-2">
 						Endast kryptovaluta med Proof of Stake-mekanism (PoS) är aktuell för staking. Den näst
@@ -98,13 +98,15 @@
 						genom att låsa dina mynt för en tid.
 					</p>
 				</div>
-				<div class="container mt-5" id="staking-pool">
+				<div id="staking-pool"></div>
+				<div class="container mt-5">
 					<h3> Vad är en staking-pool? </h3>
 					<p class="pl-2">
 						Genom att du sätter in dina kryptopolleter i en stakingpool är du med och verifierar transaktioner och underhåller säkerheten och driften i blockkedjan. För detta får du belöning som kan jämföras med ränta på insatta pengar i en vanlig bank.
 					</p>
 				</div>
-				<div class="container mt-5" id="staking-rewards">
+				<div id="staking-rewards"></div>
+				<div class="container mt-5">
 					<h3> Vad är Staking Rewards </h3>
 					<p class="pl-2">
 						Staking Reward är en sorts belöning som kryptoägaren får ut efter att ha bundit upp sina kryptotillgångar i en staking pool. 
@@ -122,6 +124,7 @@
 						Cardano (ADA).
 					</p>
 				</div>
+				<div id="risk-staking"></div>
 				<div class="container mt-5">
 					<h3> Risker med Staking </h3>
 					<ul>
@@ -273,13 +276,14 @@
 				<label style="font-size:0.68rem; color:#F47174;" class=" m-0 container ">
 					Bind inte mer än du kan avvara.
 				</label>
-				<div class="container mt-5" id="krypto-ranta">
+				<div id="krypto-ranta"></div>
+				<div class="container mt-5">
 					<h3 class="text-md-left text-center"> Tjäna ränta på dina krypto tillgångar</h3>
 					<p class="pl-2">
 						Det går även att tjäna extra med kryptovalutor som inte stödjs av Proof of Stake-teknologin.
 					</p>
 					<p class="pl-2">
-						Du kan via krypto exchanges låna ut din kryptovaluta och dessa räntekonton kan vara allt från
+						Du kan via <a href="/crypto-exchange">Crypto exchanges</a> låna ut din kryptovaluta och dessa räntekonton kan vara allt från
 						Bitcoin, XRP, Dogecoin.
 					</p>	
 					<p class="pl-2">
@@ -300,7 +304,6 @@
 				<label style="font-size:0.68rem; color:#EBA937; text-align:center;" class="pl-4 m-0">
 					Compound interest = Ränta på ränta
 				</label> 
-				<hr/ id="Yield-Farming">
 				<div class="container mt-5">
 					<h3>Yield Farming</h3>
 					<p class="pl-2">
@@ -336,7 +339,6 @@
 					</p>
 				</div>
 
-				<!-- https://academy.binance.com/en/articles/what-is-yield-farming-in-decentralized-finance-defi -->
 				<div class="container mt-5">
 					<h3 class="text-md-left text-center">Hur kommer man igång med Yield farming? </h3>
 					<p class="pl-2">
@@ -380,12 +382,12 @@
 					    <span class="sr-only">Next</span>
 					  </a>
 					</div>
+					<!-- End of Carousle Steg PancakeSwap -->
 				</div>
-				<!-- End of Carousle Steg PancakeSwap -->
-				<hr/>
+				<hr id="Sammanfattning"/>
 
-				<div class="container mt-5">
-					<h3 id="Sammanfattning"> Sammanfattning </h3>
+				<div class="container mt-5 mb-5">
+					<h3 > Sammanfattning </h3>
 					<p  class="pl-2">
 						I stället för att bara låta kryptovalutan ligga i en virtuell plånbok kan du få en passiv inkomst
 						från den i form av staking pooler, kryptoränta och yield farming. 
@@ -426,6 +428,56 @@
 	<div class="d-flex flex-column align-items-center ">
 		<img src="{% static 'images/mascot/viking-contet-writer.png' %}" alt="cryptoloan-cryptoviking.se" style="width:300px;">
 	</div>
+</div>
+<div class="d-flex flex-wrap container justify-content-around mt-5">
+	<a href="/non-fungible-token"
+		class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between"
+		style="width:250px; height:180px;border-radius:20px; color:white;">
+		
+		<div
+			style="width:100%; height:100%; border-radius:20px 20px 0 0;"
+			class="d-flex flex-column justify-content-center align-items-center"
+		>
+			<img  src="{% static 'images/NFT/NftBase.png' %}"
+				class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
+		</div>
+
+		<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
+			Läs om NFT
+		</div>
+	</a>
+	<a href="/crypto-exchange" 
+		class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between"
+		style="width:250px; height:180px;border-radius:20px;color:white;">
+		
+		<div
+			style="width:100%; height:100%; border-radius:20px 20px 0 0;"
+			class="d-flex flex-column justify-content-center align-items-center"
+		>
+			<img  src="{% static 'images/cover-images/Krypto-Exchange.png' %}"
+				class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
+		</div>
+
+		<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
+			Läs om Krypto-Exchange
+		</div>
+	</a>
+	<a href="/Kryptovaluta"
+		class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between"
+		style="width:250px; height:180px;border-radius:20px; color:white;">
+		
+		<div
+			style="width:100%; height:100%; border-radius:20px 20px 0 0;"
+			class="d-flex flex-column justify-content-center align-items-center"
+		>
+			<img  src="{% static 'images/cover-images/kryptovaluta.png' %}"
+				class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
+		</div>
+
+		<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
+			Läs om Kryptovaluta
+		</div>
+	</a>
 </div>
 <div class="curved mt-3">
 	<svg viewBox="0 0 1440 319">

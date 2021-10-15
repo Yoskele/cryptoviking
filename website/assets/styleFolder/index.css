@@ -93,6 +93,13 @@
 	margin:20px auto	20px auto	;
 
 }
+.space-wall-for-articles{
+	background: url("/static/images/walls/space-star-wall.png");
+	height:250px;
+	width:100%;
+	margin:0;
+	padding:0;
+}
 .curved{
 /*	background-color: #0070ba;
   background-image: linear-gradient(100deg,#0070ba,#1546a0);*/
@@ -173,8 +180,11 @@
 	}
 
 }
-
-
+@media (max-width:990px){
+	.space-wall-for-articles{
+		height:550px;
+	}
+}
 @media (max-width:780px){
 	.three-step-container{
 		width:95%;
@@ -187,8 +197,13 @@
 			right:1px;
 			top:80px;
 	}
-}
 
+}
+@media (max-width:760px){
+	.space-wall-for-articles{
+		height:700px;
+	}
+}
 @media (max-width:740px){
 	.token-earth-container{
 		border:1px solid lightgray;
