@@ -117,13 +117,9 @@
 }
 .image-title-width-container{
 	position:absolute;
-	bottom: 2px;
-	right:5px;
-	background:rgba(254, 211, 25, 1);
+	bottom:1px;
+	left:5px;
 	text-align:center;
-	padding:5px;
-	color:black;
-	border-radius:15px;
 	opacity: 0.8;
 	display: table;
     text-align: center;

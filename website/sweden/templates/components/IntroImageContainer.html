@@ -10,7 +10,7 @@
 
 
 
-<div class="ImageWrapper mx-auto d-flex flex-wrap justify-content-center" >
+<div class="ImageWrapper mx-auto d-flex flex-wrap-reverse   justify-content-center" >
 	<div class="sideContainerintro">
 			<a href="/Stablecoins"
 				class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function"
@@ -52,7 +52,7 @@
 		<a class="widthImageWrapper first " href="/Kryptovaluta">
 			<img  src="{% static 'images/cover-images/kryptovaluta.png' %}"
 			class="rounded">
-			<div class="image-title-width-container ">
+			<div class="image-title-width-container" style="color:whitesmoke; font-style:italic; ">
 				<h6> Vad är Kryptovaluta? </h6>
 			</div>
 		</a>
@@ -60,11 +60,9 @@
 		<div class="intro-bottom-container ">
 			<a class="widthImageWrapper second  d-lg-block rounded" style="overflow:hidden;"href="/kryptovalutaplanbok">
 				<img   class="img-fluid rounded " src="{% static 'images/cover-images/kryptowallets.png' %}" />
-				<div class="image-title-width-container d-none d-xl-block">
-					<h6> Krypto plånböcker </h6>
-				</div>
 			</a>
-			<div class="intro-image-bottom-mascot ">
+			
+			<div class="intro-image-bottom-mascot d-flex flex-column align-items-center">
 				<div class="astroid-binance-crypto-container">
 					<img class="astroid-crypto-planet" src="{% static 'images/crypto-exchanges/crypto-com.png' %}" style="width:50px;" />
 
