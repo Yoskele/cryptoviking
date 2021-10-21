@@ -6,7 +6,10 @@ body{
 .block-wrapper{
 	min-height:100vh;
 }
-
+.commercial-top img{
+	border:1px solid	red;
+	width:300px;
+}
 a{
 	color:#29A3D2;
 	font-weight:bold;
