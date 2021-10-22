@@ -3,6 +3,12 @@ body{
 	/*	background:rgba(254, 211, 25, 1);*/
 	min-height:100vh;
 }
+
+/*Is used in Generic pages on Tokens Banner center*/
+.center{
+	margin:0 auto 0 auto;
+	border:1px solid red;
+}
 .block-wrapper{
 	min-height:100vh;
 }
