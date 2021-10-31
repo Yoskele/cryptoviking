@@ -1,0 +1,349 @@
+{% extends 'Base.html' %}
+{% load static from staticfiles %}
+{% block extra_htmt_head %}
+
+<title>
+	Blockchain: vad är det? | Hur fungerar en blockkedja?
+</title>
+<meta name="description" content="Blockkedja, alias blockchain; decentraliserat nätverk känt från
+kryptovalutahandel och som spridit sig till andra områden där digitala transaktioner sker." />
+
+<meta property="og:url" content="https://www.cryptoviking.se/blockchain" />
+<meta property="og:title" content="Blockchain: vad är det? | Hur fungerar en blockkedja?" />
+<meta property="og:description" content="Blockkedja, alias blockchain; decentraliserat nätverk känt från
+kryptovalutahandel och som spridit sig till andra områden där digitala transaktioner sker.">
+
+<meta property="og:image" itemprop="image" content="{% static 'images/cover-images/Blockchain.png' %}">
+<link rel="canonical" href="https://www.cryptoviking.se/blockchain" />
+<link rel="stylesheet" href="{% static 'styleFolder/components/static-pages/static-pages-base.css' %}">
+
+{% endblock %}
+{% load static %}
+{% block content_container %}
+
+<div class="container-wrapper mt-3">
+	<div class="container-flex">
+		<div class="main-container">
+			<div class="container mt-3 pl-lg-5">
+				<div class="cover-image">
+					<img src="{% static 'images/cover-images/Blockchain.png' %}" alt="Blockchain" class="rounded img-fluid" />
+				</div>
+				<div class="container mt-5 text-center">
+					<h1 style="color:#F69516;"> Blockkedja </h1>
+					<p class="pl-2">
+						Blockkedja, känt även under den engelska termen blockchain, är en decentraliserad databas,
+						vilket innebär att det inte finns någon myndighet som styr över den. Trots att blockkedjor
+						skapades redan på 1990-talet förknippar de flesta dem med kryptovärlden och då speciellt
+						med den största kryptovalutan <a href="/handla/bitcoin">Bitcoin</a> som bygger på tekniken.
+					</p>
+				</div>
+				<hr>
+				<div class="container mt-5">
+					<h2 class="orange-viking-title"> Vad är en blockchain? </h2>
+					<p class="pl-2">
+						En blockchain är en kedja av block med krypterad information om till exempel en affär som
+						gjorts upp mellan olika parter (peer to peer). För att länka samman informationen i de olika
+						blocken i en kedja har varje block två hash som fungerar som en digital kod/ett digitalt
+						fingeravtryck. En hash kopplar det nya blocket till det föregående blocket och den andra
+						hashen binder det nya blocket med ett framtida nytt block. I blocken finns även en tidsstämpel
+						och en nonce som behövs för att verifiera hashen.
+					</p>
+					<p class="pl-2">
+						Innehållet i blocket blir giltigt när det är kopplat med det föregående blocket. När blocken
+						bildar en kedja är det enkelt för alla som är uppkopplade i nätverket att se vad som är
+						överenskommet och vad de olika parterna har gjort för att uppfylla sin del av kontraktet.
+					</p>
+					<p class="pl-2">
+						För att ta del av informationen som finns i en blockchain är det bara att koppla upp sig till
+						blockkedjan och ta del av informationen. Den anslutna datorn går då under benämningen nod.
+						För att kunna fortsätta bygga på kedjan behöver användaren en privat kod, vilket innebär att
+						utomstående inte kan ändra något i blockkedjan utan endast se och följa vad som har
+						förhandlats fram och vad de olika parterna har gjort för att fullfölja överenskommelserna.
+					</p>
+					<p class="pl-2">
+						Största fördelen med en blockkedja är säkerheten. Informationen som finns i blocken förs
+						mellan de sammankopplade noderna. Om en nod skulle förstöras, stängas eller försvinna
+						påverkar det inte innehållet som finns lagrat i de olika blocken utan lever kvar i de återstående
+						noderna. Detta gör att det är svårt att attackera en blockkedja.
+					</p>
+				</div>
+				<div class="d-flex justify-content-around  flex-wrap rounded mt-5">
+					<a href="/handla/bitcoin" class="d-flex flex-column align-items-center m-2" style="min-width:150px;">
+						<img src="{% static 'images/tokens/btc-token.png' %}" alt="token-small-image" style="width:60px; height:60px"/>
+						<div class="price-token" style="text-align:center;">
+							<b id="bitcoin-price-container"></b>
+						</div>
+					</a>
+					<a href="/handla/ethereum" class="d-flex flex-column align-items-center m-2" style="min-width:150px;">
+						<img src="{% static 'images/tokens/eth.png' %}" alt="token-small-image" style="width:60px; height:60px; margin:0 auto 0 auto;"/>
+						<div class="price-token" style="text-align:center;">
+							<b id="ethereum-price-container"></b>
+						</div>
+					</a>
+					<a  class="d-flex flex-column align-items-center m-2" style="min-width:150px; color:#29A3D2;">
+						<img src="{% static 'images/tokens/xrp.png' %}" alt="token-small-image" style="width:60px; height:60px; margin:0 auto 0 auto;"/>
+						<div class="price-token" style="text-align:center;">
+							<b id="ripple-price-container"></b>
+						</div>
+					</a>
+					<a class="d-flex flex-column align-items-center m-2" style="min-width:150px; color:#29A3D2;">
+						<img src="{% static 'images/tokens/cardano.png' %}" alt="token-small-image" style="width:60px; height:60px;"/>
+						<div class="price-token" style="text-align:center;">
+							<b id="cardano-price-container"></b>
+						</div>
+					</a>
+
+					<div class="button-container-exchange d-flex flex-column w-100 align-items-center mt-3">
+						<a href="https://www.binance.com/en/register?ref=JTZNNQHD" target="_blank" class="m-1 affiliate-binance">
+							Handla via Binance.com
+						</a>
+					</div>
+				</div>
+				<label style="font-size:0.68rem; color:#F47174;" class="pl-3 m-0 ">
+					Handla inte mer än vad du har råd att förlora.
+				</label>
+				<div class="container mt-5 mb-5">
+					<h3>En blockkedjas användningsområden</h3>
+					<p class="pl-2">
+						Blockkedjor är stort inom den digitala valutasfären, men allt eftersom det har visat sig att
+						blockkedjetekniken är säker och trygg har användningsområdena utvidgats. De senaste åren
+						har blockkedje-teknologin börjat användas av finansiella institut, statliga myndigheter och
+						röstningssystem. Det är framför allt säkerheten som är avgörande om fler kommer att använda
+						sig av blockchain-teknologin i större skala. Det är inte så sällan media rapporterar om att olika
+						myndigheter och vårdinstanser råkat ut för cyberattacker och hackare tagit del av den lagrade
+						informationen. Blockchain kan vara ett sätt att trygga så att känaslig data inte hamnar i fel
+						händer eftersom det är i stort sett är omöjligt att sabotera den krypterade och kopierade
+						informationen som finns i samtliga noder som är med i nätverket.
+					</p>
+				</div>
+				<hr>
+				<div class="container mt-5 text-center">
+					<h3> Fyra olika blockchainteknologier </h3>
+					<p class="pl-2">
+						Blockkedjor kan delas in i fyra olika grupper: offentlig (public), privat (private), hybrid
+						(hybrid) och konsortium (consortium). De alla bygger på samma blockchainteknik och
+						interaktionen äger rum direkt mellan berörda parter, peer-to-peer. Det som skiljer de olika
+						blockkedjorna åt är vilka som har rätt att ta del av informationen i blocken.
+					</p>
+				</div>
+				<div class="container mt-5">
+					<h3> Offentlig blockkedja / Public blockchain </h3>
+					<p class="pl-2">
+						Offentliga blockkedjor är transparenta och decentraliserade så ingen myndighet har makt över
+						plattformarna. Information som finns i en offentlig blockkedja är nåbar till alla som loggar in
+						sig på dess plattform och blir en nod (dator som är ansluten till blockkedjan). Användaren kan
+						sedan följa transaktioner och kontrakt i hela blockkedjan. En blockkedja kommer att existera
+						så länge det finns anslutna datorer till den och varje gång en ändring görs eller information
+						läggs till i blockkedjan kopieras den till alla de anslutna noderna.
+					</p>
+					<p class="pl-2">
+						Men hur är det med säkerheten när alla har tillgång till blockkedjorna? Risken för att
+						nätverket ska utsättas för bedrägeri är näst intill noll eftersom det krävs att minst 51 % av de
+						anslutna datorerna går samman för att utföra sabotaget. En offentlig blockchain har oftast
+						hundratusentals anslutna noder, ofta runt om i världen, och att få majoriteten av dem att gå
+						samman för att utföra en attack är i princip obetydlig och därför anses det näst intill hundra
+						procent säkert med en offentlig blockkedja.
+					</p>
+					<p class="pl-2">
+						De vanligaste användningsområdena för en public blockchain är handel med kryptovalutor,
+						mining och smarta kontrakt. Då allt som sker i en public blockchain är öppet för alla används
+						det inte av privata företag eller myndigheter som behandlar sekretessuppgifter.
+					</p>
+				</div>
+				<div class="container mt-5">
+					<h3>Privata blockkedja / Private blockchain</h3>
+					<p class="pl-2">
+						En privat blockkedja har som andra blockkedjor peer-to-peer anslutning men i mindre skala.
+						Det som skiljer sig åt är att nätverket inte är tillgängligt för alla då det kontrolleras ofta av ett
+						företag eller organisation. Den kontrollerande parten bestämmer vilka som får tillgång till
+						informationen i blockkedjan.
+					</p>
+					<p class="pl-2">
+						Kritiker menar att då det är endast auktoriserade personer som kan ändra eller lägga till data i den privata blockkedjan går det inte att lita fullt ut på informationen i en privat blockkedja. De med auktoriserade noder har makten över vad för slags data som ska vara tillgängligt.
+					</p>
+					<p class="pl-2">
+						Säkerheten är sämre i en privat blockkedja jämfört med en offentlig blockkedja eftersom det
+						är lättare att få ihop majoriteten av noderna. Om nätverket har endast ett fåtal anslutna, låt oss säga tio stycken, då behöver endast sex noder gå samman för att få minst 51 procents
+						majoritet som krävs för att kunna utföra en attack.
+						Private blockchain används i fall när det finns behov av kryptografiskt säkrade transaktioner
+						som endast en viss grupp behöver ta del av.
+					</p>
+				</div>
+				{% include 'components/crypto-exchange/banners/commercialbanner-520-70.html' %}
+				<div class="container mt-5">
+					<h3> Hybrid blockkedja / Hybrid blockchain </h3>
+					<p class="pl-2">
+						En hybrid blockkedja är en blandning av både privat och offentlig blockkedja. Fördelen med
+						den här typen av blockchain är att organisatören kan begränsa tillgången till en del av
+						informationen medan delar kan vara öppna för alla att ta del av. Oftast är insynen av
+						transaktioner begränsad och endast de personer som berörs av den får tillgång till användarnas
+						identiteter.
+					</p>
+					<p class="pl-2">
+						Säkerhetsmässigt är hybrida blockkedjor trygga då det är näst intill omöjligt att få till
+						majoriteten av noderna till att utföra en attack.
+					</p>
+					<p class="pl-2">
+						Användningsområdena för hybrida blockkedjor är stort då företag kan använda den privata
+						delen inom bolaget och bestämma vilken slags data som ska publiceras. Tänkbara områden
+						kan vara vården och statliga myndigheter.
+					</p>
+				</div>
+				<div class="container mt-5">
+					<h3>Konsortium blockkedja / Consortium blockchain</h3>
+					<p class="pl-2">
+						En konsortium-blockkedja innehåller både privata och offentliga blockkedjor. Det som skiljer
+						konsortium blockkedjan från den hybrida är att fler än en organisation samarbetar på
+						nätverket. Medlemmarna i konsortiumkedjan har viss tillgång till varandras blockkedjor vilket
+						minskar risken att en organisation skulle ta makten i blockkedjan.
+					</p>
+					<p class="pl-2">
+						Operatörer inom samma bransch skulle kunna gå samman och använda en
+						konsortiumblockkedja för att till exempel komma överens om noder som verifierar
+						pengaöverföringar.
+					</p>
+				</div>
+				<div class="container mt-5">
+					<h3> Blockchain wallet </h3>
+					<p class="pl-2">
+						För att det ska vara möjligt att bevara kryptovaluta behövs en digital <a href="/kryptovalutaplanbok">plånbok</a>. Den kan
+						jämföras med en vanlig fysisk plånbok där du har dina pengar. I en blockchain wallet kan du
+						förvara dina krypto som Bitcoins och <a href="/handla/ethereum">Ether</a>.
+					</p>
+					<p class="pl-2">
+						Det ska vara säkert att använda en blockchain-plånbok och därför finns flera säkerhetssystem
+						inbyggda för att hålla hackers borta. För att det ska vara extra säkert sparar Blockchain inte
+						lösenorden, vilket kan vara en nackdel om kunden glömmer sitt lösenord.
+					</p>
+					<p class="pl-2">
+						Enda sättet att återfå lösenordet är via mnemonic seed som består av en radda ord som
+						fungerar som ett lösenord. För att komma ihåg orden är det klokt att skriva ner dem och
+						förvara lappen på ett säkert ställe. Om någon kommer åt orden kan den personen stjäla
+						plånbokens innehåll.
+					</p>
+				</div>
+				<div class="container mt-5">
+					<h3> Blockchain Sverige </h3>
+					<p class="pl-2">
+						Under de senaste åren har ökningen av digitala transaktioner ökar lavinartat i Sverige och
+						användningen av kontanter minskar stadigt. Riksbanken söker därför efter ett säkert och
+						tryggt komplement till de betalningsalternativ som finns på marknaden. Försök med en svensk
+						digital valuta, alltså ett CBDC (Central Bank Digital Currencies), har påbörjats och bygger på
+						på Distributed Ledger Technology (blockkedjetekniken).
+					</p>
+					<p class="pl-2">
+						Riksbanken har påbörjat ett samarbete med Handelsbanken för att analysera om e-kronan
+						skulle kunna vara ett komplement till dagens betalningsalternativ. Ifall e-kronan blir
+						verklighet kommer den att utfärdas och kontrolleras av Riksbanken.
+					</p>
+
+				</div>
+				<div class="container mt-5">
+					<h3> Risker med blockkedja </h3>
+					<p class="pl-2">
+						Hittills har man inte upptäckt allvarliga brister som inte går att åtgärda när det gäller
+						blockchain teknologin. I början kan det dock finnas systemfel i form av buggar, vilka är
+						ganska lätta att åtgärda.
+					</p>
+					<p class="pl-2">
+						När blockkedjan är relativt liten med få anslutna noder är det enklare att planera en attack då
+						endast en majoritet krävs för det. Men ju fler som ansluter sig till nätverket desto mer
+						decentraliserat blir blockkedjan och riskerna för sabotage minskar.
+					</p>
+				</div>
+				<hr>
+				<div class="container mt-5 mb-4 text-center">
+					<h3> Sammanfattning </h3>
+
+					<p class="pl-2">
+						Investerare inom kryptovaluta är väl förtrogna med blockkedjeteknologin och mycket tack
+						vare dess säkerhet har <a href="/Kryptovaluta">kryptohandeln</a> kunnat expandera i den takt som den gjort de senaste
+						åren.
+					</p>
+					<p class="pl-2">
+						Blockkedjeteknologin är dock fortfarande i sin vagga, men allt pekar på att den kommer att
+						förändra och påverka även andra branscher när fler får kunskap om fördelarna med
+						blockkedjor. I många branscher som inom bokföring kan blockkedjeteknologin vara en
+						tillgång och tidsbevarande då man i realtid istället för i efterhand kan se vad som händer med
+						transaktioner, uppfyllande av krav etc.
+					</p>
+					<p class="pl-2">
+						De kommande åren blir intressanta, framför allt att se om Sverige kommer att lansera en e-
+						krona baserat på blockkedjeteknologin och om olika myndigheter och branscher börjar
+						använda sig av blockkedjor i större skala.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="side-container">
+			{% include 'components/crypto-exchange/banners/Exchange-Banner-350-330.html' %}
+		</div>
+	</div>
+</div>
+<div class="author-container container d-flex justify-content-center align-items-center">
+	<div class="d-flex flex-column align-items-center ">
+		<img src="{% static 'images/mascot/viking-contet-writer.png' %}" alt="cryptoloan-cryptoviking.se" style="width:300px;">
+	</div>
+</div>
+<div class="d-flex flex-wrap container justify-content-around mt-5">
+	<a href="/non-fungible-token"
+		class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function"
+		style="width:250px; height:180px;border-radius:20px; color:white;">
+		
+		<div
+			style="width:100%; height:100%; border-radius:20px 20px 0 0;"
+			class="d-flex flex-column justify-content-center align-items-center"
+		>
+			<img  src="{% static 'images/NFT/NftBase.png' %}"
+				class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
+		</div>
+
+		<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
+			Läs om NFT
+		</div>
+	</a>
+	<a href="/Kryptovaluta"
+		class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function"
+		style="width:250px; height:180px;border-radius:20px; color:white;">
+		
+		<div
+			style="width:100%; height:100%; border-radius:20px 20px 0 0;"
+			class="d-flex flex-column justify-content-center align-items-center"
+		>
+			<img  src="{% static 'images/cover-images/kryptovaluta.png' %}"
+				class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
+		</div>
+
+		<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
+			Läs om Kryptovaluta
+		</div>
+	</a>
+	<a href="/tjana-krypto" 
+		class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function"
+		style="width:250px; height:180px;border-radius:20px; color:white;">
+		
+		<div
+			style="width:100%; height:100%; border-radius:20px 20px 0 0;"
+			class="d-flex flex-column justify-content-center align-items-center"
+		>
+			<img  src="{% static 'images/cover-images/crypto-staking.png' %}"
+				class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
+		</div>
+
+		<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
+			Läs om Krypto Staking
+		</div>
+	</a>
+</div>
+<div class="curved mt-3">
+	<svg viewBox="0 0 1440 319">
+		<path fill="rgb(85, 85, 85, 0.8)" fill-opacity="1" d="M0,32L48,80C96,128,192,224,288,224C384,224,480,128,576,90.7C672,53,768,75,864,96C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+	</svg>
+</div>
+
+
+<style type="text/css">
+
+</style>
+{% endblock %}
+
