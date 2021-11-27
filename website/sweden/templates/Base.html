@@ -46,24 +46,27 @@
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HZV577"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
+
+	<script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+	<coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,ripple,songbird,cardano,polkadot,solana,the-sandbox,axie-infinity,dogecoin,shiba-inu" currency="usd" background-color="#21212e" locale="en" font-color="#bfbfbf"></coingecko-coin-price-marquee-widget>
+
 	{% include 'navbar/Navbar.html' %}
-		<div class="p-4 d-flex flex-column align-items-center" style="color:whitesmoke; background:#21212E;">
-			<small style="font-style:italic; opacity:0.9; font-size:0.75rem;" class="m-0"> Reklam </small>
 
-			<a href="https://www.binance.com/en/register?ref=JTZNNQHD" target="_blank" 
-				class="affiliate-binance-banner" class=" mx-auto d-flex justify-content-center commercial-top align-items-center hover-function" style="">
-				<img src="{% static	'images/Binance/Banners/banner-red-planet-520-70.png' %}" alt=""  class="img-fluid rounded " />
-			</a>
-		</div>
-		<div class="block-wrapper">
-			{% block content_container %}
+	<div class="p-4 d-flex flex-column align-items-center" style="color:whitesmoke; background:#21212E;">
+		<small style="font-style:italic; opacity:0.9; font-size:0.75rem;" class="m-0"> Reklam </small>
 
-			{% endblock %}
-		</div>
-		{% include 'components/cookieContainer/cookieContainer.html' %}
-		{% include 'components/Footer.html' %}
+		<a href="https://www.binance.com/en/register?ref=JTZNNQHD" target="_blank" 
+			class="affiliate-binance-banner" class=" mx-auto d-flex justify-content-center commercial-top align-items-center hover-function" style="">
+			<img src="{% static	'images/Binance/Banners/banner-red-planet-520-70.png' %}" alt=""  class="img-fluid rounded " />
+		</a>
+	</div>
+	<div class="block-wrapper">
+		{% block content_container %}
 
-
+		{% endblock %}
+	</div>
+	{% include 'components/cookieContainer/cookieContainer.html' %}
+	{% include 'components/Footer.html' %}
 </body>
 <script src="{% static 'javaScript/components/dashboard-tokens.js' %}"></script>
 
