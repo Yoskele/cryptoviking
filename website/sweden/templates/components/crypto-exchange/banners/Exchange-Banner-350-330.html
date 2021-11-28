@@ -2,14 +2,58 @@
 <link rel="stylesheet" href="{% static 'styleFolder/components/crypto-exchange/banners/exchange-banner-350-330.css' %}">
 
 <div class="image-planets-container">
-	<img class="astroid-crypto-planet" src="{% static 'images/crypto-exchanges/crypto-com.png' %}" alt="token" style="width:50px; position:absolute; top:5px; right:140px; border-radius:50%; box-shadow:0 0 10px #fff;" />
+	<img class="" src="{% static 'images/tokens/btc-token.png' %}" alt="token" 
+		style="opacity:0.8; width:45px; position:absolute; top:5px; right:120px; border-radius:47%; box-shadow:0 0 10px #fff;" 
+	/>
 
-	<img class="astroid-binance-planet" src="{% static 'images/crypto-exchanges/binance.png' %}" alt="token" style="width:50px; position:absolute; top:80px; right:180px; border-radius:50%; box-shadow:0 0 10px #fff;" />
-
-	<img class="astroid-mascot-planet" src="{% static 'images/mascot/cryptoviking-se.png' %}"  alt="token" style="width:60px; position:absolute; top:60px; right:40px; border-radius:50%; box-shadow:0 0 10px #fff;" />
+	<img class="" src="{% static 'images/tokens/eth.png' %}" alt="token" style="width:42px; position:absolute; top:80px; right:160px; border-radius:50%; box-shadow:0 0 10px #fff;" />
+	<img class="astroid-binance-planet" src="{% static 'images/tokens/xrp.png' %}" alt="token" 
+		style="opacity:0.8; width:35px; position:absolute; top:20px; right:210px; border-radius:50%; box-shadow:0 0 10px #fff;" 
+	/>
+	<img class="" src="{% static 'images/tokens/cardano.png' %}" alt="token" 
+		style="opacity:0.8; width:35px; position:absolute; top:70px; right:260px; border-radius:50%; box-shadow:0 0 10px #fff;" 
+	/>
+	<img class="astroid-mascot-planet" src="{% static 'images/mascot/cryptoviking-se.png' %}"  alt="token" 		style="width:60px; position:absolute; top:60px; right:40px; border-radius:50%; box-shadow:0 0 10px #fff;" 
+	/>
 </div>
 
-<h4 style="font-family:Almendra SC, serif; font-weight:bold;border-bottom:1px solid lightgray; "> Crypto Exchanges </h4>
+
+<h4 class="" style="font-family:Almendra SC, serif; font-weight:bold;border-bottom:1px solid lightgray; "> Crypto Exchanges </h4>
+<label style="font-size:0.68rem; font-style:italic; color:#F47174;" class=" m-0 ">
+	Handla inte mer än vad du har råd att förlora.
+</label>
+<div class="crypto-exchanges-container" style="position:relative;">
+	<p style="position:absolute; left:70px; top:20px; font-size:0.9rem; font-style:italic; font-weight:bold; letter-spacing:2px; color:gray;"> Besök </p>
+	<a 
+		href="https://www.binance.com/en/register?ref=JTZNNQHD" 
+		target="_blank" 
+		class="affiliate-binance"
+		style="font-style:italic;" 
+	>
+		<span>Binance.com </span>
+		<img src="{% static	'images/crypto-exchanges/binance.png' %}"
+			style="width:50px; opacity:0.85" 
+		/>
+	</a>
+	<a 
+		href="https://crypto.com/app/kd26d8skzr" 
+		target="_blank" 
+		class="affiliate-crypto"
+		style="font-style:italic;" 
+	>
+		<img src="{% static	'images/crypto-exchanges/crypto-com.png' %}"
+		style="width:44px; opacity:0.85" 
+		/>
+		<span>Crypto.com </span>
+	</a>	
+</div>
+
+
+
+
+
+
+<!-- <h4 style="font-family:Almendra SC, serif; font-weight:bold;border-bottom:1px solid lightgray; "> Crypto Exchanges </h4>
 <label style="font-size:0.68rem; font-style:italic; color:#F47174;" class=" m-0 ">
 	Handla inte mer än vad du har råd att förlora.
 </label>
@@ -26,11 +70,6 @@
 					<div class="star-title">⭐</div>
 				</div>
 			<div class="button-container">
-
-				<!-- <a href="" class="btn btn-secondary">
-					Läs mer
-				</a> -->
-
 				<a href="https://crypto.com/app/kd26d8skzr" target="_blank" class="btn btn-success affiliate-crypto">
 					Öppna Konto
 				</a>
@@ -38,11 +77,6 @@
 		</div>
 	</div>
 </div>
-
-<!-- <label style="font-size:0.68rem; color:#F47174;" class="m-0 ">
-	Investera inte mer än vad du har råd att förlora.
-</label>
- -->
 <div class="exchange-container-350px-330px mt-5">
 	<img src="{% static 'images/walls/wooden-wall.png' %}" class="img-fluid" alt="wall" style="border-radius:10px;"/>
 	<div class="exchange-content-wrapper">
@@ -56,11 +90,6 @@
 					<div class="star-title">⭐</div>
 				</div>
 			<div class="button-container">
-
-				<!-- <a href="" class="btn btn-secondary">
-					Läs mer
-				</a>
- -->
 				<a href="https://www.binance.com/en/register?ref=JTZNNQHD" target="_blank" class="btn btn-success affiliate-binance">
 					Öppna Konto
 				</a>
@@ -68,6 +97,8 @@
 		</div>
 	</div>
 </div>
+ -->
+
 
 
 
@@ -93,3 +124,14 @@
 	</ul>
 </div>
 <br>
+<style type="text/css">
+	.crypto-exchanges-container{
+		display:flex;
+		flex-direction:column;
+		align-items: center;
+		justify-content:space-around;
+		height:300px;
+		width:100%;
+		background: url('/static/images/crypto-exchanges/crypto-exchange-banner.png') no-repeat center;"
+	}
+</style>
