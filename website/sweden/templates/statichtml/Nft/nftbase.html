@@ -273,7 +273,7 @@ de senaste två åren. Vad är det och hur kan man investera i NFT? Var kan man 
 						id="NFT-store-button"
 					>
 						<h6 class="text-center" style="font-weight:normal; font-style:italic;">
-							<span id='toogle-on-click' style="border-bottom:1px solid lightgray;">Se fler NFT affärer</span>
+							<span style="border-bottom:1px solid lightgray;">Se fler NFT affärer</span>
 							<small class="d-block mt-2" id="roll-down-arrow-nft-store" style="font-size:0.7rem; color:gray;">
 								🔽
 							</small>
@@ -517,19 +517,13 @@ de senaste två åren. Vad är det och hur kan man investera i NFT? Var kan man 
 </style>
 <script type="text/javascript">
 	var a = document.getElementById("display-more-NFT-stores");
-	var button = document.getElementById("toogle-on-click");
-	var arrow = document.getElementById("roll-down-arrow-nft-store");
+	var button = document.getElementById("NFT-store-button");
 	a.style.display = "none";
 	function toogleWhereToBuyNftContainer() {
 	  	var b = document.getElementById("display-more-NFT-stores");
 		 if (b.style.display === "none") {
 		    b.style.display = "block";
-		    button.innerHTML = "";
-		    arrow.innerHTML = "🔼"
-		} else {
-			b.style.display = "none";
-			button.innerHTML = "Se fler NFT affärer";
-			arrow.innerHTML = "🔽"
+		    button.remove()
 		}
 	}
 
