@@ -3,12 +3,12 @@
 {% block extra_htmt_head %}
 
 <title>Non-Fungible-Token | Vad är NFT-konst | Hur/var köper man NFT</title>
-<meta name="description" content="Värdet på på Non-Fungible-Token-konst har fullkomligt rusat i höjden
+<meta name="description" content="Värdet på Non-Fungible-Token-konst har fullkomligt rusat i höjden
 de senaste två åren. Vad är det och hur kan man investera i NFT? Var kan man skapa NFT?" />
 
 <meta property="og:title" content="Non-Fungible-Token | Vad är NFT-konst | Hur/var köper man NFT" />
 <meta property="og:url" content="https://www.cryptoviking.se/non-fungible-token" />
-<meta property="og:description" content="Värdet på på Non-Fungible-Token-konst har fullkomligt rusat i höjden
+<meta property="og:description" content="Värdet på Non-Fungible-Token-konst har fullkomligt rusat i höjden
 de senaste två åren. Vad är det och hur kan man investera i NFT? Var kan man skapa NFT?">
 
 <meta property="og:image" itemprop="image" content="{% static 'images/NFT/NftBase.png' %}">
@@ -65,6 +65,9 @@ de senaste två åren. Vad är det och hur kan man investera i NFT? Var kan man 
 						OpenSea är ett annan operatör som erbjuder en plattform där man kan skapa NFT-konst. När
 						verket sedan läggs ut till försäljning tas en transaktionsavgift ut. Denna avgift går under
 						namnet gasavgift.
+					</p>
+					<p class="pl-2">
+						<b>Men hur går man tillväga rent praktiskt?</b> Om du har en idé som du vill förverkliga och vill till exempel skapa konst av en bild så se till att konsten är i rätt fil format och gå in på Binance eller OpenSea och ladda upp bilden. Vid laddningen måste du betala en avgift innan minting kan påbörjas. När minting börjar kan du inte stoppa processen och när verket är mintat är den för evigt i blockkedjan. Du kan dock radera din NFT-konst och minta upp en ny i samma fil.
 					</p>
 				</div>
 				{% include 'components/crypto-exchange/banners/commercialbanner-520-70.html' %}
@@ -271,9 +274,9 @@ de senaste två åren. Vad är det och hur kan man investera i NFT? Var kan man 
 						class="container d-flex justify-content-center "
 						id="NFT-store-button"
 					>
-						<h6 class="text-center">
-							Se fler NFT affärer
-							<small class="d-block" style="font-size:0.7rem; color:gray;">
+						<h6 class="text-center" style="font-weight:normal; font-style:italic;">
+							<span id='toogle-on-click' style="border-bottom:1px solid lightgray;">Se fler NFT affärer</span>
+							<small class="d-block mt-2" id="roll-down-arrow-nft-store" style="font-size:0.7rem; color:gray;">
 								🔽
 							</small>
 						</h6>
@@ -519,15 +522,20 @@ de senaste två åren. Vad är det och hur kan man investera i NFT? Var kan man 
 </style>
 <script type="text/javascript">
 	var a = document.getElementById("display-more-NFT-stores");
+	var button = document.getElementById("toogle-on-click");
+	var arrow = document.getElementById("roll-down-arrow-nft-store");
 	a.style.display = "none";
 	function toogleWhereToBuyNftContainer() {
 	  	var b = document.getElementById("display-more-NFT-stores");
 		 if (b.style.display === "none") {
 		    b.style.display = "block";
-		    button = document.getElementById("NFT-store-button");
-		    console.log(button)
-		    button.remove();
-		} 
+		    button.innerHTML = "";
+		    arrow.innerHTML = "🔼"
+		} else {
+			b.style.display = "none";
+			button.innerHTML = "Se fler NFT affärer";
+			arrow.innerHTML = "🔽"
+		}
 	}
 
 
