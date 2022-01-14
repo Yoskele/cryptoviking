@@ -5,12 +5,12 @@
 <title>{{article.meta_title}}</title>
 <meta name="description" content="{{article.description}}" />
 
-<meta property="og:url" content="https://www.cryptoviking.se/centralized-crypto-exchange/cryptocom" />
+<meta property="og:url" content="https://www.cryptoviking.se/{{article.get_category_display}}/{{article.slug}}" />
 <meta property="og:title" content="{{article.meta_title}}" />
 <meta property="og:description" content="{{article.description}}">
 
 <meta property="og:image" itemprop="image" content="{{article.cover_image.url}}">
-<link rel="canonical" href="https://www.cryptoviking.se/centralized-crypto-exchange/cryptocom" />
+<link rel="canonical" href="https://www.cryptoviking.se/{{article.get_category_display}}/{{article.slug}}" />
 <link rel="stylesheet" href="{% static 'styleFolder/components/generic-pages/generic-pages-base.css' %}">
 <link rel="stylesheet" href="{% static 'styleFolder/components/static-pages/static-pages-base.css' %}">
 {% endblock %}
