@@ -1,0 +1,46 @@
+{% load static from staticfiles %} 
+<div class="container d-flex justify-content-center mb-2">
+	<label 
+		class="mx-auto senaste_nytt_label" 
+	
+	> 
+		Senaste nytt hos Cryptoviking
+	</label>
+</div>
+<div 
+	class="d-flex flex-wrap container justify-content-around p-3" 
+	id="latest_articles_container"
+>
+	{% for latest_new in latest_news %}
+		<a 
+			href="{{latest_new.get_category_display}}/{{latest_new.slug}}" 
+			class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function"
+			style="width:250px; height:180px;border-radius:20px; color:white;"
+		>
+			<div
+				style="width:100%; height:100%; border-radius:20px 20px 0 0;"
+				class="d-flex flex-column justify-content-center align-items-center"
+			>
+				<img  src="{{latest_new.cover_image.url}}"
+					class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
+			</div>
+			<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic; font-size:0.9rem;">
+				{{latest_new.title}}
+			</div>
+		</a>
+	{% endfor %}
+</div>
+
+<style type="text/css">
+	#latest_articles_container{
+		
+	}
+	.senaste_nytt_label{
+		color:#EBA937;
+		font-weight:bold;
+		font-style:italic;
+		border-bottom:1px solid lightgray;
+	}
+
+
+</style>

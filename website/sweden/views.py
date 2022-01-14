@@ -1,8 +1,12 @@
 from django.shortcuts import render
-from sweden.models import Token
+from sweden.models import Token, Article
 # Create your views here.
 def index(request):
-	return render(request, 'index.html')
+	latest_news = Article.objects.all().order_by('-created_at')[:3]
+	context = {
+		'latest_news':latest_news,
+	}
+	return render(request, 'index.html', context)
 
 def Kryptovaluta(request):
 	return render(request, 'statichtml/Kryptovaluta.html')
@@ -36,3 +40,18 @@ def token(request, slug):
 		'token' : token
 	}
 	return render(request, 'generichtml/token-page.html', context)
+
+def article(request, slug):
+	article = Article.objects.get(slug=slug)
+	template = ''
+	if(article.category == 'CEX'):
+		print('iiiif')
+		template = 'generichtml/crypto-exchange-detail.html'
+	elif(article.category == 'B'):
+		template = 'generichtml/blockchain-article.html'
+	else:
+		template = 'set-default-template-404'
+	context = {
+		'article':article,
+	}
+	return render(request, template, context)

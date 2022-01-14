@@ -16,6 +16,10 @@ urlpatterns = [
 	path('metamask-guide', views.MetamaskGuide, name="MetamaskGuide"),
 	path('crypto-exchange', views.CryptoExchange, name="CryptoExchange"),
 	path('handla/<slug>', views.token, name='token'),
+	# Articles Paths but all leads to the same view function.
+	path('centralized-crypto-exchange/<slug>', views.article, name="centralized-crypto-exchange"),
+	path('blockchain/<slug>', views.article, name="blockchain-article"),
+
 	# path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
 
 ]
