@@ -5,12 +5,12 @@
 <title>{{article.meta_title}}</title>
 <meta name="description" content="{{article.description}}" />
 
-<meta property="og:url" content="{{article.get_category_display}}/{{article.slug}}" />
+<meta property="og:url" content="https://www.cryptoviking.se/{{article.get_category_display}}/{{article.slug}}" />
 <meta property="og:title" content="{{article.meta_title}}" />
 <meta property="og:description" content="{{article.description}}">
 
 <meta property="og:image" itemprop="image" content="{{article.cover_image.url}}">
-<link rel="canonical" href="{{article.get_category_display}}/{{article.slug}}" />
+<link rel="canonical" href="https://www.cryptoviking.se/{{article.get_category_display}}/{{article.slug}}" />
 <link rel="stylesheet" href="{% static 'styleFolder/components/generic-pages/generic-pages-base.css' %}">
 <link rel="stylesheet" href="{% static 'styleFolder/components/static-pages/static-pages-base.css' %}">
 {% endblock %}
@@ -23,7 +23,7 @@
 			<div class="container mt-3 pl-lg-5">
 				<div class="cover-image">
 					{% if article.cover_image.url %}
-					<img src="{{article.cover_image.url}}" alt="Blockchain article" class="rounded img-fluid" />
+					<img src="{{article.cover_image.url}}" alt="Krypto Exchange" class="rounded img-fluid" />
 					{% endif %}
 				</div>
 				<div class="container mt-5">
@@ -32,7 +32,6 @@
 						{{ article.content|safe }}
 					</div>
 				</div>
-				<br><br>
 			</div>
 		</div>
 		<div class="side-container">
@@ -108,7 +107,18 @@
 
 
 <style type="text/css">
+#carouselOpenSea{
+	height:350px;
+	width:350px;
+}
 
+
+@media(max-width:450px){
+	#carouselOpenSea{
+		height:250px;
+		width:324px;
+	}
+}
 </style>
 {% endblock %}
 
