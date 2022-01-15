@@ -82,9 +82,33 @@ krypto framtiden? Vilket krypto ska man köpa? Få svar på dina frågor och all
 		</div> -->
 	</div>
 </div>
-<div class="" style="background:#21212E;">
+<div class="pb-5 pt-2  test" style="background:#21212E;">
+	
+	<div class="spaceship-container" style="color:white;">
+		<img src="{% static 'images/bonus-images/spaceship-with-stars.png' %}" alt="Cryptoviking spaceship" />
+	</div>
+
 	{% include 'components/articles/latest_articles.html' %}
+
 </div>
+<style type="text/css">
+	.test{
+		position:relative;
+	}
+	.spaceship-container{
+		position:absolute;
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		align-items:center;
+		width:125px;
+		height:125px;
+		top:10%;
+	}
+
+</style>
+
+
 <div class="moonWall">
 	<img  class="viking_astronout" alt="viking_astronout" src="{% static 'images/mascot/viking-astronout.png' %}" />
 	<div class="space-contanier">
