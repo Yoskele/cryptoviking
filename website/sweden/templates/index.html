@@ -25,6 +25,19 @@ krypto framtiden? Vilket krypto ska man köpa? Få svar på dina frågor och all
 <link rel="stylesheet" href="{% static 'styleFolder/components/crypto-exchange/banners/exchange-banner-350-330.css' %}">
 
 
+
+
+<meta name="twitter:card" content="twitter:card">
+<meta name="twitter:description" content="Vad är kryptovaluta? Hur fungerar Crypto? Hur köper man krypto? Är
+krypto framtiden? Vilket krypto ska man köpa? Få svar på dina frågor och allt inom krypto!">
+<meta name="twitter:title" content="Kryptoguide: Kom igång med kryptohandel | Cryptoviking.se">
+<meta name="twitter:site" content="https://www.cryptoviking.se/">
+<meta name="twitter:image" content="{% static 'images/mascot/feature-logo-image.jpeg' %}">
+<meta name="twitter:creator" content="@CryptovikingSe">
+
+
+
+  
 {% endblock %}
 {% load static %}
 
@@ -82,32 +95,21 @@ krypto framtiden? Vilket krypto ska man köpa? Få svar på dina frågor och all
 		</div> -->
 	</div>
 </div>
-<div class="pb-5 pt-2  test" style="background:#21212E;">
+<div class="pb-5 pt-2  spaceship-wrapper" style="background:#21212E; position:relative;">
 	
-	<div class="spaceship-container" style="color:white;">
-		<img src="{% static 'images/bonus-images/spaceship-with-stars.png' %}" alt="Cryptoviking spaceship" />
+	<div 
+		style="position:absolute; width:100px; height:100px; top:7%;"
+		class="spaceship-container" 
+	>
+		<img 
+			class="img-fluid" 
+			src="{% static 'images/bonus-images/spaceship-with-stars.png' %}" 
+			alt="Cryptoviking spaceship" />
 	</div>
 
 	{% include 'components/articles/latest_articles.html' %}
 
 </div>
-<style type="text/css">
-	.test{
-		position:relative;
-	}
-	.spaceship-container{
-		position:absolute;
-		display:flex;
-		flex-direction:column;
-		justify-content:center;
-		align-items:center;
-		width:125px;
-		height:125px;
-		top:10%;
-	}
-
-</style>
-
 
 <div class="moonWall">
 	<img  class="viking_astronout" alt="viking_astronout" src="{% static 'images/mascot/viking-astronout.png' %}" />
@@ -368,15 +370,15 @@ krypto framtiden? Vilket krypto ska man köpa? Få svar på dina frågor och all
 						/>
 					</a>
 					<a 
-						href="https://crypto.com/app/kd26d8skzr" 
+						href="https://ftx.com/profile#a=cryptoviking" 
 						target="_blank" 
-						class="affiliate-crypto mb-2"
+						class="affiliate-FTX mb-2"
 						style="font-style:italic; transform: rotate(-12deg); font-size:1.1rem;" 
 					>
-						<img src="{% static	'images/crypto-exchanges/crypto-com.png' %}"
+						<img src="{% static	'images/tokens/ftx-com.png' %}"
 						style="width:40px; opacity:0.85" 
 						/>
-						<span>Crypto.com </span>
+						<span>FTX.com </span>
 						<small class="d-block" style="font-size:0.7rem; color:gray;">
 							Besök
 						</small>
