@@ -13,6 +13,14 @@
 <link rel="canonical" href="https://www.cryptoviking.se/blockchain/crypto-mining" />
 <link rel="stylesheet" href="{% static 'styleFolder/components/generic-pages/generic-pages-base.css' %}">
 <link rel="stylesheet" href="{% static 'styleFolder/components/static-pages/static-pages-base.css' %}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@CryptovikingSe">
+<meta name="twitter:title" content="{{article.meta_title}}">
+<meta name="twitter:description" content="{{article.description}}">
+<meta name="twitter:image" content="https://www.cryptoviking.se{{article.cover_image.url}}">
+
+
 {% endblock %}
 {% load static %}
 {% block content_container %}
