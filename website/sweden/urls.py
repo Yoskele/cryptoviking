@@ -6,6 +6,7 @@ app_name = 'sweden'
 
 urlpatterns = [
 	path('', views.index, name='index'),
+	path('nyheter/<slug>', views.article, name="nyheter"),
 	path('Kryptovaluta', views.Kryptovaluta, name="Kryptovaluta"),
 	path('blockchain', views.blockchain, name="blockchain"),
 	path('Stablecoins', views.Stablecoins, name="Stablecoins"),

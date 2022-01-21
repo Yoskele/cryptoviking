@@ -45,10 +45,11 @@ def article(request, slug):
 	article = Article.objects.get(slug=slug)
 	template = ''
 	if(article.category == 'CEX'):
-		print('iiiif')
 		template = 'generichtml/crypto-exchange-detail.html'
 	elif(article.category == 'B'):
 		template = 'generichtml/blockchain-article.html'
+	elif(article.category == 'news'):
+		template = 'generichtml/news-article.html'
 	else:
 		template = 'set-default-template-404'
 	context = {

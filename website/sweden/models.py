@@ -8,6 +8,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 class Article(models.Model):
     ARTICLE_POSTION = (
         ('B', 'blockchain'),
+        ('news', 'nyheter'),
         ('G', 'guest_post'),
         ('CEX', 'centralized-crypto-exchange'),
     )
