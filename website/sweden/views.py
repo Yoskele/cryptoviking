@@ -1,6 +1,15 @@
 from django.shortcuts import render
 from sweden.models import Token, Article
 # Create your views here.
+
+def articles(request):
+	latest_news = Article.objects.all().order_by('-created_at')[:3]
+	context = {
+		'latest_news':latest_news,
+	}
+	return render(request, 'statichtml/articles.html', context)
+
+
 def index(request):
 	latest_news = Article.objects.all().order_by('-created_at')[:3]
 	context = {

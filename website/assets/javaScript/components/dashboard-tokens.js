@@ -2,8 +2,10 @@
 
 
 
-
-
+// Update the price every minute.
+var intervalId = window.setInterval(function(){
+  	getHistoricalPrice();
+}, 60 * 1000);
 
 
 
@@ -13,19 +15,19 @@ const getHistoricalPrice = async event => {
 	.then(res => res.json())
 	.then((data) => {
 		for (const [key, value] of Object.entries(data)) {
-		  console.log(key, value);
+		  // console.log(key, value);
 		  // Grab the price container 
 		  try{
 		  	document.querySelector(`#${key}-price-container`).innerText = `$${value.usd}`;
-		  	console.log('Done...')
+		  	// console.log('Done...')
 		  }catch(err){
-		  	console.log(err, "error")
+		  	// console.log(err, "error")
 		  }
 		}
 	});
 }
 
-
+// Get the price when user enter the page.
 getHistoricalPrice();
 
 

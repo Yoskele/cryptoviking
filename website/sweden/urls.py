@@ -18,6 +18,7 @@ urlpatterns = [
 	path('crypto-exchange', views.CryptoExchange, name="CryptoExchange"),
 	path('handla/<slug>', views.token, name='token'),
 	# Articles Paths but all leads to the same view function.
+	path('artiklar', views.articles, name="all-articles"),
 	path('centralized-crypto-exchange/<slug>', views.article, name="centralized-crypto-exchange"),
 	path('blockchain/<slug>', views.article, name="blockchain-article"),
 
