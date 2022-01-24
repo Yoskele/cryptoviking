@@ -19,15 +19,20 @@
 		>
 			<div
 				style="width:100%; height:100%; border-radius:20px 20px 0 0;"
-				class="d-flex flex-column justify-content-center align-items-center"
+				class="text-center d-flex flex-column justify-content-center align-items-center"
 			>
 			{% if latest_new.cover_image %}
 				<img  src="{{latest_new.cover_image.url}}"
 					class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
 			{% endif %}
 			</div>
-			<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic; font-size:0.9rem;">
-				{{latest_new.title}}
+			<div 
+				class="p-1 text-center w-100 d-flex flex-column align-items-center" 
+				style="
+				min-height:50px;
+				border-radius:0px 0 20px 20px; background:#85BB65;  font-style:italic; font-size:0.9rem;"
+			>
+				<span class="h-100 d-flex flex-column justify-content-center"> {{latest_new.title}} </span>
 			</div>
 		</a>
 	{% endfor %}

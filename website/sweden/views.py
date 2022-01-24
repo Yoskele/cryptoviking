@@ -3,7 +3,7 @@ from sweden.models import Token, Article
 # Create your views here.
 
 def articles(request):
-	latest_news = Article.objects.all().order_by('-created_at')[:3]
+	latest_news = Article.objects.all().order_by('-created_at')[:4]
 	context = {
 		'latest_news':latest_news,
 	}
