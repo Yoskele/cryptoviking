@@ -18,35 +18,73 @@ def index(request):
 	return render(request, 'index.html', context)
 
 def Kryptovaluta(request):
-	return render(request, 'statichtml/Kryptovaluta.html')
+	article_container = Article.objects.all().order_by('-created_at')[:3]
+	context = {
+		'article_container' : article_container
+	}
+	return render(request, 'statichtml/Kryptovaluta.html', context)
 
 def blockchain(request):
-	return render(request, 'statichtml/Blockchain/blockchain.html')
+	article_container = Article.objects.all().order_by('-created_at')[:3]
+	context = {
+		'article_container' : article_container
+	}
+	return render(request, 'statichtml/Blockchain/blockchain.html', context)
 def Kryptoloan(request):
-	return render(request, 'statichtml/Kryptoloan.html')
+	article_container = Article.objects.all().order_by('-created_at')[:3]
+	context = {
+		'article_container' : article_container
+	}
+	return render(request, 'statichtml/Kryptoloan.html', context)
 
 def Kryptoearn(request):
-	return render(request, 'statichtml/KryptoDefi/kryptoearn.html')
+	article_container = Article.objects.all().order_by('-created_at')[:3]
+	context = {
+		'article_container' : article_container
+	}
+	return render(request, 'statichtml/KryptoDefi/kryptoearn.html', context)
 
 def kryptovalutaplanbok(request):
-	return render(request, 'statichtml/kryptovalutaplanbok.html')
+	article_container = Article.objects.all().order_by('-created_at')[:3]
+	context = {
+		'article_container' : article_container
+	}
+	return render(request, 'statichtml/kryptovalutaplanbok.html', context)
 
 def Stablecoins(request):
-	return render(request, 'statichtml/Stablecoins.html')
+	article_container = Article.objects.all().order_by('-created_at')[:3]
+	context = {
+		'article_container' : article_container
+	}
+	return render(request, 'statichtml/Stablecoins.html', context)
 
 def NftBase(request):
-	return render(request, 'statichtml/Nft/nftbase.html')
+	article_container = Article.objects.all().order_by('-created_at')[:3]
+	context = {
+		'article_container' : article_container
+	}
+	return render(request, 'statichtml/Nft/nftbase.html', context)
 
 def CryptoExchange(request):
-	return render(request, 'statichtml/Crypto-Exchange/Crypto-exchange.html')
+	article_container = Article.objects.all().order_by('-created_at')[:3]
+	context = {
+		'article_container' : article_container
+	}
+	return render(request, 'statichtml/Crypto-Exchange/Crypto-exchange.html', context)
 
 def MetamaskGuide(request):
-	return render(request, 'statichtml/wallets/Metamask-guide-page.html')
+	article_container = Article.objects.all().order_by('-created_at')[:3]
+	context = {
+		'article_container' : article_container
+	}
+	return render(request, 'statichtml/wallets/Metamask-guide-page.html', context)
 
 def token(request, slug):
 	token = Token.objects.get(slug=slug)
+	article_container = Article.objects.all().order_by('-created_at')[:3]
 	context = {
-		'token' : token
+		'token' : token,
+		'article_container':article_container,
 	}
 	return render(request, 'generichtml/token-page.html', context)
 
@@ -61,7 +99,15 @@ def article(request, slug):
 		template = 'generichtml/news-article.html'
 	else:
 		template = 'set-default-template-404'
+	# Filter out the news the user already read.
+	all_news = Article.objects.all().order_by('-created_at')[:4]
+	article_container = []
+	for news in all_news:
+		if slug != news.slug:
+			article_container.append(news)
+
 	context = {
 		'article':article,
+		'article_container':article_container,
 	}
 	return render(request, template, context)

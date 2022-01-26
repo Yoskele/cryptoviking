@@ -1,0 +1,110 @@
+{% load static from staticfiles %} 
+
+<div class="d-flex flex-wrap container justify-content-around mt-5">
+	<div class="w-100">
+		<small class="pl-2 senaste_nytt_label" > Senaste nytt hos Cryptoviking </small>
+	</div>
+	<div 
+		class="d-flex flex-wrap container justify-content-around p-3" 
+	>
+		{% for latest_new in article_container %}
+			<a 
+				href="/{{latest_new.get_category_display}}/{{latest_new.slug}}" 
+				class=" m-lg-2 m-4 mt-5 d-flex flex-column align-items-center justify-content-between hover-function"
+				style="width:250px; height:180px;border-radius:20px; color:white;"
+			>
+				<div
+					style="width:100%; height:100%; border-radius:20px 20px 0 0;"
+					class="text-center d-flex flex-column justify-content-center align-items-center"
+				>
+				{% if latest_new.cover_image %}
+					<img  src="{{latest_new.cover_image.url}}"
+						class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
+				{% endif %}
+				</div>
+				<div 
+					class="p-1 text-center w-100 d-flex flex-column align-items-center" 
+					style="
+					min-height:50px;
+					border-radius:0px 0 20px 20px; background:#85BB65;  font-style:italic; font-size:0.9rem;"
+				>
+					<span class="h-100 d-flex flex-column justify-content-center"> {{latest_new.title}} </span>
+				</div>
+			</a>
+		{% endfor %}
+	</div>
+</div>
+
+<br>
+<br>
+<br>
+<div class="author-container container d-flex justify-content-center align-items-center">
+	<div class="d-flex flex-column align-items-center ">
+		<img src="{% static 'images/mascot/viking-contet-writer.png' %}" alt="CryptoViking writer" style="width:300px;">
+	</div>
+</div>
+
+
+<br>
+<div class="d-flex flex-wrap container justify-content-around mt-5">
+	<div class="w-100">
+		<small class="pl-2 senaste_nytt_label" style="color:#B17EDE;" > Populära artiklar </small>
+	</div>
+	<a href="/non-fungible-token"
+		class=" m-lg-2 m-4 mt-5 d-flex flex-column align-items-center justify-content-between hover-function"
+		style="width:250px; height:180px;border-radius:20px; color:white;"
+	>
+		<div
+			style="width:100%; height:100%; border-radius:20px 20px 0 0;"
+			class="d-flex flex-column justify-content-center align-items-center"
+		>
+			<img  src="{% static 'images/NFT/NftBase.png' %}"
+				class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
+		</div>
+		<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
+			Läs om NFT
+		</div>
+	</a>
+	<a href="/metamask-guide"
+		class=" m-lg-2 m-4 mt-5 d-flex flex-column align-items-center justify-content-between hover-function"
+		style="width:250px; height:180px;border-radius:20px; color:white;">
+		
+		<div
+			style="width:100%; height:100%; border-radius:20px 20px 0 0;"
+			class="d-flex flex-column justify-content-center align-items-center"
+		>
+			<img  src="{% static 'images/wallets/metamask-guide-cover-image.png' %}"
+				class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
+		</div>
+
+		<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
+			Läs om MetaMask
+		</div>
+	</a>
+	<a href="/tjana-krypto" 
+		class=" m-lg-2 m-4 mt-5 d-flex flex-column align-items-center justify-content-between hover-function"
+		style="width:250px; height:180px;border-radius:20px; color:white;">
+		
+		<div
+			style="width:100%; height:100%; border-radius:20px 20px 0 0;"
+			class="d-flex flex-column justify-content-center align-items-center"
+		>
+			<img  src="{% static 'images/cover-images/crypto-staking.png' %}"
+				class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
+		</div>
+
+		<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
+			Läs om Krypto Staking
+		</div>
+	</a>
+</div>
+
+
+
+
+<br>
+<br>
+
+<a href="/" class="container d-flex justify-content-center  mt-0 ">
+	<img src="{% static 'images/mascot/cryptoviking-name-silver.png' %}" class="img-fluid " />
+</a>

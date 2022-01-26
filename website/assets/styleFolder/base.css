@@ -83,6 +83,14 @@ body::-webkit-scrollbar-thumb {
 }
 
 
+.senaste_nytt_label{
+	color:#EBA937;
+	font-weight:bold;
+	font-style:italic;
+	border-bottom:1px solid lightgray;
+}
+
+
 @media(max-width:1200px){
 	.side-container{
 		max-width:100%;
