@@ -101,8 +101,9 @@ de senaste två åren. Vad är det och hur kan man investera i NFT? Var kan man 
 						man i princip alltid smarta kontrakt och det ställer en del krav på att programmeringen blir rätt
 						gjord för att äganderätten ska vara laglig.
 					</p>
-					<br>
-					<h6 style="color:#B17EDE; font-style:italic;opacity:0.9;">Hur köper man nft❓ </h6>
+					<br id="handla-NFT-konst">
+					<h6 
+						style="color:#B17EDE; font-style:italic;opacity:0.9;">Hur köper man nft❓ </h6>
 					<hr>
 					<h6 class="text-center mt-4" style="font-style:italic;"> Handla NFT-Konst Via Binance NFT Marketplace</h6>
 					<br>
@@ -281,7 +282,7 @@ de senaste två åren. Vad är det och hur kan man investera i NFT? Var kan man 
 						class="container d-flex justify-content-center "
 						id="NFT-store-button"
 					>
-						<h6 class="text-center" style="font-weight:normal; font-style:italic;">
+						<h6 class="text-center"  style="font-weight:normal; font-style:italic;">
 							<span style="border-bottom:1px solid lightgray;">Se fler NFT affärer</span>
 							<small class="d-block mt-2" id="roll-down-arrow-nft-store" style="font-size:0.7rem; color:gray;">
 								🔽
@@ -473,6 +474,7 @@ de senaste två åren. Vad är det och hur kan man investera i NFT? Var kan man 
 }
 </style>
 <script type="text/javascript">
+
 	var a = document.getElementById("display-more-NFT-stores");
 	var button = document.getElementById("NFT-store-button");
 	a.style.display = "none";
@@ -485,8 +487,16 @@ de senaste två åren. Vad är det och hur kan man investera i NFT? Var kan man 
 	}
 
 
-
-
+	$(document).ready(function() {
+	    if (window.location.href.indexOf("handla-NFT-konst") > -1) {
+	    	$('#NFT-store-button').css('border', '1px solid #85BB66'); 
+	    	$('#NFT-store-button').css('border-radius', '10px'); 
+	    	$('#NFT-store-button').css('width', '50%'); 
+	    }
+	    console.log('yooo')
+	  });
+	console.log('heee')
 </script>
 {% endblock %}
 
+see-more-Nft-stores
