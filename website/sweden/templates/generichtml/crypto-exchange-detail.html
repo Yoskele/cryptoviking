@@ -31,6 +31,18 @@
 		<div class="main-container">
 			<div class="container mt-3 pl-lg-5">
 				<div class="cover-image">
+					<div class="container d-flex justify-content-between">
+						<div class="">
+							<small style="font-style:italic;">
+								Krypto-Exchange
+							</small>
+						</div>
+						<div class="">
+							<small style="font-style:italic;">
+								Publicerad {{ article.publish_at | date:"M d Y H:i" }}
+							</small>
+						</div>
+					</div>
 					{% if article.cover_image.url %}
 					<img src="{{article.cover_image.url}}" alt="Krypto Exchange" class="rounded img-fluid" />
 					{% endif %}

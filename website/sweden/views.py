@@ -4,8 +4,10 @@ from sweden.models import Token, Article
 
 def articles(request):
 	latest_news = Article.objects.all().order_by('-created_at')[:4]
+	crypto_exchanges = Article.objects.all().filter(category='CEX').order_by('-created_at')[:4]
 	context = {
 		'latest_news':latest_news,
+		'crypto_exchanges':crypto_exchanges,
 	}
 	return render(request, 'statichtml/articles.html', context)
 
