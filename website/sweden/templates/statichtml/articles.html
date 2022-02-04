@@ -45,7 +45,7 @@
 					Senaste nytt hos Cryptoviking <span> <img src="{% static 'images/icons/viking-helmet-small.png' %}" alt="" style="width:50px;" class=" ml-3 mb-2 img-fluid" /></span>
 				</h2>
 				
-				{% for article in latest_news%}
+				{% for article in news %}
 				<a  
 					href="{{article.get_category_display}}/{{article.slug}}" 
 					style="text-decoration:none; border:1px solid gray;" 
@@ -79,9 +79,62 @@
 				</a>
 				<br>
 				{% endfor %}
-				<a href="/" class=""> Se fler nyheter </a>
+				
+				<br>
+				<div class="container d-flex justify-content-center align-items-center">
+
+					<!-- Navigation bar for Previous -->
+					{% if news.has_previous %}
+						<!-- <a href="?sida=1" 
+							style="font-size:1.2rem; color:gray;"
+							class=""> 
+							<< 
+						</a> -->
+						<a href="?sida={{ news.previous_page_number }}"
+							style="font-size:1.6rem; color:#F69516;"
+							class="m-1"> 
+							<- 
+						</a>
+					{% endif %}
+
+
+					<!-- Get the numbers for the list -->
+					{% for num in news.paginator.page_range %}
+						
+						<!-- Highlight the current number -->
+						{% if news.number == num %}
+							<strong style="font-size:1.4rem; color:#dcdcdc;" class="m-1"> {{ num }} </strong>
+						{% elif num > news.number|add:'-3' and num < news.number|add:'3' %}
+							<a href="?sida={{ forloop.counter }}"
+								style="font-size:1.2rem"
+								class="m-1"> 
+							{{ num }} 
+						</a>
+						{% endif %}
+					{% endfor%}
+
+
+					<!-- Navigation bar for Next -->
+					{% if news.has_next %}
+						<a href="?sida={{ news.next_page_number }}"
+							style="font-size:1.6rem; color:#F69516;"
+							class="m-1"> 
+							-> 
+						</a>
+						
+					{% endif %}
+
+				</div>
+					
+
+
+
+
 			</div>
-			<div class="author-container container d-flex justify-content-center align-items-center">
+
+<br>
+
+			<div class="author-container container d-flex justify-content-center align-items-center mt-5">
 				<div class="d-flex flex-column align-items-center ">
 					<img src="{% static 'images/mascot/viking-contet-writer.png' %}" alt="CryptoViking writer" style="width:300px;">
 				</div>

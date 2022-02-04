@@ -1,12 +1,29 @@
 from django.shortcuts import render
 from sweden.models import Token, Article
-# Create your views here.
+# Import Pagination 
+from django.core.paginator import Paginator
+
+
+
 
 def articles(request):
-	latest_news = Article.objects.all().order_by('-created_at')[:4]
+	# latest_news = Article.objects.all().order_by('-created_at')[:4]
+
+	# Set up Pagination
+	paginator = Paginator(Article.objects.all().order_by('-created_at'), 4)
+
+	# Get page number
+	page = request.GET.get('sida')
+	# Track page number ?page=2
+	news = paginator.get_page(page)
+	# nums = "a" * news.paginator.num_pages
+
+
 	crypto_exchanges = Article.objects.all().filter(category='CEX').order_by('-created_at')[:4]
 	context = {
-		'latest_news':latest_news,
+		# 'latest_news':latest_news,
+		'news':news,
+		# 'nums':nums,
 		'crypto_exchanges':crypto_exchanges,
 	}
 	return render(request, 'statichtml/articles.html', context)
