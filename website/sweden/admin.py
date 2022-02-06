@@ -9,7 +9,7 @@ class TokenAdmin(admin.ModelAdmin):
 
 
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ['title', 'created_at']
+    list_display = ['title', 'category', 'created_at']
 
 
 admin.site.register(Article, ArticleAdmin)

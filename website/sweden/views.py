@@ -116,6 +116,8 @@ def article(request, slug):
 		template = 'generichtml/blockchain-article.html'
 	elif(article.category == 'news'):
 		template = 'generichtml/news-article.html'
+	elif(article.category == 'wallet'):
+		template = 'generichtml/crypto-wallet.html'
 	else:
 		template = 'set-default-template-404'
 	# Filter out the news the user already read.
@@ -130,3 +132,5 @@ def article(request, slug):
 		'article_container':article_container,
 	}
 	return render(request, template, context)
+
+

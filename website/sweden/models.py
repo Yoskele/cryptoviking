@@ -10,14 +10,15 @@ class Article(models.Model):
         ('B', 'blockchain'),
         ('news', 'nyheter'),
         ('G', 'guest_post'),
+        ('wallet', 'crypto-wallet'),
         ('CEX', 'centralized-crypto-exchange'),
     )
     slug = models.SlugField()
+    meta_title = models.CharField(max_length=500, blank=True)
+    meta_description = models.TextField(max_length=500, blank=True)
     title = models.CharField(max_length=100, unique=True)
     content = RichTextUploadingField(blank=True, null=True)
     cover_image = models.ImageField(upload_to='article', blank=True)
-    meta_title = models.CharField(max_length=500, blank=True)
-    meta_description = models.TextField(max_length=500, blank=True)
     publish_at = models.DateTimeField()
     category = models.CharField(max_length=50, choices=ARTICLE_POSTION)
     created_at = models.DateTimeField(auto_now_add=True)
