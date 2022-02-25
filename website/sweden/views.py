@@ -126,6 +126,8 @@ def article(request, slug):
 	for news in all_news:
 		if slug != news.slug:
 			article_container.append(news)
+		if len(article_container) >= 4: # Make sure we are only displaying 3 articles.
+			article_container.pop(-1) # Deleting last object from the list.
 
 	context = {
 		'article':article,
