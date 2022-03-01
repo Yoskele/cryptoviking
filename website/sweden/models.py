@@ -9,7 +9,7 @@ class Article(models.Model):
     ARTICLE_POSTION = (
         ('B', 'blockchain'),
         ('news', 'nyheter'),
-        ('G', 'guest_post'),
+        ('G', 'guest-post'),
         ('wallet', 'crypto-wallet'),
         ('CEX', 'centralized-crypto-exchange'),
     )
