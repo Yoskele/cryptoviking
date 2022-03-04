@@ -65,20 +65,31 @@
 			Läs om NFT
 		</div>
 	</a>
-	<a href="/metamask-guide"
-		class=" m-lg-2 m-4 mt-5 d-flex flex-column align-items-center justify-content-between hover-function"
-		style="width:250px; height:180px;border-radius:20px; color:white;">
-		
+	<a href="/handla/ethereum"
+		class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function position-relative" 
+		style="width:250px; height:180px;border-radius:20px; color:white;"
+	>
+		<div 
+			class="position-absolute d-flex flex-column align-items-center" 
+			style="position: absolute; top: 50%; left: 50%; 
+			transform: translate(-50%, -50%);"
+		>
+			<img src="{% static 'images/tokens/eth.png' %}" alt="Bitcoin logo" />
+			<span class="d-flex" style="font-size:0.95rem; font-style:italic; color:#dcdcdc;">
+				<p id="ethereum-price-container"> </p> 
+			</span>
+		</div>
+
 		<div
 			style="width:100%; height:100%; border-radius:20px 20px 0 0;"
 			class="d-flex flex-column justify-content-center align-items-center"
 		>
-			<img  src="{% static 'images/wallets/metamask-guide-cover-image.png' %}"
-				class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
+			<img  src="{% static 'images/tokens/wallet-icons/mini-wall-token.png' %}"
+				class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" 
+			>
 		</div>
-
 		<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
-			Läs om MetaMask
+			Mer om Ethereum
 		</div>
 	</a>
 	<a href="/tjana-krypto" 
