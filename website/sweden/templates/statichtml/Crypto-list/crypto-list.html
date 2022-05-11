@@ -387,10 +387,10 @@
 	        wrapper.innerHTML += `<button value=${page} class="page m-1 btn btn-sm btn-info">${page}</button>`
 	    }
 	    if (state.page != 1) {
-	        wrapper.innerHTML = `<button value=${1} class="page m-1 btn btn-sm btn-info">&#171; First</button>` + wrapper.innerHTML
+	        wrapper.innerHTML = `<button value=${1} class="page m-1 btn btn-sm btn-info">&#171; Första</button>` + wrapper.innerHTML
 	    }
 	    if (state.page != pages) {
-	        wrapper.innerHTML += `<button value=${pages} class="page m-1 btn btn-sm btn-info">Last &#187;</button>`
+	        wrapper.innerHTML += `<button value=${pages} class="page m-1 btn btn-sm btn-info">Sista &#187;</button>`
 	    }
 	    $('.page').on('click', function() {
 	        $('#table-body').empty()
