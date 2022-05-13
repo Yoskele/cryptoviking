@@ -27,7 +27,6 @@
 	.image-logo img{
 		max-width:40px;
 	}
-
 	table{
 		background-color: #21212E !important;
 		
@@ -50,41 +49,54 @@
 	.remove-token-symbol{
 		display:none;
 	}
+	.mobile-image-logo-ticket-name{
+		display:none;
+	}
 	@media only screen and (max-width: 1000px){
         .remove-token-name{
             display: none;
         }
-       	.remove-token-symbol{
+		.mobile-image-logo-ticket-name{
 			display:block;
+			display:flex;
+			flex-direction:column;
+			align-items:center;
+		}
+		.mobile-image-logo-ticket-name img{
+			max-width:30px;
 		}
     }
 
 	.container-token{
 		max-width:1200px;
+		min-width:800px;
 		margin:0 auto 0 auto;
 		overflow-x:auto;
 	}
 
 </style>
-
 <div class="container-token mt-3" style="overflow-x:auto">
     <!-- Table structure here -->
+
+    <!-- <div class="container text-white m-2">
+    	<input id="search-token-input" type="text" placeholder="Sök" />
+    </div> -->
     <table class="table table-dark" id="our-table">
 		<thead>
 			<tr style="text-align:center;">
                 <th class="rank m-5" style="color:white;"><abbr title="Position">Rank</abbr></th>
-                <th class='image-logo'></th>
-                <th class="name m-5 remove-token-name" style="color:white;">Name</th>
-                <th class="price m-5" style="color:white;">Price(USD)</th>
-                <th class="price_change_percentage_1h_in_currency m-5 remove-token-name" style="color:white;">1</th>
+                <th class='image-logo remove-token-name'></th>
+                <th class="name m-5 " style="color:white;">Namn</th>
+                <th class="price m-5" style="color:white;">Pris(USD)</th>
+                <th class="price_change_percentage_1h_in_currency m-5 remove-token-name" style="color:white;">1h</th>
                 <th class="percent_change_24h m-5" style="color:white;">24h</th>
                 <th class="price_change_percentage_7d_in_currency m-5" style="color:white;">7d</th>
-                <th class="volume_24h m-5 remove-token-name" style="color:white;">Volume(24h)</th>
-                <th class="market_ p m-5" style="color:white;">Market Cap</th>
-                <th class="sparkline m-5" style="color:white;">Last 7 days</th>
+                <th class="volume_24h m-5 remove-token-name" style="color:white;">Volym(24h)</th>
+                <th class="market_ p m-5" style="color:white;">Börsvärde</th>
+                <th class="sparkline m-5" style="color:white;">Sista 7 dagar</th>
 			</tr>
 		</thead>
-        <tbody id="table-body">
+        <tbody id="crypto-table-body" class="">
 
         </tbody>
     </table>
@@ -93,7 +105,13 @@
 	<div id="pagination-wrapper"></div>
 </div>
 
+
+
+
 <br><br><br>
+
+
+
 
 <div class="container-wrapper mt-5">
 	<div class="container-flex">
@@ -302,8 +320,6 @@
 		</div>
 	</div>
 </div>
-
-
 <div class="curved mt-3">
 	<svg viewBox="0 0 1440 319">
 		<path fill="rgb(85, 85, 85, 0.8)" fill-opacity="1" d="M0,32L48,80C96,128,192,224,288,224C384,224,480,128,576,90.7C672,53,768,75,864,96C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
@@ -314,6 +330,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
 <script type="text/javascript">
+
 	// Check if a number box has a minus sign inside if so add red color if not add green.
 	const setColorOnNumbers = () => {
 		var minus_boxes_red = document.querySelectorAll('.minus_boxes_red');
@@ -325,23 +342,58 @@
 			}
 		});
 	}
-	// Get CoinGecko data for the token list.
-	var xhReq = new XMLHttpRequest();
-	xhReq.open("GET", "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d", false);
-	xhReq.send(null);
-	// We get a Json file convert it to Javascript objekt below
-	var data = JSON.parse(xhReq.responseText);
 
-	// set a State for the paginator.
 	var state = {
-	    'querySet': data,
+	    'querySet':[],
 	    'page': 1,
 	    'rows': 30,
 	    'window': 5,
+	    'old_data':[],
 	}
 
-	// Call build table funtion
-	buildTable()
+
+	const getCoinGeckoData = async () =>{
+		state.old_data = state.querySet;
+		const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d')
+		state.querySet = await response.json();
+
+		buildTable()
+		// Send the old data and compare to the new state.
+		changeColor();
+
+	}
+	// One Time Render
+	getCoinGeckoData();
+
+
+	const changeColor = () => {
+		console.log('changing Color... ')
+		for( let i = 0; i < state.querySet.length; i++){
+			if( state.old_data[i].current_price < state.querySet[i].current_price ){
+				try{
+					let price_box = document.getElementById(`price_box-${i}`).style.color = "#8dc647";
+				}catch{
+
+				}
+			}else if(state.old_data[i].current_price <= state.querySet[i].current_price){
+				try{
+					let price_box = document.getElementById(`price_box-${i}`).style.color = "white";
+				}catch{
+					
+				}
+			}else{
+				try{
+					let price_box = document.getElementById(`price_box-${i}`).style.color = "#e15241";
+				}
+				catch{
+					
+				}
+			}
+		}
+	}
+
+
+	
 	function pagination(querySet, page, rows) {
 	    var trimStart = (page - 1) * rows
 	    var trimEnd = trimStart + rows
@@ -381,74 +433,155 @@
 	        wrapper.innerHTML += `<button value=${pages} class="page m-1 btn btn-sm btn-info">Sista &#187;</button>`
 	    }
 	    $('.page').on('click', function() {
-	        $('#table-body').empty()
+	        $('#crypto-table-body').empty()
 	        state.page = Number($(this).val())
 	        buildTable()
 	    })
 	}
 
 	function buildTable() {
-    var table = $('#table-body')
-    table.empty();
-    console.log('building table..')
-    var data = pagination(state.querySet, state.page, state.rows)
-    var token_list = data.querySet
-    for(var i = 0; i < token_list.length; i++) {
-        /// Create an item row for each token in the list.
-        var item = 
-                `<tr id="${i}-row" class="rowX"> 
-                    <th class='rank 'style='color:white; height:80px; text-align:center; vertical-align: middle;'>${token_list[i].market_cap_rank}</th>
-                    <th class='rank image-logo'style='color:white; height:80px; text-align:center; vertical-align: middle;'>
-                        ${`<img src="${token_list[i].image}"`}  
-                    </th>
+	    var table = $('#crypto-table-body')
+	    table.empty();
+	    console.log('building table..')
+	    var data = pagination(state.querySet, state.page, state.rows)
+	    var token_list = data.querySet
+	    for(var i = 0; i < token_list.length; i++) {
+	        /// Create an item row for each token in the list.
+	        var item = 
+	                `<tr id="${i}-row" class="Token-Detail-Row"> 
+	                    <th class='rank 'style='color:white; height:80px; text-align:center; vertical-align: middle;'>${token_list[i].market_cap_rank}
+	                    </th>
 
-                    <td class='name remove-token-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-                        ${token_list[i].name}
-                    </td>" 
+	                    <th class='rank image-logo remove-token-name'style='color:white; height:80px; text-align:center; vertical-align: middle;'>
+	                        ${`<img src="${token_list[i].image}"`}  
+	                    </th>
 
-                    <td id='price_box-${i}' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-                        $${token_list[i].current_price}
-                    </td>" 
+	                    <td class='name remove-token-name image-logo' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+	                        ${token_list[i].name} 
+	                    </td>" 
 
-                     <td id='1h_container-${i}' class='name minus_boxes_red procent_box remove-token-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-                        ${token_list[i].price_change_percentage_1h_in_currency.toFixed(2)}%
-                    </td>" 
+	                    <td class='mobile-image-logo-ticket-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'>
+	                    	<img src="${token_list[i].image}"/>
+	                        ${token_list[i].symbol} 
+	                    </td>"
 
-                    <td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-                        ${token_list[i].price_change_percentage_24h.toFixed(2) }%
-                    </td>
+	                    <td id='price_box-${i}' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+	                        $${token_list[i].current_price}
+	                    </td>" 
 
-                    <td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-                        ${token_list[i].price_change_percentage_7d_in_currency.toFixed(2) }%
-                    </td>
+	                     <td id='1h_container-${i}' class='name minus_boxes_red procent_box remove-token-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+	                        ${token_list[i].price_change_percentage_1h_in_currency.toFixed(2)}%
+	                    </td>" 
 
-                    <td class='name remove-token-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-                        $${token_list[i].total_volume.toLocaleString() }
-                    </td>
+	                    <td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+	                        ${token_list[i].price_change_percentage_24h.toFixed(2) }%
+	                    </td>
 
-                    <td class='name ' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-                        $${token_list[i].market_cap.toLocaleString() }
-                    </td>
-                   
-                   <td class='name' id="sparkline-graph-${i}" style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-                       sparkline...${token_list[i].name}
-                    </td>
-                </tr>`
-            table.append(item)
-            $("#sparkline-graph-"+ i).sparkline(token_list[i].sparkline_in_7d.price, {
-			    type: 'line',
-			    width: '135',
-			    height: '50',
-			    lineColor: '#ff00ff',
-			    fillColor:'#21212E',
-			});
-        }
-    pageButtons(data.pages)
-    setColorOnNumbers();
-}
+	                    <td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+	                        ${token_list[i].price_change_percentage_7d_in_currency.toFixed(2) }%
+	                    </td>
+
+	                    <td class='name remove-token-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+	                        $${token_list[i].total_volume.toLocaleString() }
+	                    </td>
+
+	                    <td class='name ' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+	                        $${token_list[i].market_cap.toLocaleString() }
+	                    </td>
+	                   
+	                   <td class='name' id="sparkline-graph-${i}" style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+	                       sparkline...${token_list[i].name}
+	                    </td>
+	                </tr>`
+	            table.append(item)
+	            $("#sparkline-graph-"+ i).sparkline(token_list[i].sparkline_in_7d.price, {
+				    type: 'line',
+				    width: '135',
+				    height: '50',
+				    lineColor: '#ff00ff',
+				    fillColor:'#21212E',
+				});
+	        }
+	    pageButtons(data.pages)
+	    setColorOnNumbers();
+	}
+
 var timerId;
 var updateInterval = 8000;
-timerId = setInterval("buildTable();", updateInterval);
+timerId = setInterval("getCoinGeckoData();", updateInterval);
+
+
+
+const buildSearchTable = () =>{
+    var table = document.getElementById('crypto-table-body')
+    table.innerHTML = '';
+    for (var i = 0; i < state.querySet.length; i++){
+        var row = `<tr id="${i}-row" class="rowX"> 
+		    		<th class='rank 'style='color:white; height:80px; text-align:center; vertical-align: middle;'>${(i + 1)}</th>
+		    		<th class='rank image-logo'style='color:white; height:80px; text-align:center; vertical-align: middle;'>
+		    			${`<img src="${state.querySet[i].image}"`}  
+		    		</th>
+
+		    		<td class='name ' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+		    			${state.querySet[i].name}
+		    		</td> 
+
+		    		<td  style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+		    			${state.querySet[i].current_price}
+		    		</td> 
+
+		    		<td id='1h_container-${i}' class='name minus_boxes_red procent_box' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+		    			${state.querySet[i].price_change_percentage_1h_in_currency.toFixed(2)}%
+		    		</td> 
+
+		    		<td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+		    			${state.querySet[i].price_change_percentage_24h.toFixed(2) }
+		    		</td>
+
+		    		<td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+		    			${state.querySet[i].price_change_percentage_7d_in_currency.toFixed(2) }
+		    		</td>
+	    		</tr>`
+        table.innerHTML += row
+    }
+}
+
+
+$('#search-token-input').on('keyup', function(e){
+	console.log('Typing...')
+	clearInterval(timerId)
+    var table = $('#crypto-table-body')
+    table.empty();
+	//Clear current state so we can push the search values.
+	var searchInputValue = e.target.value
+	let searchList = [];
+	// Loop through the data comes from the Coingecko first API call.
+	for (var i = 0; i < state.querySet.length; i++){
+		// search input values to lowercase
+		searchValue = searchInputValue.toLowerCase()
+		console.log('searchValue...', searchValue)
+		//Each list item value to lowercase
+		var name = state.querySet[i].name.toLowerCase()
+		var ticket_symbol = state.querySet[i].symbol.toLowerCase()
+		console.log('name ', name)
+		if(name.includes(searchValue) || ticket_symbol.includes(searchValue)){
+			console.log('it includes.. ', state.querySet[i])
+			searchList.push(state.querySet[i]);
+			console.log('nooo pushed.. ', searchList)
+		}
+		
+		//buildTable()
+		console.log('pushed.. ', searchList)
+
+		
+
+	}
+
+
+
+})
+
+
 </script>
 
 
