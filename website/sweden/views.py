@@ -118,6 +118,7 @@ def token(request, slug):
 def article(request, slug):
 	article = Article.objects.get(slug=slug)
 	template = ''
+	print('article.category ' + article.category)
 	if(article.category == 'CEX'):
 		template = 'generichtml/crypto-exchange-detail.html'
 	elif(article.category == 'B'):
@@ -126,6 +127,8 @@ def article(request, slug):
 		template = 'generichtml/news-article.html'
 	elif(article.category == 'wallet'):
 		template = 'generichtml/crypto-wallet.html'
+	elif(article.category == 'G'):
+		template = 'generichtml/guest-post.html'
 	else:
 		template = 'set-default-template-404'
 	# Filter out the news the user already read.

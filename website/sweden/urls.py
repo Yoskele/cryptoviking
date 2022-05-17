@@ -19,6 +19,7 @@ urlpatterns = [
 	# Articles Paths but all leads to the same view function.
 	path('artiklar', views.articles, name="all-articles"),
 	path('nyheter/<slug>', views.article, name="nyheter"),
+	path('guest-post/<slug>', views.article, name="guest-post"),
 	path('blockchain/<slug>', views.article, name="blockchain-article"),
 	path('crypto-wallet/<slug>', views.article, name="crypto-wallet-article"),
 	path('centralized-crypto-exchange/<slug>', views.article, name="centralized-crypto-exchange"),
