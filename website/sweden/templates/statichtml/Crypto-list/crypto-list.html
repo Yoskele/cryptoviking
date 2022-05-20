@@ -76,11 +76,13 @@
 
 </style>
 <div class="container-token mt-3" style="overflow-x:auto">
-    <!-- Table structure here -->
 
-    <!-- <div class="container text-white m-2">
+    <div class="container d-flex text-white m-2">
     	<input id="search-token-input" type="text" placeholder="Sök" />
-    </div> -->
+    	<div id="search-token-close-button" style="cursor:pointer;" onclick="buildTable()">
+    		❌
+    	</div>
+    </div>
 
     <table class="table table-dark" id="our-table">
 		<thead>
@@ -107,217 +109,61 @@
 </div>
 
 <br><br><br>
-
-
-
-
-<div class="container-wrapper mt-5">
-	<div class="container-flex">
-		<div class="main-container">
-			<div class="author-container container d-flex justify-content-center align-items-center mt-5">
-				<div class="d-flex flex-column align-items-center ">
-					<img src="{% static 'images/mascot/viking-contet-writer.png' %}" alt="CryptoViking writer" style="width:300px;">
-				</div>
-			</div>
-			<div class="mt-2">
-				<small class="pl-2" style="font-style:italic;"> Populära artiklar </small>
-			</div>
-			<div class="d-flex flex-wrap container justify-content-around">
-				<a href="/non-fungible-token"
-					class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function"
-					style="width:250px; height:180px;border-radius:20px; color:white;">
-					
-					<div
-						style="width:100%; height:100%; border-radius:20px 20px 0 0;"
-						class="d-flex flex-column justify-content-center align-items-center"
-					>
-						<img  src="{% static 'images/NFT/NftBase.png' %}"
-							class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" 
-						>
-					</div>
-					<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
-						Läs om NFT
-					</div>
-				</a>
-				<a href="/metamask-guide"
-					class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function"
-					style="width:250px; height:180px;border-radius:20px; color:white;">
-					
-					<div
-						style="width:100%; height:100%; border-radius:20px 20px 0 0;"
-						class="d-flex flex-column justify-content-center align-items-center"
-					>
-						<img  src="{% static 'images/wallets/metamask-guide-cover-image.png' %}"
-							class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
-					</div>
-
-					<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
-						Läs om MetaMask
-					</div>
-				</a>
-				<a href="/tjana-krypto" 
-					class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function"
-					style="width:250px; height:180px;border-radius:20px; color:white;"
-				>
-			
-					<div
-						style="width:100%; height:100%; border-radius:20px 20px 0 0;"
-						class="d-flex flex-column justify-content-center align-items-center"
-					>
-						<img  src="{% static 'images/cover-images/crypto-staking.png' %}"
-							class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
-					</div>
-
-					<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
-						Läs om Krypto Staking
-					</div>
-				</a>
-			</div>
-			<div class="mt-5">
-				<small class="pl-2" style="font-style:italic;"> Kryptovaluta </small>
-			</div>
-			<div class="d-flex flex-wrap container justify-content-around mb-5">
-				<a href="/handla/bitcoin"
-					class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function position-relative" 
-					style="width:250px; height:180px;border-radius:20px; color:white;"
-				>
-					<div 
-						class="position-absolute d-flex flex-column align-items-center" 
-						style="position: absolute; top: 50%; left: 50%; 
-						transform: translate(-50%, -50%);"
-					>
-						<img src="{% static 'images/tokens/btc-token.png' %}" alt="Bitcoin logo" />
-						<span class="d-flex" style="font-size:0.95rem; font-style:italic; color:#dcdcdc;">
-							<p id="bitcoin-price-container"> </p> 
-						</span>
-					</div>
-
-					<div
-						style="width:100%; height:100%; border-radius:20px 20px 0 0;"
-						class="d-flex flex-column justify-content-center align-items-center"
-					>
-						<img  src="{% static 'images/tokens/wallet-icons/mini-wall-token.png' %}"
-							class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" 
-						>
-					</div>
-					<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
-						Mer om Bitcoin
-					</div>
-				</a>
-				<a href="/handla/ethereum"
-					class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function position-relative" 
-					style="width:250px; height:180px;border-radius:20px; color:white;"
-				>
-					<div 
-						class="position-absolute d-flex flex-column align-items-center" 
-						style="position: absolute; top: 50%; left: 50%; 
-						transform: translate(-50%, -50%);"
-					>
-						<img src="{% static 'images/tokens/eth.png' %}" alt="Bitcoin logo" />
-						<span class="d-flex" style="font-size:0.95rem; font-style:italic; color:#dcdcdc;">
-							<p id="ethereum-price-container"> </p> 
-						</span>
-					</div>
-
-					<div
-						style="width:100%; height:100%; border-radius:20px 20px 0 0;"
-						class="d-flex flex-column justify-content-center align-items-center"
-					>
-						<img  src="{% static 'images/tokens/wallet-icons/mini-wall-token.png' %}"
-							class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" 
-						>
-					</div>
-					<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
-						Mer om Ethereum
-					</div>
-				</a>
-				<a href="/handla/cardano"
-					class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function position-relative" 
-					style="width:250px; height:180px;border-radius:20px; color:white;"
-				>
-					<div 
-						class="position-absolute d-flex flex-column align-items-center" 
-						style="position: absolute; top: 50%; left: 50%; 
-						transform: translate(-50%, -50%);"
-					>
-						<img src="{% static 'images/tokens/cardano.png' %}" alt="Bitcoin logo" />
-						<span class="d-flex" style="font-size:0.95rem; font-style:italic; color:#dcdcdc;">
-							<p id="cardano-price-container"> </p> 
-						</span>
-					</div>
-
-					<div
-						style="width:100%; height:100%; border-radius:20px 20px 0 0;"
-						class="d-flex flex-column justify-content-center align-items-center"
-					>
-						<img  src="{% static 'images/tokens/wallet-icons/mini-wall-token.png' %}"
-							class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" 
-						>
-					</div>
-					<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
-						Mer om Cardano
-					</div>
-				</a>
-			</div>
-			<a class="container d-flex justify-content-center mt-0">
-				<img src="{% static 'images/mascot/cryptoviking-name-silver.png' %}" class="img-fluid " />
-			</a>
-
-			<div class="mt-5">
-				<small class="pl-2" style="font-style:italic;"> Krypto Exchanges </small>
-			</div>
-			<div class="d-flex flex-wrap container justify-content-around mb-5">
-				<a href="/crypto-exchange"
-					class=" m-lg-2 m-4 mt-5 d-flex flex-column align-items-center justify-content-between hover-function"
-					style="width:250px; height:180px;border-radius:20px; color:white;"
-				>
-					<div
-						style="width:100%; height:100%; border-radius:20px 20px 0 0;"
-						class="d-flex flex-column justify-content-center align-items-center"
-					>
-						<img  src="{% static 'images/cover-images/Krypto-Exchange.png' %}"
-							class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
-					</div>
-
-					<div 
-						class="p-1 text-center w-100 d-flex flex-column align-items-center" 
-						style="
-						min-height:50px;
-						border-radius:0px 0 20px 20px; background:#85BB65;  font-style:italic; font-size:0.9rem;"
-						>
-						<span class="h-100 d-flex flex-column justify-content-center"> Mer om Krypto exchanges </span>
-					</div>
-				</a>
-				{% for cryptoExchange in crypto_exchanges %}
-					<a href="/{{cryptoExchange.get_category_display}}/{{cryptoExchange.slug}}" 
-					class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function"
-					style="width:250px; height:180px;border-radius:20px; color:white;"
-					>
-						<div
-							style="width:100%; height:100%; border-radius:20px 20px 0 0;"
-							class="d-flex flex-column justify-content-center align-items-center"
-						>
-							<img  src="{{cryptoExchange.cover_image.url}}"
-								class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
-						</div>
-
-						<div 
-							class="p-1 text-center w-100 d-flex flex-column align-items-center" 
-							style="
-							min-height:50px;
-							border-radius:0px 0 20px 20px; background:#85BB65;  font-style:italic; font-size:0.9rem;"
-							>
-							<span class="h-100 d-flex flex-column justify-content-center"> {{cryptoExchange.title}} </span>
-						</div>
-					</a>
-				{% endfor%}
-			</div>
-		</div>
-		<div class="side-container">
-			{% include 'components/crypto-exchange/banners/Exchange-Banner-350-330.html' %}
-		</div>
-	</div>
+{% include 'components/articles/article_container.html' %}
+<div class=" mt-5 text-center">
+<small style="color:white; color:#85bb65; font-style:italic;"> Decentralized E-wallets </small>
 </div>
+<div class=" d-flex flex-wrap justify-content-around w-50 mx-auto">
+	<a href="/metamask-guide" 
+		class="d-flex flex-column align-items-center p-2 m-4 text-center"
+		style="height:150px; width:180px; border-radius:20px;box-shadow:0 0 5px #fff; text-decoration:none;" />
+		<img 
+			src="{% static 'images/wallets/metamask.png' %}" alt="Metamask-logo" 
+		 	style="height:100px;" 
+		 	class="img-fluid"
+		/>
+		Metamask Guide
+	</a>
+	<a href="/crypto-wallet/phantom-guide" 
+		class="d-flex flex-column align-items-center p-2 m-4 text-center"
+		style="height:150px; width:180px; border-radius:20px;box-shadow:0 0 5px #fff; text-decoration:none;" />
+		<img 
+			src="{% static 'images/wallets/phantom-icon.png' %}" alt="Metamask-logo" 
+		 	style="height:100px;" 
+		 	class="img-fluid" />
+		
+		Phantom Guide
+	</a>
+</div>
+<div class="container d-flex justify-content-around align-items-center mt-5 mb-3">
+		<a href="https://www.binance.com/en/register?ref=JTZNNQHD" class="m-2 affiliate-binance" target="_blank">
+			Handla krypto via Binance
+		</a>
+
+		<a href="https://ftx.com/profile#a=cryptoviking" class="m-2 affiliate-FTX" target="_blank">
+			Handla krypto via FTX.com
+		</a>
+	</div>
+
+	<br>
+	<div class="text-center mt-2 mb-5">
+		<a 
+			href="/#krypto-snabbguide-avdelning"
+			style="font-weight:normal;" 
+			class="" 
+		>
+			Hur köper man kryptovaluta❓
+			<small class="d-block" style="font-size:0.7rem; color:gray;">
+				Läs mer
+			</small>
+		</a>
+	</div>
+	<div class="container  text-center">
+		<label style="font-size:0.68rem; font-style:italic; color:#F47174;" class=" m-0 ">
+			Handla inte mer än vad du har råd att förlora.
+		</label>
+	</div>
+
 <div class="curved mt-3">
 	<svg viewBox="0 0 1440 319">
 		<path fill="rgb(85, 85, 85, 0.8)" fill-opacity="1" d="M0,32L48,80C96,128,192,224,288,224C384,224,480,128,576,90.7C672,53,768,75,864,96C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
@@ -344,7 +190,7 @@
 	var state = {
 	    'querySet':[],
 	    'page': 1,
-	    'rows': 30,
+	    'rows': 25,
 	    'window': 5,
 	    'old_data':[],
 	}
@@ -354,7 +200,6 @@
 		state.old_data = state.querySet;
 		const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d')
 		state.querySet = await response.json();
-
 		buildTable()
 		// Send the old data and compare to the new state.
 		changeColor();
@@ -362,6 +207,10 @@
 	}
 	// One Time Render
 	getCoinGeckoData();
+
+
+
+
 
 
 	const changeColor = () => {
@@ -438,6 +287,8 @@
 	}
 
 	function buildTable() {
+		$('#pagination-wrapper').css('display', 'block');
+		$('#search-token-close-button').css('display', 'none');
 	    var table = $('#crypto-table-body')
 	    table.empty();
 	    console.log('building table..')
@@ -510,38 +361,70 @@ timerId = setInterval("getCoinGeckoData();", updateInterval);
 
 
 
-const buildSearchTable = () =>{
-    var table = document.getElementById('crypto-table-body')
-    table.innerHTML = '';
-    for (var i = 0; i < state.querySet.length; i++){
-        var row = `<tr id="${i}-row" class="rowX"> 
-		    		<th class='rank 'style='color:white; height:80px; text-align:center; vertical-align: middle;'>${(i + 1)}</th>
-		    		<th class='rank image-logo'style='color:white; height:80px; text-align:center; vertical-align: middle;'>
-		    			${`<img src="${state.querySet[i].image}"`}  
-		    		</th>
+const buildSearchTable = (searchList) =>{
+	$('#pagination-wrapper').css('display', 'none');
+	$('#search-token-close-button').css('display', 'block');
+	console.log('searchList ', searchList)
+    var table = $('#crypto-table-body')
+    //table.innerHTML = '';
+    for(var i = 0; i < searchList.length; i++) {
+        /// Create an item row for each token in the list.
+        var item = 
+                `<tr id="${i}-row" class="Token-Detail-Row"> 
+                    <th class='rank 'style='color:white; height:80px; text-align:center; vertical-align: middle;'>${searchList[i].market_cap_rank}
+                    </th>
 
-		    		<td class='name ' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-		    			${state.querySet[i].name}
-		    		</td> 
+                    <th class='rank image-logo remove-token-name'style='color:white; height:80px; text-align:center; vertical-align: middle;'>
+                        ${`<img src="${searchList[i].image}"`}  
+                    </th>
 
-		    		<td  style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-		    			${state.querySet[i].current_price}
-		    		</td> 
+                    <td class='name remove-token-name image-logo' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+                        ${searchList[i].name} 
+                    </td>" 
 
-		    		<td id='1h_container-${i}' class='name minus_boxes_red procent_box' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-		    			${state.querySet[i].price_change_percentage_1h_in_currency.toFixed(2)}%
-		    		</td> 
+                    <td class='mobile-image-logo-ticket-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'>
+                    	<img src="${searchList[i].image}"/>
+                        ${searchList[i].symbol} 
+                    </td>"
 
-		    		<td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-		    			${state.querySet[i].price_change_percentage_24h.toFixed(2) }
-		    		</td>
+                    <td id='price_box-${i}' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+                        $${searchList[i].current_price}
+                    </td>" 
 
-		    		<td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-		    			${state.querySet[i].price_change_percentage_7d_in_currency.toFixed(2) }
-		    		</td>
-	    		</tr>`
-        table.innerHTML += row
-    }
+                     <td id='1h_container-${i}' class='name minus_boxes_red procent_box remove-token-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+                        ${searchList[i].price_change_percentage_1h_in_currency.toFixed(2)}%
+                    </td>" 
+
+                    <td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+                        ${searchList[i].price_change_percentage_24h.toFixed(2) }%
+                    </td>
+
+                    <td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+                        ${searchList[i].price_change_percentage_7d_in_currency.toFixed(2) }%
+                    </td>
+
+                    <td class='name remove-token-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+                        $${searchList[i].total_volume.toLocaleString() }
+                    </td>
+
+                    <td class='name ' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+                        $${searchList[i].market_cap.toLocaleString() }
+                    </td>
+                   
+                   <td class='name' id="sparkline-graph-${i}" style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+                       sparkline...${searchList[i].name}
+                    </td>
+                </tr>`
+            table.append(item)
+            $("#sparkline-graph-"+ i).sparkline(searchList[i].sparkline_in_7d.price, {
+			    type: 'line',
+			    width: '135',
+			    height: '50',
+			    lineColor: '#ff00ff',
+			    fillColor:'#21212E',
+			});
+        }
+    setColorOnNumbers();
 }
 
 
@@ -557,25 +440,15 @@ $('#search-token-input').on('keyup', function(e){
 	for (var i = 0; i < state.querySet.length; i++){
 		// search input values to lowercase
 		searchValue = searchInputValue.toLowerCase()
-		console.log('searchValue...', searchValue)
 		//Each list item value to lowercase
 		var name = state.querySet[i].name.toLowerCase()
 		var ticket_symbol = state.querySet[i].symbol.toLowerCase()
-		console.log('name ', name)
 		if(name.includes(searchValue) || ticket_symbol.includes(searchValue)){
-			console.log('it includes.. ', state.querySet[i])
 			searchList.push(state.querySet[i]);
-			console.log('nooo pushed.. ', searchList)
 		}
-		
-		//buildTable()
-		console.log('pushed.. ', searchList)
-
-		
-
 	}
-
-
+	buildSearchTable(searchList)
+	console.log('pushed.. ', searchList)
 
 })
 

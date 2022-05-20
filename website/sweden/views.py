@@ -4,29 +4,22 @@ from sweden.models import Token, Article
 from django.core.paginator import Paginator
 
 def crypto_list(request):
-	# latest_news = Article.objects.all().order_by('-created_at')[:4]
-	crypto_exchanges = Article.objects.all().filter(category='CEX').order_by('-created_at')[:4]
+	article_container = Article.objects.all().order_by('-created_at')[:3]
 	context = {
-		# 'latest_news':latest_news,
-		# 'news':news,
-		'crypto_exchanges':crypto_exchanges,
+		'article_container' : article_container
 	}
 	return render(request, 'statichtml/Crypto-list/crypto-list.html', context)
 
 
 def articles(request):
 	# latest_news = Article.objects.all().order_by('-created_at')[:4]
-
 	# Set up Pagination
 	paginator = Paginator(Article.objects.all().order_by('-created_at'), 4)
-
 	# Get page number
 	page = request.GET.get('sida')
 	# Track page number ?page=2
 	news = paginator.get_page(page)
 	# nums = "a" * news.paginator.num_pages
-
-
 	crypto_exchanges = Article.objects.all().filter(category='CEX').order_by('-created_at')[:4]
 	context = {
 		# 'latest_news':latest_news,
