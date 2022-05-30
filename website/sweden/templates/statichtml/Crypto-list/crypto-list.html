@@ -31,8 +31,10 @@
 		background-color: #21212E !important;
 		
 	}
-	#table-body{
-		height:1500px;
+	.container-token{
+		width:1200px;
+		
+		margin:0 auto 0 auto;
 	}
 	.crypto-item{
 		border-bottom:1px solid lightgray;
@@ -66,13 +68,12 @@
 			max-width:30px;
 		}
     }
-
-	.container-token{
-		max-width:1200px;
-		min-width:800px;
-		margin:0 auto 0 auto;
-		overflow-x:auto;
+    @media only screen and (max-width: 650px){
+        .container-token{
+			width:100%;
+		}
 	}
+	
 
 </style>
 <div class="container-token mt-3" style="overflow-x:auto">
@@ -304,40 +305,31 @@
 	                `<tr id="${i}-row" class="Token-Detail-Row"> 
 	                    <th class='rank 'style='color:white; height:80px; text-align:center; vertical-align: middle;'>${token_list[i].market_cap_rank}
 	                    </th>
-
 	                    <th class='rank image-logo remove-token-name'style='color:white; height:80px; text-align:center; vertical-align: middle;'>
 	                        ${`<img src="${token_list[i].image}"`}  
 	                    </th>
-
 	                    <td class='name remove-token-name image-logo' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
 	                        ${token_list[i].name} 
 	                    </td>" 
-
 	                    <td class='mobile-image-logo-ticket-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'>
 	                    	<img src="${token_list[i].image}"/>
 	                        ${token_list[i].symbol} 
 	                    </td>"
-
 	                    <td id='price_box-${i}' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
 	                        $${token_list[i].current_price}
 	                    </td>" 
-
 	                     <td id='1h_container-${i}' class='name minus_boxes_red procent_box remove-token-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
 	                        ${token_list[i].price_change_percentage_1h_in_currency.toFixed(2)}%
 	                    </td>" 
-
 	                    <td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
 	                        ${token_list[i].price_change_percentage_24h.toFixed(2) }%
 	                    </td>
-
 	                    <td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
 	                        ${token_list[i].price_change_percentage_7d_in_currency.toFixed(2) }%
 	                    </td>
-
 	                    <td class='name remove-token-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
 	                        $${token_list[i].total_volume.toLocaleString() }
 	                    </td>
-
 	                    <td class='name ' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
 	                        $${token_list[i].market_cap.toLocaleString() }
 	                    </td>
@@ -377,40 +369,31 @@ const buildSearchTable = (searchList) =>{
                 `<tr id="${i}-row" class="Token-Detail-Row"> 
                     <th class='rank 'style='color:white; height:80px; text-align:center; vertical-align: middle;'>${searchList[i].market_cap_rank}
                     </th>
-
                     <th class='rank image-logo remove-token-name'style='color:white; height:80px; text-align:center; vertical-align: middle;'>
                         ${`<img src="${searchList[i].image}"`}  
                     </th>
-
                     <td class='name remove-token-name image-logo' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
                         ${searchList[i].name} 
                     </td>" 
-
                     <td class='mobile-image-logo-ticket-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'>
                     	<img src="${searchList[i].image}"/>
                         ${searchList[i].symbol} 
                     </td>"
-
                     <td id='price_box-${i}' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
                         $${searchList[i].current_price}
                     </td>" 
-
                      <td id='1h_container-${i}' class='name minus_boxes_red procent_box remove-token-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
                         ${searchList[i].price_change_percentage_1h_in_currency.toFixed(2)}%
                     </td>" 
-
                     <td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
                         ${searchList[i].price_change_percentage_24h.toFixed(2) }%
                     </td>
-
                     <td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
                         ${searchList[i].price_change_percentage_7d_in_currency.toFixed(2) }%
                     </td>
-
                     <td class='name remove-token-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
                         $${searchList[i].total_volume.toLocaleString() }
                     </td>
-
                     <td class='name ' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
                         $${searchList[i].market_cap.toLocaleString() }
                     </td>
@@ -484,4 +467,3 @@ $('#search-token-input').on('keyup', function(e){
 
 </style>
 {% endblock %}
-
