@@ -76,15 +76,16 @@
 	
 
 </style>
-<div class="container-token mt-3" style="overflow-x:auto">
 
-    <div class="container d-flex text-white m-2">
+<div class="container mx-auto d-flex justify-content-between text-white ">
+	<div class="d-flex">
     	<input id="search-token-input" type="text" placeholder="Sök" />
     	<div id="search-token-close-button" class="m-2" style="cursor:pointer;" onclick="buildTable()">
     		❌
     	</div>
     </div>
-
+</div>
+<div class="container-token mt-3" style="overflow-x:auto">
     <table class="table table-dark" id="our-table">
 		<thead>
 			<tr style="text-align:center;">
@@ -105,9 +106,22 @@
         </tbody>
     </table>
 </div>
+<div class="text-white text-right container">
+	<small> Powered by </small> 
+	<img src="https://static.coingecko.com/s/coingecko-logo-white-99d39c22910707ffddb7aa7090753ca2089eb1813440286da14927a723b2d2d6.png" 
+	style="width:85px;" 
+	/>
+</div>
 <div class="container mt-5 d-flex justify-content-center">
 	<div id="pagination-wrapper"></div>
 </div>
+<div class="text-white container text-center mt-5"> 
+    <small class="m-1">Rädsla och girighet index Bitcoin </small>
+	<small id="fear-bitcoin-index-value" class="m-1">
+	
+	</small>
+</div>
+
 
 <br><br><br>
 {% include 'components/articles/article_container.html' %}
@@ -174,6 +188,8 @@
 <!-- load in jquery script to use jquery imported also Sparkline -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
+<!-- Import Axio for Bitcoin Fear index -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script type="text/javascript">
 
 	// Check if a number box has a minus sign inside if so add red color if not add green.
@@ -208,42 +224,38 @@
 		changeColor();
 
 	}
-
 	// One Time Render
 	getCoinGeckoData();
 
-
-
-
-
-
 	const changeColor = () => {
-		console.log('changing Color... ')
-		for( let i = 0; i < state.querySet.length; i++){
-			if( state.old_data[i].current_price < state.querySet[i].current_price ){
-				try{
-					let price_box = document.getElementById(`price_box-${i}`).style.color = "#8dc647";
-				}catch{
+		console.log('Changing Color...')
+		try{
+			for( let i = 0; i < state.querySet.length; i++){
+				if( state.old_data[i].current_price < state.querySet[i].current_price ){
+					try{
+						let price_box = document.getElementById(`price_box-${i}`).style.color = "#8dc647";
+					}catch{
 
-				}
-			}else if(state.old_data[i].current_price <= state.querySet[i].current_price){
-				try{
-					let price_box = document.getElementById(`price_box-${i}`).style.color = "white";
-				}catch{
-					
-				}
-			}else{
-				try{
-					let price_box = document.getElementById(`price_box-${i}`).style.color = "#e15241";
-				}
-				catch{
-					
+					}
+				}else if(state.old_data[i].current_price <= state.querySet[i].current_price){
+					try{
+						let price_box = document.getElementById(`price_box-${i}`).style.color = "white";
+					}catch{
+						
+					}
+				}else{
+					try{
+						let price_box = document.getElementById(`price_box-${i}`).style.color = "#e15241";
+					}
+					catch{
+						
+					}
 				}
 			}
+		}catch{
+						
 		}
 	}
-
-
 	
 	function pagination(querySet, page, rows) {
 	    var trimStart = (page - 1) * rows
@@ -290,13 +302,16 @@
 	    })
 	}
 
-	function buildTable() {
+	function detailedViewOfToken(tokenName){
+		console.log('yeaaa ')
+	}
 
+	function buildTable() {
+		$('#search-token-input').val('');
 		$('#pagination-wrapper').css('display', 'block');
 		$('#search-token-close-button').css('display', 'none');
 	    var table = $('#crypto-table-body')
 	    table.empty();
-	    console.log('building table..')
 	    var data = pagination(state.querySet, state.page, state.rows)
 	    var token_list = data.querySet
 	    for(var i = 0; i < token_list.length; i++) {
@@ -308,7 +323,8 @@
 	                    <th class='rank image-logo remove-token-name'style='color:white; height:80px; text-align:center; vertical-align: middle;'>
 	                        ${`<img src="${token_list[i].image}"`}  
 	                    </th>
-	                    <td class='name remove-token-name image-logo' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+	                    <td 
+	                    	class='name remove-token-name image-logo' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
 	                        ${token_list[i].name} 
 	                    </td>" 
 	                    <td class='mobile-image-logo-ticket-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'>
@@ -360,7 +376,6 @@ timerId = setInterval("getCoinGeckoData();", updateInterval);
 const buildSearchTable = (searchList) =>{
 	$('#pagination-wrapper').css('display', 'none');
 	$('#search-token-close-button').css('display', 'block');
-	console.log('searchList ', searchList)
     var table = $('#crypto-table-body')
     //table.innerHTML = '';
     for(var i = 0; i < searchList.length; i++) {
@@ -416,7 +431,6 @@ const buildSearchTable = (searchList) =>{
 
 
 $('#search-token-input').on('keyup', function(e){
-	console.log('Typing...')
 	clearInterval(timerId)
     var table = $('#crypto-table-body')
     table.empty();
@@ -435,9 +449,35 @@ $('#search-token-input').on('keyup', function(e){
 		}
 	}
 	buildSearchTable(searchList)
-	console.log('pushed.. ', searchList)
-
+	if(searchInputValue === ''){
+		$('#search-token-close-button').css('display', 'none');
+		buildTable();
+	}
 })
+const options = {
+	  method: 'GET',
+	  url: 'https://fear-and-greed-index.p.rapidapi.com/v1/fgi',
+	  headers: {
+	    'X-RapidAPI-Host': 'fear-and-greed-index.p.rapidapi.com',
+	    'X-RapidAPI-Key': '65f7037976mshf1ae556eba5ee9cp10ffa4jsn9df882ad2171'
+	  }
+	};
+
+axios.request(options).then(function (response) {
+	console.log('response.data ', response.data)
+	$('#fear-bitcoin-index-value').html(`
+		<div> ${response.data.fgi.now.value} av 100 <span class="m-1 valueText-Bitcoin-index"> ${response.data.fgi.now.valueText}</span> </div>
+	`);
+	if(response.data.fgi.now.valueText == 'Fear' || response.data.fgi.now.valueText == 'Extreme Fear' ){
+		$(".valueText-Bitcoin-index").css('color', 'red');
+	}else{
+		$(".valueText-Bitcoin-index").css('color', 'green');
+	}
+
+}).catch(function (error) {
+	console.error(error);
+});
+
 
 
 </script>
