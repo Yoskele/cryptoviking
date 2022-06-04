@@ -19,4 +19,5 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('sweden.urls')),
     path('sitemap.xml', sitemap, {'sitemaps':sitemaps}),
+    path('api/', include('djangoApi.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

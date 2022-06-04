@@ -18,7 +18,7 @@ const getHistoricalPrice = async event => {
 		  // console.log(key, value);
 		  // Grab the price container 
 		  try{
-		  	document.querySelector(`#${key}-price-container`).innerText = `$${value.usd}`;
+		  	document.querySelector(`#${key}-price-container`).innerText = `$${value.usd.toFixed(2)}`;
 		  	// console.log('Done...')
 		  }catch(err){
 		  	// console.log(err, "error")

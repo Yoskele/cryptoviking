@@ -2,20 +2,20 @@
 {% load static from staticfiles %}
 {% block extra_htmt_head %}
 
-<title>Cryptovikings Krypto Lista </title>
-<meta name="description" content="Krypto Lista" />
+<title> Kryptovalutakurser och diagram i tydlig tabell | CryptoViking.se </title>
+<meta name="description" content="Håll ett öga på kryptovalutornas kursutveckling! Se kryptonas marknadsvärde, volym senaste dygnet och hur värdet har ändrats under 1h, ett dygn och en vecka!" />
 
 <meta property="og:url" content="https://www.cryptoviking.se/krypto-lista" />
-<meta property="og:title" content="Cryptovikings krypto lista" />
-<meta property="og:description" content="Kom och läs allt inom krypto.">
+<meta property="og:title" content="Kryptovalutakurser och diagram i tydlig tabell | CryptoViking.se" />
+<meta property="og:description" content="Håll ett öga på kryptovalutornas kursutveckling! Se kryptonas marknadsvärde, volym senaste dygnet och hur värdet har ändrats under 1h, ett dygn och en vecka!">
 
 <meta property="og:image" itemprop="image" content="{% static 'images/mascot/feature-logo-image.jpeg' %}">
 <link rel="canonical" href="" />
 <link rel="stylesheet" href="{% static 'styleFolder/components/static-pages/static-pages-base.css' %}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@CryptovikingSe">
-<meta name="twitter:title" content="">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Kryptovalutakurser och diagram i tydlig tabell | CryptoViking.se">
+<meta name="twitter:description" content="Håll ett öga på kryptovalutornas kursutveckling! Se kryptonas marknadsvärde, volym senaste dygnet och hur värdet har ändrats under 1h, ett dygn och en vecka!">
 
 <meta name="twitter:image" content="https://www.cryptoviking.se/static/images/mascot/cryptoviking-se.png">
 
@@ -302,9 +302,6 @@
 	    })
 	}
 
-	function detailedViewOfToken(tokenName){
-		console.log('yeaaa ')
-	}
 
 	function buildTable() {
 		$('#search-token-input').val('');
@@ -367,116 +364,116 @@
 	    setColorOnNumbers();
 	}
 
-var timerId;
-var updateInterval = 8000;
-timerId = setInterval("getCoinGeckoData();", updateInterval);
+	var timerId;
+	var updateInterval = 8000;
+	timerId = setInterval("getCoinGeckoData();", updateInterval);
 
 
 
-const buildSearchTable = (searchList) =>{
-	$('#pagination-wrapper').css('display', 'none');
-	$('#search-token-close-button').css('display', 'block');
-    var table = $('#crypto-table-body')
-    //table.innerHTML = '';
-    for(var i = 0; i < searchList.length; i++) {
-        /// Create an item row for each token in the list.
-        var item = 
-                `<tr id="${i}-row" class="Token-Detail-Row"> 
-                    <th class='rank 'style='color:white; height:80px; text-align:center; vertical-align: middle;'>${searchList[i].market_cap_rank}
-                    </th>
-                    <th class='rank image-logo remove-token-name'style='color:white; height:80px; text-align:center; vertical-align: middle;'>
-                        ${`<img src="${searchList[i].image}"`}  
-                    </th>
-                    <td class='name remove-token-name image-logo' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-                        ${searchList[i].name} 
-                    </td>" 
-                    <td class='mobile-image-logo-ticket-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'>
-                    	<img src="${searchList[i].image}"/>
-                        ${searchList[i].symbol} 
-                    </td>"
-                    <td id='price_box-${i}' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-                        $${searchList[i].current_price}
-                    </td>" 
-                     <td id='1h_container-${i}' class='name minus_boxes_red procent_box remove-token-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-                        ${searchList[i].price_change_percentage_1h_in_currency.toFixed(2)}%
-                    </td>" 
-                    <td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-                        ${searchList[i].price_change_percentage_24h.toFixed(2) }%
-                    </td>
-                    <td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-                        ${searchList[i].price_change_percentage_7d_in_currency.toFixed(2) }%
-                    </td>
-                    <td class='name remove-token-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-                        $${searchList[i].total_volume.toLocaleString() }
-                    </td>
-                    <td class='name ' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-                        $${searchList[i].market_cap.toLocaleString() }
-                    </td>
-                   
-                   <td class='name' id="sparkline-graph-${i}" style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
-                       sparkline...${searchList[i].name}
-                    </td>
-                </tr>`
-            table.append(item)
-            $("#sparkline-graph-"+ i).sparkline(searchList[i].sparkline_in_7d.price, {
-			    type: 'line',
-			    width: '135',
-			    height: '50',
-			    lineColor: '#ff00ff',
-			    fillColor:'#21212E',
-			});
-        }
-    setColorOnNumbers();
-}
+	const buildSearchTable = (searchList) =>{
+		$('#pagination-wrapper').css('display', 'none');
+		$('#search-token-close-button').css('display', 'block');
+	    var table = $('#crypto-table-body')
+	    //table.innerHTML = '';
+	    for(var i = 0; i < searchList.length; i++) {
+	        /// Create an item row for each token in the list.
+	        var item = 
+	                `<tr id="${i}-row" class="Token-Detail-Row"> 
+	                    <th class='rank 'style='color:white; height:80px; text-align:center; vertical-align: middle;'>${searchList[i].market_cap_rank}
+	                    </th>
+	                    <th class='rank image-logo remove-token-name'style='color:white; height:80px; text-align:center; vertical-align: middle;'>
+	                        ${`<img src="${searchList[i].image}"`}  
+	                    </th>
+	                    <td class='name remove-token-name image-logo' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+	                        ${searchList[i].name} 
+	                    </td>" 
+	                    <td class='mobile-image-logo-ticket-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'>
+	                    	<img src="${searchList[i].image}"/>
+	                        ${searchList[i].symbol} 
+	                    </td>"
+	                    <td id='price_box-${i}' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+	                        $${searchList[i].current_price}
+	                    </td>" 
+	                     <td id='1h_container-${i}' class='name minus_boxes_red procent_box remove-token-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+	                        ${searchList[i].price_change_percentage_1h_in_currency.toFixed(2)}%
+	                    </td>" 
+	                    <td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+	                        ${searchList[i].price_change_percentage_24h.toFixed(2) }%
+	                    </td>
+	                    <td class='name minus_boxes_red' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+	                        ${searchList[i].price_change_percentage_7d_in_currency.toFixed(2) }%
+	                    </td>
+	                    <td class='name remove-token-name' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+	                        $${searchList[i].total_volume.toLocaleString() }
+	                    </td>
+	                    <td class='name ' style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+	                        $${searchList[i].market_cap.toLocaleString() }
+	                    </td>
+	                   
+	                   <td class='name' id="sparkline-graph-${i}" style='height:80px; text-align:center; vertical-align: middle;color:white;'> 
+	                       sparkline...${searchList[i].name}
+	                    </td>
+	                </tr>`
+	            table.append(item)
+	            $("#sparkline-graph-"+ i).sparkline(searchList[i].sparkline_in_7d.price, {
+				    type: 'line',
+				    width: '135',
+				    height: '50',
+				    lineColor: '#ff00ff',
+				    fillColor:'#21212E',
+				});
+	        }
+	    setColorOnNumbers();
+	}
 
 
-$('#search-token-input').on('keyup', function(e){
-	clearInterval(timerId)
-    var table = $('#crypto-table-body')
-    table.empty();
-	//Clear current state so we can push the search values.
-	var searchInputValue = e.target.value
-	let searchList = [];
-	// Loop through the data comes from the Coingecko first API call.
-	for (var i = 0; i < state.querySet.length; i++){
-		// search input values to lowercase
-		searchValue = searchInputValue.toLowerCase()
-		//Each list item value to lowercase
-		var name = state.querySet[i].name.toLowerCase()
-		var ticket_symbol = state.querySet[i].symbol.toLowerCase()
-		if(name.includes(searchValue) || ticket_symbol.includes(searchValue)){
-			searchList.push(state.querySet[i]);
+	$('#search-token-input').on('keyup', function(e){
+		clearInterval(timerId)
+	    var table = $('#crypto-table-body')
+	    table.empty();
+		//Clear current state so we can push the search values.
+		var searchInputValue = e.target.value
+		let searchList = [];
+		// Loop through the data comes from the Coingecko first API call.
+		for (var i = 0; i < state.querySet.length; i++){
+			// search input values to lowercase
+			searchValue = searchInputValue.toLowerCase()
+			//Each list item value to lowercase
+			var name = state.querySet[i].name.toLowerCase()
+			var ticket_symbol = state.querySet[i].symbol.toLowerCase()
+			if(name.includes(searchValue) || ticket_symbol.includes(searchValue)){
+				searchList.push(state.querySet[i]);
+			}
 		}
-	}
-	buildSearchTable(searchList)
-	if(searchInputValue === ''){
-		$('#search-token-close-button').css('display', 'none');
-		buildTable();
-	}
-})
-const options = {
-	  method: 'GET',
-	  url: 'https://fear-and-greed-index.p.rapidapi.com/v1/fgi',
-	  headers: {
-	    'X-RapidAPI-Host': 'fear-and-greed-index.p.rapidapi.com',
-	    'X-RapidAPI-Key': '65f7037976mshf1ae556eba5ee9cp10ffa4jsn9df882ad2171'
-	  }
-	};
+		buildSearchTable(searchList)
+		if(searchInputValue === ''){
+			$('#search-token-close-button').css('display', 'none');
+			buildTable();
+		}
+	})
+	const options = {
+		  method: 'GET',
+		  url: 'https://fear-and-greed-index.p.rapidapi.com/v1/fgi',
+		  headers: {
+		    'X-RapidAPI-Host': 'fear-and-greed-index.p.rapidapi.com',
+		    'X-RapidAPI-Key': '65f7037976mshf1ae556eba5ee9cp10ffa4jsn9df882ad2171'
+		  }
+		};
 
-axios.request(options).then(function (response) {
-	console.log('response.data ', response.data)
-	$('#fear-bitcoin-index-value').html(`
-		<div> ${response.data.fgi.now.value} av 100 <span class="m-1 valueText-Bitcoin-index"> ${response.data.fgi.now.valueText}</span> </div>
-	`);
-	if(response.data.fgi.now.valueText == 'Fear' || response.data.fgi.now.valueText == 'Extreme Fear' ){
-		$(".valueText-Bitcoin-index").css('color', 'red');
-	}else{
-		$(".valueText-Bitcoin-index").css('color', 'green');
-	}
+	axios.request(options).then(function (response) {
+		console.log('response.data ', response.data)
+		$('#fear-bitcoin-index-value').html(`
+			<div> ${response.data.fgi.now.value} av 100 <span class="m-1 valueText-Bitcoin-index"> ${response.data.fgi.now.valueText}</span> </div>
+		`);
+		if(response.data.fgi.now.valueText == 'Fear' || response.data.fgi.now.valueText == 'Extreme Fear' ){
+			$(".valueText-Bitcoin-index").css('color', 'red');
+		}else{
+			$(".valueText-Bitcoin-index").css('color', 'green');
+		}
 
-}).catch(function (error) {
-	console.error(error);
-});
+	}).catch(function (error) {
+		console.error(error);
+	});
 
 
 

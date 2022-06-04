@@ -2,20 +2,20 @@
 {% load static from staticfiles %}
 {% block extra_htmt_head %}
 
-<title>Cryptovikings artikel avdelning</title>
-<meta name="description" content="Kom och läs allt inom krypto." />
+<title>Hetaste nyheterna från kryptovärlden | CryptoViking.se</title>
+<meta name="description" content="Ta del av de senaste nyheterna från den spännande kryptovärlden! Nyheter uppdateras med varje vecka så att du kan hålla dig á jour med den digitala världen." />
 
 <meta property="og:url" content="https://www.cryptoviking.se/artiklar" />
-<meta property="og:title" content="Cryptovikings artikel avdelning" />
-<meta property="og:description" content="Kom och läs allt inom krypto.">
+<meta property="og:title" content="Hetaste nyheterna från kryptovärlden | CryptoViking.se" />
+<meta property="og:description" content="Ta del av de senaste nyheterna från den spännande kryptovärlden! Nyheter uppdateras med varje vecka så att du kan hålla dig á jour med den digitala världen.">
 
 <meta property="og:image" itemprop="image" content="{% static 'images/mascot/feature-logo-image.jpeg' %}">
 <link rel="canonical" href="https://www.cryptoviking.se/artiklar" />
 <link rel="stylesheet" href="{% static 'styleFolder/components/static-pages/static-pages-base.css' %}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@CryptovikingSe">
-<meta name="twitter:title" content="Cryptovikings artikel avdelning">
-<meta name="twitter:description" content="Kom och läs allt inom krypto.">
+<meta name="twitter:title" content="Hetaste nyheterna från kryptovärlden | CryptoViking.se">
+<meta name="twitter:description" content="Ta del av de senaste nyheterna från den spännande kryptovärlden! Nyheter uppdateras med varje vecka så att du kan hålla dig á jour med den digitala världen.">
 
 <meta name="twitter:image" content="https://www.cryptoviking.se/static/images/mascot/cryptoviking-se.png">
 {% endblock %}
@@ -25,57 +25,63 @@
 	<div class="container-flex">
 		<div class="main-container">
 			<div class="container mt-3 pl-lg-5">
-				<!-- <div class="cover-image">
-					<img src="{% static 'images/cover-images/Krypto-Exchange.png' %}" alt="Krypto Exchange" class="rounded img-fluid" />
+				<div class="">
+					<h2 
+						class="orange-viking-title d-flex justify-content-between" 
+						style="border-bottom:1px solid lightgray; font-style:italic;"> 
+						Senaste nytt hos Cryptoviking 
+						<span 
+							onclick='searchArticle()'
+							style="cursor:pointer;"
+							class="align-right">
+							<small style="font-size:1.1rem;"> Sök </small>
+							<img 
+								src="{% static 'images/icons/search-icon.png' %}" 
+								alt="" 
+								style="width:30px;" 
+								class=" ml-3 mb-2 img-fluid" 
+							/>
+						</span>
+
+					</h2>
+					<div id="search-field-input"></div>
 				</div>
-				<div class="container mt-4">
-					<h1 style="color:#F69516;"> Cryptocurrency Exchange </h1>
-					<p class="pl-2">
-						
-					</p>
-				</div> -->
-			
-				<h2 
-					class="orange-viking-title" 
-					style="border-bottom:1px solid lightgray; font-style:italic;"> 
-					Senaste nytt hos Cryptoviking <span> <img src="{% static 'images/icons/viking-helmet-small.png' %}" alt="" style="width:50px;" class=" ml-3 mb-2 img-fluid" /></span>
-				</h2>
-				
-				{% for article in news %}
-				<a  
-					href="{{article.get_category_display}}/{{article.slug}}" 
-					style="text-decoration:none; border:1px solid gray;" 
-					class="d-flex mt-5 rounded article-container"
-				> 
-					<div class="d-flex flex-wrap">
-						<div class="d-flex flex-column justify-content-center mx-auto align-items-center">
-							{% if article.cover_image.url %}
-								<img 
-									class="rounded article-image" src="{{article.cover_image.url}}" 
-									style="width:100%; height:140px"
-								/>
-							{% endif %}
-						</div>
-						<div class="p-2 d-flex flex-column justify-content-between" 
-							style="width:300px; color:#dcdcdc;"
-						>
-							<div class="h-100 d-flex flex-column justify-content-center article-title">
-								<h4 
-									class="" 
-									style="font-size: 18px;">
-									{{article.title}}
-								</h4>
+				<div id="article-container">
+					{% for article in news %}
+					<a  
+						href="{{article.get_category_display}}/{{article.slug}}" 
+						style="text-decoration:none; border:1px solid gray;" 
+						class="d-flex mt-5 rounded article-container"
+					> 
+						<div class="d-flex flex-wrap">
+							<div class="d-flex flex-column justify-content-center mx-auto align-items-center">
+								{% if article.cover_image.url %}
+									<img 
+										class="rounded article-image" src="{{article.cover_image.url}}" 
+										style="width:100%; height:140px"
+									/>
+								{% endif %}
 							</div>
-							<hr class="m-0" />
-							<div class="m-0" style="text-align:right;">
-								<small class="m-0">{{article.created_at | date:"l d M Y H:i"}}</small>
+							<div class="p-2 d-flex flex-column justify-content-between" 
+								style="width:300px; color:#dcdcdc;"
+							>
+								<div class="h-100 d-flex flex-column justify-content-center article-title">
+									<h4 
+										class="" 
+										style="font-size: 18px;">
+										{{article.title}}
+									</h4>
+								</div>
+								<hr class="m-0" />
+								<div class="m-0" style="text-align:right;">
+									<small class="m-0">{{article.created_at | date:"l d M Y H:i"}}</small>
+								</div>
 							</div>
 						</div>
-					</div>
-				</a>
-				<br>
-				{% endfor %}
-				
+					</a>
+					<br>
+					{% endfor %}
+				</div>
 				<br>
 				<div class="container d-flex justify-content-center align-items-center">
 
@@ -359,5 +365,114 @@
 
 
 </style>
+
+
+
+<script type="text/javascript">
+	// Set state of the Search list.
+	var state = {
+		'searchList' : [],
+		'searchResult' : [],
+		'defaultList': [],
+	}
+
+
+
+	const getSearchList = async () => {
+		const searchResponse = await fetch(`/api/articles`)
+		state.searchList = await searchResponse.json();
+		state.defaultList = state.searchList.slice(0,5)
+		console.log('state.defaultList ', state.defaultList)
+	}
+
+
+	const buildArticleBox = () => {
+		for(var i = 0; i < state.searchResult.length; i++) {
+	        var article = 
+	            `
+					<a  
+						href="${state.searchResult[i].articleCatergoryApi}/${state.searchResult[i].slug}"
+						style="text-decoration:none; border:1px solid gray;" 
+						class="d-flex mt-5 rounded article-container"
+					> 
+						<div class="d-flex flex-wrap">
+							<div class="d-flex flex-column justify-content-center mx-auto align-items-center">
+						 		<img 
+						 		class="rounded article-image"
+						 		style="width:100%; height:140px"
+						 		src="${state.searchResult[i].cover_image}" 
+						 		/>
+							</div>
+							<div class="p-2 d-flex flex-column justify-content-between" 
+								style="width:300px; color:#dcdcdc;"
+							>
+								<div class="h-100 d-flex flex-column justify-content-center article-title">
+									<h4 
+										class="" 
+										style="font-size: 18px;">
+										${state.searchResult[i].title}
+									</h4>
+								</div>
+								<hr class="m-0" />
+								<div class="m-0" style="text-align:right;">
+									<small class="m-0"> ${state.searchResult[i].created_at.slice(0,10)} </small>
+								</div>
+							</div>
+						</div>
+					</a>
+					<br>
+				`
+		}
+		$('#article-container').append(article)
+	}
+
+	const setDefaultList = () => {
+		console.log('state.defaultList ', state.defaultList)
+		$('#article-container').css('display', 'none');
+		location.reload();
+	}
+
+
+	const searchArticle = () => {
+		// Fetch all the articles from Database Api
+		getSearchList();
+		// Create a Seach field input..
+		$('#search-field-input').html(`
+			<input 
+				id="search-article-input"
+				placeholder='Sök artikel' 
+				class='w-75' 
+			/>
+			<span onclick="setDefaultList()" style="cursor:pointer;"> ❌ </span>
+		`);
+		// Grab the Value from the search input.
+		$('#search-article-input').on('keyup', function(e){
+			$('#article-container').empty();
+			var searchInputValue =  e.target.value
+			for (var i = 0; i < state.searchList.length; i++){
+				// search input values to lowercase
+				searchValue = searchInputValue.toLowerCase()
+				//Each list item value to lowercase
+				var title = state.searchList[i].title.toLowerCase()
+				if(title.includes(searchValue)){
+					state.searchResult.push(state.searchList[i]);
+					// Build Article container and append it.
+					buildArticleBox()
+				}
+			}
+			
+			if(searchInputValue === ''){
+				$('#article-container').empty();
+			}
+		});
+
+	}
+
+
+
+</script>
+
+
+
 {% endblock %}
 
