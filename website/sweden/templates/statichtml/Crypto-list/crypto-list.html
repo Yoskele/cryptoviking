@@ -115,14 +115,63 @@
 <div class="container mt-5 d-flex justify-content-center">
 	<div id="pagination-wrapper"></div>
 </div>
+
+
+
+
 <div class="text-white container text-center mt-5"> 
     <small class="m-1">Rädsla och girighet index Bitcoin </small>
 	<small id="fear-bitcoin-index-value" class="m-1">
 	
 	</small>
 </div>
+<!-- 
+<div class="three-step-container-flex">
+			<div class="flex-child text-white">
+				<p> Hej </p>
+			</div>
 
+			<div class="flex-child d-flex flex-column justify-content-around m-sm-2">
+				<div
+					id="ufo-wrapper-box"
+					class="image-holder "
+					>
 
+					<img 
+						src="{% static 'images/crypto-exchanges/exchange-banner-space-ship.png' %}" alt="banner big" 
+						class="img-fluid" 
+						style="border-radius:10px;"
+					/>
+
+					<div class="ufo-alien">
+						<img 
+							src="{% static 'images/icons/moving-ufo.png' %}"
+							class="img-fluid" 
+							/>
+					</div>
+				</div>
+				<div class="image-footer mt-2">
+					<a href="https://crypto.com/app/kd26d8skzr" target="_blank" class="m-4 affiliate-crypto"> 
+						Crypto.com 
+					</a>
+					<a href="https://www.binance.com/en/register?ref=JTZNNQHD" target="_blank" 
+					class="affiliate-binance" 
+					style="text-decoration:none;" class="btn btn-secondary"> 
+						Binance.com 
+					</a>
+					<a href="https://ftx.com/profile#a=cryptoviking" target="_blank" 
+					class="affiliate-FTX m-4" 
+					style="text-decoration:none;" class="btn btn-secondary"> 
+						Ftx.com   
+					</a>
+				</div>
+				<label style="font-size:0.68rem; font-style:italic; color:#F47174;" class=" mt-2 ">
+					Handla inte mer än vad du har råd att förlora.
+				</label>
+			</div>
+		</div>
+
+ -->
 <br><br><br>
 {% include 'components/articles/article_container.html' %}
 <div class=" mt-5 text-center">
@@ -426,7 +475,6 @@
 	    setColorOnNumbers();
 	}
 
-
 	$('#search-token-input').on('keyup', function(e){
 		clearInterval(timerId)
 	    var table = $('#crypto-table-body')
@@ -475,8 +523,6 @@
 		console.error(error);
 	});
 
-
-
 </script>
 
 
@@ -503,4 +549,62 @@
 
 
 </style>
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+
+	#ufo-wrapper-box{
+		position:relative;
+		max-width:600px;
+		max-height:350px;
+		
+	}
+
+	.ufo-alien{
+ 		width:70px;
+		height:60px;
+		position:absolute; 
+	}
+					   	
+
+</style>
+
+<script>
+
+// //let's build the chutes 
+
+//cache a few static values
+var box = $('#ufo-wrapper-box');
+var width = box.width();
+var height = box.height();
+var ufo_alien = $('.ufo-alien');
+
+//our main animation "loop"
+
+ufo_alien.each(function foo() {
+
+    //generate random values
+    var top = (Math.random() * height) | 0;
+    var left = (Math.random() * width) | 0;
+    var time = Math.random() * (900 - 400) + 2000 | 0;
+
+    //animate
+    //we introduce a random value so that they aren't moving together
+    //after the animation, we call foo for the current element
+    //to animate the current element again
+    $(this).animate({
+        left: left,
+        top: top
+    }, time, foo);
+});
+</script>
+
 {% endblock %}

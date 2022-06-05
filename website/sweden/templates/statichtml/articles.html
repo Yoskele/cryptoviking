@@ -25,6 +25,7 @@
 	<div class="container-flex">
 		<div class="main-container">
 			<div class="container mt-3 pl-lg-5">
+
 				<div class="">
 					<h2 
 						class="orange-viking-title d-flex justify-content-between" 
@@ -45,6 +46,14 @@
 
 					</h2>
 					<div id="search-field-input"></div>
+
+				
+
+
+
+				</div>
+				<div id="search-result-article-container">
+
 				</div>
 				<div id="article-container">
 					{% for article in news %}
@@ -83,6 +92,9 @@
 					{% endfor %}
 				</div>
 				<br>
+
+
+
 				<div class="container d-flex justify-content-center align-items-center">
 
 					<!-- Navigation bar for Previous -->
@@ -373,7 +385,6 @@
 	var state = {
 		'searchList' : [],
 		'searchResult' : [],
-		'defaultList': [],
 	}
 
 
@@ -381,8 +392,125 @@
 	const getSearchList = async () => {
 		const searchResponse = await fetch(`/api/articles`)
 		state.searchList = await searchResponse.json();
-		state.defaultList = state.searchList.slice(0,5)
-		console.log('state.defaultList ', state.defaultList)
+	}
+
+	const buildArticleBox = () => {
+		for(var i = 0; i < state.searchResult.length; i++) {
+	        var article = 
+	            `
+					<a  
+						href="${state.searchResult[i].articleCatergoryApi}/${state.searchResult[i].slug}"
+						style="text-decoration:none; border:1px solid gray;" 
+						class="d-flex mt-5 rounded article-container"
+					> 
+						<div class="d-flex flex-wrap">
+							<div class="d-flex flex-column justify-content-center mx-auto align-items-center">
+						 		<img 
+						 		class="rounded article-image"
+						 		style="width:100%; height:140px"
+						 		src="${state.searchResult[i].cover_image}" 
+						 		/>
+							</div>
+							<div class="p-2 d-flex flex-column justify-content-between" 
+								style="width:300px; color:#dcdcdc;"
+							>
+								<div class="h-100 d-flex flex-column justify-content-center article-title">
+									<h4 
+										class="" 
+										style="font-size: 18px;">
+										${state.searchResult[i].title}
+									</h4>
+								</div>
+								<hr class="m-0" />
+								<div class="m-0" style="text-align:right;">
+									<small class="m-0"> ${state.searchResult[i].created_at.slice(0,10)} </small>
+								</div>
+							</div>
+						</div>
+					</a>
+					<br>
+				`
+		}
+
+		$('#search-result-article-container').append(article)
+	}
+
+
+	const clearSearchField = () => {
+		$('#search-result-article-container').css('display','none');
+		$('#article-container').css('display','block');
+		$('#search-field-input').css('display','none');
+	}
+
+	const searchArticle = () => {
+		$('#search-result-article-container').css('display','block');
+		// Fetch all the articles from Database Api
+		getSearchList();
+		// Create a Seach field input..
+		$('#search-field-input').html(`
+			<input 
+				id="search-article-input"
+				placeholder='Sök artikel' 
+				class='w-75' 
+			/>
+			<span onclick="clearSearchField()" style="cursor:pointer;"> ❌ </span>
+		`).css('display', 'block');
+		// Grab the Value from the search input.
+		$('#search-article-input').on('keyup', function(e){
+			$('#search-result-article-container').empty();
+			$('#article-container').css('display','none')
+			var searchInputValue =  e.target.value
+			for (var i = 0; i < state.searchList.length; i++){
+				// search input values to lowercase
+				searchValue = searchInputValue.toLowerCase()
+				//Each list item value to lowercase
+				var title = state.searchList[i].title.toLowerCase()
+				if(title.includes(searchValue)){
+					state.searchResult.push(state.searchList[i]);
+					// Build Article container and append it.
+					buildArticleBox()
+				}
+			}
+			if(searchInputValue === ''){
+				console.log('empty Value...')
+				// $('#article-container').css('display', 'block');
+				$('#search-result-article-container').empty()
+
+			}
+		});
+
+	}
+
+
+
+</script>
+
+
+
+{% endblock %}
+
+
+<!-- 	const clearSearchField = () => {
+		console.log('Clearing...')
+		$('#article-container').css('display', 'block');
+		$('#search-result-container').empty();
+		$('.hidden-element').css('display','')
+
+	} -->
+
+
+<!-- <script type="text/javascript">
+	// Set state of the Search list.
+	var state = {
+		'searchList' : [],
+		'searchResult' : [],
+	}
+
+
+
+	const getSearchList = async () => {
+		const searchResponse = await fetch(`/api/articles`)
+		state.searchList = await searchResponse.json();
 	}
 
 
@@ -426,11 +554,7 @@
 		$('#article-container').append(article)
 	}
 
-	const setDefaultList = () => {
-		console.log('state.defaultList ', state.defaultList)
-		$('#article-container').css('display', 'none');
-		location.reload();
-	}
+
 
 
 	const searchArticle = () => {
@@ -460,9 +584,10 @@
 					buildArticleBox()
 				}
 			}
-			
 			if(searchInputValue === ''){
-				$('#article-container').empty();
+				console.log('empty Value...')
+				$('#article-container').css('display', 'block');
+				
 			}
 		});
 
@@ -471,8 +596,4 @@
 
 
 </script>
-
-
-
-{% endblock %}
-
+ -->
