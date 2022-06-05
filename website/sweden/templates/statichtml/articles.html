@@ -437,9 +437,10 @@
 
 
 	const clearSearchField = () => {
-		$('#search-result-article-container').css('display','none');
 		$('#article-container').css('display','block');
 		$('#search-field-input').css('display','none');
+		$('#search-result-article-container').empty();
+
 	}
 
 	const searchArticle = () => {
