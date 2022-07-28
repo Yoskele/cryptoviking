@@ -27,27 +27,27 @@
 			<div class="container mt-3 pl-lg-5">
 
 				<div class="">
-					<h2 
-						class="orange-viking-title d-flex justify-content-between" 
-						style="border-bottom:1px solid lightgray; font-style:italic;"> 
-						Senaste nytt hos Cryptoviking 
-						<span 
+					<h2
+						class="orange-viking-title d-flex justify-content-between"
+						style="border-bottom:1px solid lightgray; font-style:italic;">
+						Senaste nytt hos Cryptoviking
+						<span
 							onclick='searchArticle()'
 							style="cursor:pointer;"
 							class="align-right">
 							<small style="font-size:1.1rem;"> Sök </small>
-							<img 
-								src="{% static 'images/icons/search-icon.png' %}" 
-								alt="" 
-								style="width:30px;" 
-								class=" ml-3 mb-2 img-fluid" 
+							<img
+								src="{% static 'images/icons/search-icon.png' %}"
+								alt=""
+								style="width:30px;"
+								class=" ml-3 mb-2 img-fluid"
 							/>
 						</span>
 
 					</h2>
 					<div id="search-field-input"></div>
 
-				
+
 
 
 
@@ -57,26 +57,26 @@
 				</div>
 				<div id="article-container">
 					{% for article in news %}
-					<a  
-						href="{{article.get_category_display}}/{{article.slug}}" 
-						style="text-decoration:none; border:1px solid gray;" 
+					<a
+						href="{{article.get_category_display}}/{{article.slug}}"
+						style="text-decoration:none; border:1px solid gray;"
 						class="d-flex mt-5 rounded article-container"
-					> 
+					>
 						<div class="d-flex flex-wrap">
 							<div class="d-flex flex-column justify-content-center mx-auto align-items-center">
 								{% if article.cover_image.url %}
-									<img 
-										class="rounded article-image" src="{{article.cover_image.url}}" 
+									<img
+										class="rounded article-image" src="{{article.cover_image.url}}"
 										style="width:100%; height:140px"
 									/>
 								{% endif %}
 							</div>
-							<div class="p-2 d-flex flex-column justify-content-between" 
+							<div class="p-2 d-flex flex-column justify-content-between"
 								style="width:300px; color:#dcdcdc;"
 							>
 								<div class="h-100 d-flex flex-column justify-content-center article-title">
-									<h4 
-										class="" 
+									<h4
+										class=""
 										style="font-size: 18px;">
 										{{article.title}}
 									</h4>
@@ -99,30 +99,30 @@
 
 					<!-- Navigation bar for Previous -->
 					{% if news.has_previous %}
-						<!-- <a href="?sida=1" 
+						<!-- <a href="?sida=1"
 							style="font-size:1.2rem; color:gray;"
-							class=""> 
-							<< 
+							class="">
+							<<
 						</a> -->
 						<a href="?sida={{ news.previous_page_number }}"
 							style="font-size:1.6rem; color:#F69516;"
-							class="m-1"> 
-							<- 
+							class="m-1">
+							<-
 						</a>
 					{% endif %}
 
 
 					<!-- Get the numbers for the list -->
 					{% for num in news.paginator.page_range %}
-						
+
 						<!-- Highlight the current number -->
 						{% if news.number == num %}
 							<strong style="font-size:1.4rem; color:#dcdcdc;" class="m-1"> {{ num }} </strong>
 						{% elif num > news.number|add:'-3' and num < news.number|add:'3' %}
 							<a href="?sida={{ forloop.counter }}"
 								style="font-size:1.2rem"
-								class="m-1"> 
-							{{ num }} 
+								class="m-1">
+							{{ num }}
 						</a>
 						{% endif %}
 					{% endfor%}
@@ -132,10 +132,10 @@
 					{% if news.has_next %}
 						<a href="?sida={{ news.next_page_number }}"
 							style="font-size:1.6rem; color:#F69516;"
-							class="m-1"> 
-							-> 
+							class="m-1">
+							->
 						</a>
-						
+
 					{% endif %}
 
 				</div>
@@ -155,13 +155,13 @@
 				<a href="/non-fungible-token"
 					class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function"
 					style="width:250px; height:180px;border-radius:20px; color:white;">
-					
+
 					<div
 						style="width:100%; height:100%; border-radius:20px 20px 0 0;"
 						class="d-flex flex-column justify-content-center align-items-center"
 					>
 						<img  src="{% static 'images/NFT/NftBase.png' %}"
-							class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" 
+							class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;"
 						>
 					</div>
 					<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
@@ -171,7 +171,7 @@
 				<a href="/metamask-guide"
 					class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function"
 					style="width:250px; height:180px;border-radius:20px; color:white;">
-					
+
 					<div
 						style="width:100%; height:100%; border-radius:20px 20px 0 0;"
 						class="d-flex flex-column justify-content-center align-items-center"
@@ -181,14 +181,14 @@
 					</div>
 
 					<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
-						Läs om MetaMask
+						Läs om MetaMask 
 					</div>
 				</a>
-				<a href="/tjana-krypto" 
+				<a href="/tjana-krypto"
 					class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function"
 					style="width:250px; height:180px;border-radius:20px; color:white;"
 				>
-			
+
 					<div
 						style="width:100%; height:100%; border-radius:20px 20px 0 0;"
 						class="d-flex flex-column justify-content-center align-items-center"
@@ -207,17 +207,17 @@
 			</div>
 			<div class="d-flex flex-wrap container justify-content-around mb-5">
 				<a href="/handla/bitcoin"
-					class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function position-relative" 
+					class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function position-relative"
 					style="width:250px; height:180px;border-radius:20px; color:white;"
 				>
-					<div 
-						class="position-absolute d-flex flex-column align-items-center" 
-						style="position: absolute; top: 50%; left: 50%; 
+					<div
+						class="position-absolute d-flex flex-column align-items-center"
+						style="position: absolute; top: 50%; left: 50%;
 						transform: translate(-50%, -50%);"
 					>
 						<img src="{% static 'images/tokens/btc-token.png' %}" alt="Bitcoin logo" />
 						<span class="d-flex" style="font-size:0.95rem; font-style:italic; color:#dcdcdc;">
-							<p id="bitcoin-price-container"> </p> 
+							<p id="bitcoin-price-container"> </p>
 						</span>
 					</div>
 
@@ -226,7 +226,7 @@
 						class="d-flex flex-column justify-content-center align-items-center"
 					>
 						<img  src="{% static 'images/tokens/wallet-icons/mini-wall-token.png' %}"
-							class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" 
+							class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;"
 						>
 					</div>
 					<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
@@ -234,17 +234,17 @@
 					</div>
 				</a>
 				<a href="/handla/ethereum"
-					class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function position-relative" 
+					class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function position-relative"
 					style="width:250px; height:180px;border-radius:20px; color:white;"
 				>
-					<div 
-						class="position-absolute d-flex flex-column align-items-center" 
-						style="position: absolute; top: 50%; left: 50%; 
+					<div
+						class="position-absolute d-flex flex-column align-items-center"
+						style="position: absolute; top: 50%; left: 50%;
 						transform: translate(-50%, -50%);"
 					>
 						<img src="{% static 'images/tokens/eth.png' %}" alt="Bitcoin logo" />
 						<span class="d-flex" style="font-size:0.95rem; font-style:italic; color:#dcdcdc;">
-							<p id="ethereum-price-container"> </p> 
+							<p id="ethereum-price-container"> </p>
 						</span>
 					</div>
 
@@ -253,7 +253,7 @@
 						class="d-flex flex-column justify-content-center align-items-center"
 					>
 						<img  src="{% static 'images/tokens/wallet-icons/mini-wall-token.png' %}"
-							class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" 
+							class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;"
 						>
 					</div>
 					<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
@@ -261,17 +261,17 @@
 					</div>
 				</a>
 				<a href="/handla/cardano"
-					class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function position-relative" 
+					class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function position-relative"
 					style="width:250px; height:180px;border-radius:20px; color:white;"
 				>
-					<div 
-						class="position-absolute d-flex flex-column align-items-center" 
-						style="position: absolute; top: 50%; left: 50%; 
+					<div
+						class="position-absolute d-flex flex-column align-items-center"
+						style="position: absolute; top: 50%; left: 50%;
 						transform: translate(-50%, -50%);"
 					>
 						<img src="{% static 'images/tokens/cardano.png' %}" alt="Bitcoin logo" />
 						<span class="d-flex" style="font-size:0.95rem; font-style:italic; color:#dcdcdc;">
-							<p id="cardano-price-container"> </p> 
+							<p id="cardano-price-container"> </p>
 						</span>
 					</div>
 
@@ -280,7 +280,7 @@
 						class="d-flex flex-column justify-content-center align-items-center"
 					>
 						<img  src="{% static 'images/tokens/wallet-icons/mini-wall-token.png' %}"
-							class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" 
+							class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;"
 						>
 					</div>
 					<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
@@ -308,8 +308,8 @@
 							class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
 					</div>
 
-					<div 
-						class="p-1 text-center w-100 d-flex flex-column align-items-center" 
+					<div
+						class="p-1 text-center w-100 d-flex flex-column align-items-center"
 						style="
 						min-height:50px;
 						border-radius:0px 0 20px 20px; background:#85BB65;  font-style:italic; font-size:0.9rem;"
@@ -318,8 +318,8 @@
 					</div>
 				</a>
 				{% for cryptoExchange in crypto_exchanges %}
-					<a href="/{{cryptoExchange.get_category_display}}/{{cryptoExchange.slug}}" 
-					class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function"
+					<a href="/{{cryptoExchange.get_category_display}}/{{cryptoExchange.slug}}"
+					class="m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function"
 					style="width:250px; height:180px;border-radius:20px; color:white;"
 					>
 						<div
@@ -330,8 +330,8 @@
 								class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" >
 						</div>
 
-						<div 
-							class="p-1 text-center w-100 d-flex flex-column align-items-center" 
+						<div
+							class="p-1 text-center w-100 d-flex flex-column align-items-center"
 							style="
 							min-height:50px;
 							border-radius:0px 0 20px 20px; background:#85BB65;  font-style:italic; font-size:0.9rem;"
@@ -396,27 +396,27 @@
 
 	const buildArticleBox = () => {
 		for(var i = 0; i < state.searchResult.length; i++) {
-	        var article = 
+	        var article =
 	            `
-					<a  
+					<a
 						href="${state.searchResult[i].articleCatergoryApi}/${state.searchResult[i].slug}"
-						style="text-decoration:none; border:1px solid gray;" 
+						style="text-decoration:none; border:1px solid gray;"
 						class="d-flex mt-5 rounded article-container"
-					> 
+					>
 						<div class="d-flex flex-wrap">
 							<div class="d-flex flex-column justify-content-center mx-auto align-items-center">
-						 		<img 
+						 		<img
 						 		class="rounded article-image"
 						 		style="width:100%; height:140px"
-						 		src="${state.searchResult[i].cover_image}" 
+						 		src="${state.searchResult[i].cover_image}"
 						 		/>
 							</div>
-							<div class="p-2 d-flex flex-column justify-content-between" 
+							<div class="p-2 d-flex flex-column justify-content-between"
 								style="width:300px; color:#dcdcdc;"
 							>
 								<div class="h-100 d-flex flex-column justify-content-center article-title">
-									<h4 
-										class="" 
+									<h4
+										class=""
 										style="font-size: 18px;">
 										${state.searchResult[i].title}
 									</h4>
@@ -449,10 +449,10 @@
 		getSearchList();
 		// Create a Seach field input..
 		$('#search-field-input').html(`
-			<input 
+			<input
 				id="search-article-input"
-				placeholder='Sök artikel' 
-				class='w-75' 
+				placeholder='Sök artikel'
+				class='w-75'
 			/>
 			<span onclick="clearSearchField()" style="cursor:pointer;"> ❌ </span>
 		`).css('display', 'block');
@@ -517,27 +517,27 @@
 
 	const buildArticleBox = () => {
 		for(var i = 0; i < state.searchResult.length; i++) {
-	        var article = 
+	        var article =
 	            `
-					<a  
+					<a
 						href="${state.searchResult[i].articleCatergoryApi}/${state.searchResult[i].slug}"
-						style="text-decoration:none; border:1px solid gray;" 
+						style="text-decoration:none; border:1px solid gray;"
 						class="d-flex mt-5 rounded article-container"
-					> 
+					>
 						<div class="d-flex flex-wrap">
 							<div class="d-flex flex-column justify-content-center mx-auto align-items-center">
-						 		<img 
+						 		<img
 						 		class="rounded article-image"
 						 		style="width:100%; height:140px"
-						 		src="${state.searchResult[i].cover_image}" 
+						 		src="${state.searchResult[i].cover_image}"
 						 		/>
 							</div>
-							<div class="p-2 d-flex flex-column justify-content-between" 
+							<div class="p-2 d-flex flex-column justify-content-between"
 								style="width:300px; color:#dcdcdc;"
 							>
 								<div class="h-100 d-flex flex-column justify-content-center article-title">
-									<h4 
-										class="" 
+									<h4
+										class=""
 										style="font-size: 18px;">
 										${state.searchResult[i].title}
 									</h4>
@@ -563,10 +563,10 @@
 		getSearchList();
 		// Create a Seach field input..
 		$('#search-field-input').html(`
-			<input 
+			<input
 				id="search-article-input"
-				placeholder='Sök artikel' 
-				class='w-75' 
+				placeholder='Sök artikel'
+				class='w-75'
 			/>
 			<span onclick="setDefaultList()" style="cursor:pointer;"> ❌ </span>
 		`);
@@ -588,7 +588,7 @@
 			if(searchInputValue === ''){
 				console.log('empty Value...')
 				$('#article-container').css('display', 'block');
-				
+
 			}
 		});
 

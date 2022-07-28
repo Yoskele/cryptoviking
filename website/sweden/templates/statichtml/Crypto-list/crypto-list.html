@@ -76,7 +76,9 @@
 	
 
 </style>
-
+<div class="container mt-5 mb-5 d-flex justify-content-center">
+	<h1 style="margin:auto"> Kryptovalutakurser i realtid </h1>
+</div>
 <div class="container mx-auto d-flex justify-content-between text-white ">
 	<div class="d-flex">
     	<input id="search-token-input" type="text" placeholder="Sök" />
@@ -228,7 +230,63 @@
 		</label>
 	</div>
 
+	<div class="d-flex flex-wrap container justify-content-around mt-5">
 
+		<a href="/handla/bitcoin"
+			class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function position-relative" 
+			style="width:250px; height:180px;border-radius:20px; color:white;"
+		>
+			<div 
+				class="position-absolute d-flex flex-column align-items-center" 
+				style="position: absolute; top: 50%; left: 50%; 
+				transform: translate(-50%, -50%);"
+			>
+				<img src="{% static 'images/tokens/btc-token.png' %}" alt="Bitcoin logo" />
+				<span class="d-flex" style="font-size:0.95rem; font-style:italic; color:#dcdcdc;">
+					<p id="bitcoin-price-container"> </p> 
+				</span>
+			</div>
+	
+			<div
+				style="width:100%; height:100%; border-radius:20px 20px 0 0;"
+				class="d-flex flex-column justify-content-center align-items-center"
+			>
+				<img  src="{% static 'images/tokens/wallet-icons/mini-wall-token.png' %}"
+					class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" 
+				>
+			</div>
+			<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
+				Mer om Bitcoin
+			</div>
+		</a>
+		<a href="/handla/cardano"
+			class=" m-lg-2 m-4  d-flex flex-column align-items-center justify-content-between hover-function position-relative" 
+			style="width:250px; height:180px;border-radius:20px; color:white;"
+		>
+			<div 
+				class="position-absolute d-flex flex-column align-items-center" 
+				style="position: absolute; top: 50%; left: 50%; 
+				transform: translate(-50%, -50%);"
+			>
+				<img src="{% static 'images/tokens/cardano.png' %}" alt="ethereum logo" />
+				<span class="d-flex" style="font-size:0.95rem; font-style:italic; color:#dcdcdc;">
+					<p id="cardano-price-container"> </p> 
+				</span>
+			</div>
+	
+			<div
+				style="width:100%; height:100%; border-radius:20px 20px 0 0;"
+				class="d-flex flex-column justify-content-center align-items-center"
+			>
+				<img  src="{% static 'images/tokens/wallet-icons/mini-wall-token.png' %}"
+					class=" img-fluid" style="height:150px; width:100%; border-radius:15px 15px 0px 0px;" 
+				>
+			</div>
+			<div class=" w-100 text-center p-1" style="border-radius:0px 0 20px 20px; background:#85BB65; font-style:italic;">
+				Mer om Cardano
+			</div>
+		</a>
+	</div>
 <div class="curved mt-3">
 	<svg viewBox="0 0 1440 319">
 		<path fill="rgb(85, 85, 85, 0.8)" fill-opacity="1" d="M0,32L48,80C96,128,192,224,288,224C384,224,480,128,576,90.7C672,53,768,75,864,96C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
