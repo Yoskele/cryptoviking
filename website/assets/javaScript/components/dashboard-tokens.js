@@ -10,12 +10,12 @@ var intervalId = window.setInterval(function(){
 
 
 const getHistoricalPrice = async event => {
-	let string = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ccardano%2Cripple%2Cpolkadot&vs_currencies=usd&include_market_cap=false&include_24hr_vol=false&include_24hr_change=false&include_last_updated_at=false";
+	let string = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cripple%2Ccardano%2Cpolkadot%2Cthe-sandbox%2Csolana%2Cdogecoin&vs_currencies=usd";
 	await fetch(string)
 	.then(res => res.json())
 	.then((data) => {
 		for (const [key, value] of Object.entries(data)) {
-		  // console.log(key, value);
+		  console.log(key, value);
 		  // Grab the price container 
 		  try{
 		  	document.querySelector(`#${key}-price-container`).innerText = `$${value.usd.toFixed(2)}`;
