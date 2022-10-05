@@ -32,8 +32,15 @@ def articles(request):
 
 def index(request):
 	latest_news = Article.objects.all().order_by('-created_at')[:3]
+	newsOne = Article.objects.order_by('-created_at')[0]
+	newsSecond = Article.objects.order_by('-created_at')[1]
+	newsThird = Article.objects.order_by('-created_at')[2]
 	context = {
 		'latest_news':latest_news,
+		'newsOne':newsOne,
+		'newsSecond':newsSecond,
+		'newsThird':newsThird,
+
 	}
 	return render(request, 'index.html', context)
 
@@ -111,7 +118,6 @@ def token(request, slug):
 def article(request, slug):
 	article = Article.objects.get(slug=slug)
 	template = ''
-	print('article.category ' + article.category)
 	if(article.category == 'CEX'):
 		template = 'generichtml/crypto-exchange-detail.html'
 	elif(article.category == 'B'):

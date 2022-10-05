@@ -11,6 +11,8 @@
 	class="d-flex flex-wrap container justify-content-around p-3" 
 	id="latest_articles_container"
 >
+
+
 	{% for latest_new in latest_news %}
 		<a 
 			href="{{latest_new.get_category_display}}/{{latest_new.slug}}" 

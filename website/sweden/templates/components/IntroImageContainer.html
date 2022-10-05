@@ -2,14 +2,6 @@
 <link rel="stylesheet" href="{% static 'styleFolder/components/introImageContainer.css' %}">
 
 
-
-
-
-
-
-
-
-
 <div class="ImageWrapper mx-auto d-flex flex-wrap-reverse   justify-content-center" >
 	<div class="sideContainerintro">
 		<a href="/non-fungible-token"
@@ -48,14 +40,24 @@
 		</a>
 	</div>
 	<div class="d-flex flex-column aling-center twoImageContainer " style="">
-		<a class="widthImageWrapper first " href="/Kryptovaluta">
-			<img  src="{% static 'images/cover-images/kryptovaluta.png' %}"
-			class="rounded">
-			<div class="image-title-width-container" style="color:whitesmoke; font-style:italic; ">
-				<h6> Vad är Kryptovaluta? </h6>
+		<!-- Slide Box -->
+		<div class="widthImageWrapper first">
+			<a class="slider-img" href="{{newsOne.get_category_display}}/{{newsOne.slug}}">
+				{% if newsOne.cover_image %}
+					<img  src="{{newsOne.cover_image.url}}">
+				{% endif %}
+				<div class="" style="color:whitesmoke; font-style:italic; ">
+					<h6>{{newsOne.title}}</h6>
+				</div>
+			</a>
+			<!-- End of Slide Box -->
+			<div class="d-flex justify-content-between">
+				<button class="btn" onclick="prev()" style="color:white;">Prev</button>
+
+				<button class="btn" onclick="next()" style="color:white;">Next</button>
 			</div>
-		</a>
-		
+		</div>
+
 		<div class="intro-bottom-container ">
 			<a class="widthImageWrapper second  d-lg-block rounded" style="overflow:hidden;"href="/kryptovalutaplanbok">
 				<img   class="img-fluid rounded " src="{% static 'images/cover-images/kryptowallets.png' %}" />
@@ -74,6 +76,80 @@
 		</div>
 	</div>
 </div>
+<div class="text-center mt-4">
+	<a 
+		href="/artiklar"
+		style="font-weight:normal; font-style:italic;" 
+		class="" 
+	>
+		Se fler nyheter
+	</a>
+</div>
+
+<script>
+
+	var itemOne = `
+		<a class="widthImageWrapper first "href="{{newsOne.get_category_display}}/{{newsOne.slug}}">
+			{% if newsOne.cover_image %}
+				<img  src="{{newsOne.cover_image.url}}">
+			{% endif %}
+			<div style="color:whitesmoke; font-style:italic; ">
+				<h6>{{newsOne.title}}</h6>
+			</div>
+		</a>
+	`
+
+	var itemSecond = `
+		<a class="widthImageWrapper first "href="{{newsSecond.get_category_display}}/{{newsSecond.slug}}">
+			{% if newsSecond.cover_image %}
+				<img  src="{{newsSecond.cover_image.url}}">
+			{% endif %}
+			<div style="color:whitesmoke; font-style:italic; ">
+				<h6>{{newsSecond.title}}</h6>
+			</div>
+		</a>
+	`
+
+	var itemThird = `
+		<a class="widthImageWrapper first "href="{{newsThird.get_category_display}}/{{newsThird.slug}}">
+			{% if newsThird.cover_image %}
+				<img  src="{{newsThird.cover_image.url}}">
+			{% endif %}
+			<div style="color:whitesmoke; font-style:italic; ">
+				<h6>{{newsThird.title}}</h6>
+			</div>
+		</a>
+	`
+
+	var slider_img = document.querySelector('.slider-img');
+	var images = [itemOne, itemSecond, itemThird, ];
+	var i = 0;
+
+	function prev(){
+		if(i <= 0) i = images.length;	
+		i--;
+		return setImg();			 
+	}
+
+	function next(){
+		if(i >= images.length-1) i = -1;
+		i++;
+		return setImg();			 
+	}
+
+	function setImg(){
+		return slider_img.innerHTML = images[i];
+		
+	}
+
+</script>
 
 
 
+		<!-- <a class="widthImageWrapper first " href="/Kryptovaluta">
+			<img  src="{% static 'images/cover-images/kryptovaluta.png' %}"
+			class="rounded">
+			<div class="image-title-width-container" style="color:whitesmoke; font-style:italic; ">
+				<h6> Vad är Kryptovaluta? </h6>
+			</div>
+		</a> -->
