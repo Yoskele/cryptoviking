@@ -32,7 +32,7 @@ def articles(request):
 
 def index(request):
 	latest_news = Article.objects.all().order_by('-created_at')[:3]
-	newsOne = Article.objects.order_by('-created_at')[0]
+	newsOne = Article.objects.order_by('-created_at')[20]
 	newsSecond = Article.objects.order_by('-created_at')[1]
 	newsThird = Article.objects.order_by('-created_at')[2]
 	context = {
