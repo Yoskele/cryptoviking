@@ -107,43 +107,4 @@
 <script src="{% static 'javaScript/components/cookieContainer/cookieContainer.js' %}"></script>
 </html>
 
-		<div class="d-flex flex-column aling-center twoImageContainer " style="">
-		<!-- Slide Box -->
-		<div class="widthImageWrapper first">
-			<a class="slider-img" href="{{newsOne.get_category_display}}/{{newsOne.slug}}">
-				{% if newsOne.cover_image %}
-					<img  src="{{newsOne.cover_image.url}}">
-				{% endif %}
-				<div class="" style="color:whitesmoke; font-style:italic;">
-					<h6>{{newsOne.title}}</h6>
-				</div>
-			</a>
-			<!-- End of Slide Box -->
-			<div class="d-flex justify-content-between">
-				<button class="btn" onclick="prev()" style="color:white; font-style:italic;">Bakåt</button>
-				<div style="text-align:center">
-					<span class="dot"></span>
-					<span class="dot"></span>
-					<span class="dot"></span>
-				</div>
-				<button class="btn" onclick="next()" style="color:white; font-style:italic;">Nästa</button>
-			</div>
-		</div>
-
-		<div class="intro-bottom-container ">
-			<a class="widthImageWrapper second  d-lg-block rounded" style="overflow:hidden;"href="/kryptovalutaplanbok">
-				<img   class="img-fluid rounded " src="{% static 'images/cover-images/kryptowallets.png' %}" />
-			</a>
-			
-			<div class="intro-image-bottom-mascot d-flex flex-column align-items-center">
-				<div class="astroid-binance-crypto-container">
-					<img class="astroid-crypto-planet" src="{% static 'images/crypto-exchanges/crypto-com.png' %}" style="width:50px;" />
-
-					<img class="astroid-binance-planet" src="{% static 'images/crypto-exchanges/binance.png' %}" style="width:50px;" />
-
-					<img class="astroid-mascot-planet" src="{% static 'images/mascot/cryptoviking-se.png' %}" style="width:60px;" />
-				</div>
-			</div>
-
-		</div>
-	</div>
+		
