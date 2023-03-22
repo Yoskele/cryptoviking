@@ -7,6 +7,9 @@ body{
 .block-wrapper{
 	min-height:100vh;
 }
+blockquote{
+	padding:15px;
+}
 
 a{
 	color:#29A3D2;
