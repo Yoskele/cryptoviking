@@ -48,14 +48,11 @@
 .navBar-bottom{
 	/*background:rgba(254, 211, 25, 0.8);*/
 }
-
-
 .space-wrapper-image{
 	background:#21212E;
 	margin:0;
 	padding:0;
 }
-
 .wrapper{
 	height:100%;
 	max-width:400px;
@@ -77,9 +74,7 @@
 		justify-content:center;
 	}
 }
-
 /*Navbar Styling Hamburger*/
-
 .mobile-nav-button{
 	width:48px;
 	height:35px;
@@ -89,14 +84,10 @@
 	align-items:center;
 	border-radius:5px;
 	border:1px solid gray;
-
 }
-
 .mobile-nav-button-line{
 	width:50%;
 	margin:0;
 	border-bottom:1px solid gray;
 }
-
-
 

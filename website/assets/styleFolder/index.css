@@ -1,21 +1,18 @@
-
-
 .space-wall{
-	/*background:#21212E;*/
 	background: url("/static/images/walls/space-star-wall.png")no-repeat;
 	background-size: cover;
 }
 .space-earth-wall{
-		background: url("/static/images/walls/space-earth-wall.png")no-repeat;
-		height:500px;
-		width:100%;
-		margin:0;
-		padding:0;
-		position:relative;
-		background-size: cover;
+	background: url("/static/images/walls/space-earth-wall.png")no-repeat;
+	height:500px;
+	width:100%;
+	margin:0;
+	padding:0;
+	position:relative;
+	background-size: cover;
 }
 .token-container{
-		position: absolute; 
+	position: absolute; 
   	left: 0; 
   	right: 0;
   	top:60px; 
@@ -24,14 +21,11 @@
   	max-width:1000px;
   	height:400px;
   	border-radius:10px;
-	/*box-shadow:5px 8px 5px #FF0000;*/
-		/*box-shadow:0 0 10px #fff;*/
-		display:flex;
-		flex-wrap: wrap;
-		justify-content:space-around;
-		align-items:center;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content:space-around;
+	align-items:center;
 }
-
 .token-earth-container{
 	border:1px solid lightgray;
 	border-radius:20px;
@@ -47,7 +41,6 @@
 	box-shadow:0 0 3px #fff;
 	background:rgb(85, 85, 85, 0.5);
 }
-
 .token-earth-container img{
 	width:50px;
 	height:50px;
@@ -56,7 +49,6 @@
 	margin:0;
 	padding:0;
 }
-
 .button-container-exchange{
 	width:400px;
 	display:flex;
@@ -65,18 +57,14 @@
 	align-items:center;
 	height:80px;
 }
-
-
 .moonWall{
-		background: url("/static/images/walls/space-basic-moon-wall.png");
-		height:693px;
-		width:100%;
-		margin:0;
-		padding:0;
-		position:relative;
-		background-size: cover;
-/*  background-position: center;
-    background-attachment: fixed;*/
+	background: url("/static/images/walls/space-basic-moon-wall.png");
+	height:693px;
+	width:100%;
+	margin:0;
+	padding:0;
+	position:relative;
+	background-size: cover;
 }
 .viking_astronout{
 		width:300px;
@@ -84,7 +72,6 @@
 		right:250px;
 		top:50px;
 }
-
 .space-contanier{
 	position: absolute;
 	color:white;
@@ -108,8 +95,6 @@
 	text-align:center;
 	background: url("/static/images/walls/space-star-wall.png");
 }
-
-
 .curved h3 {
   font-size: 4rem;
 }
@@ -120,7 +105,6 @@
 .curved svg {
   display: block;
 }
-
 .three-step-guid-content-container{
 	background: rgb(85, 85, 85, 0.8);
 }
@@ -130,7 +114,6 @@
     font-weight:bold;
     letter-spacing:2px;
 }
-
 .three-step-container{
 	width:75%;
 	margin:0 auto 0 auto;
@@ -166,8 +149,6 @@
 	width:95%;
 	margin:0 auto 0 auto;
 }
-
-
 @media (max-width:1590px){
 	.space-gray-backround-mobile{
 		background:rgb(85, 85, 85, 0.5);
@@ -229,8 +210,6 @@
 		width:250px;
 	}
 }
-
-
 @media (max-width:450px){
 .moonWall{
 		height:1000px;
@@ -245,5 +224,4 @@
 		margin:0 auto 0 auto;
 		width:98%;
 	}
-
 }

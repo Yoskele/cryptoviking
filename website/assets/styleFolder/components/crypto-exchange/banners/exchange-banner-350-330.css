@@ -4,8 +4,6 @@
 	margin:10px auto 10px auto;
 	position:relative;
 }
-
-
 .exchange-container-350px-330px{
 	width:350px;
 	height:120px;
@@ -33,7 +31,6 @@
 	justify-content:center;
 	padding:5px;
 }
-
 .exchange-content-image-wrapper img{
 	width:70px;
 	height:60px;
@@ -47,7 +44,6 @@
 	flex-direction:column;
 	justify-content:space-around;
 }
-
 .title-wrapper h3{
 	font-weight:bold;
 	color:#F69516;

@@ -21,7 +21,6 @@
     border-bottom-left-radius:10px;
     width:75%;
    	background:rgb(85, 85, 85, 0.5);
-
 }
 .token-wrapper{
 	width:65%;
@@ -77,24 +76,6 @@
 .price-token{
 	margin:0;
 }
-/*.read-more-token{
-	position:absolute;
-	top:0;
-	left:0;
-	margin:0;
-	color:green;
-	font-size:0.9rem;
-	background:#85bb65;
-	opacity: 0.9;
-	border-radius:0px 0px 4px 0px;
-	color:white;
-	padding:1px;
-	width:60px;
-}
-.read-more-token b{
-	width:30px;
-	margin-left:1px;
-}*/
 .image-wrapper{
 	position:absolute;
 	bottom:0;

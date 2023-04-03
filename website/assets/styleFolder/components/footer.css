@@ -4,14 +4,12 @@
   color:white;
   /*margin-top:50px;*/
 }
-
 .footer-clean h3 {
   margin-top:0;
   margin-bottom:12px;
   font-weight:bold;
   font-size:16px;
 }
-
 .footer-clean ul {
   padding:0;
   list-style:none;
@@ -19,34 +17,28 @@
   font-size:14px;
   margin-bottom:0;
 }
-
 .footer-clean ul a {
   color:inherit;
   text-decoration:none;
   opacity:0.8;
 }
-
 .footer-clean ul a:hover {
   opacity:1;
 }
-
 .footer-clean .item.social {
   text-align:right;
 }
-
 @media (max-width:767px) {
   .footer-clean .item {
     text-align:center;
     padding-bottom:20px;
   }
 }
-
 @media (max-width: 768px) {
   .footer-clean .item.social {
     text-align:center;
   }
 }
-
 .footer-clean .item.social > a {
   font-size:24px;
   width:40px;
@@ -61,23 +53,19 @@
   color:inherit;
   opacity:0.75;
 }
-
 .footer-clean .item.social > a:hover {
   opacity:0.9;
 }
-
 @media (max-width:991px) {
   .footer-clean .item.social > a {
     margin-top:40px;
   }
 }
-
 @media (max-width:767px) {
   .footer-clean .item.social > a {
     margin-top:10px;
   }
 }
-
 .footer-clean .copyright {
   margin-top:14px;
   margin-bottom:0;
@@ -86,7 +74,7 @@
 }
 h3{
   font-family: "Almendra SC", serif;
-    color:#F69516;
-    font-weight:bold;
-    letter-spacing:2px;
+  color:#F69516;
+  font-weight:bold;
+  letter-spacing:2px;
 }

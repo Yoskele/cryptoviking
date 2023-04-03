@@ -96,8 +96,6 @@
 	box-shadow:0 0 20px #fff;
 	border-radius:30px;
 }
-
-
 .image-title-container{
 	position:absolute;
 	bottom:2px;
@@ -128,15 +126,12 @@
 	display: table-cell;
     vertical-align: middle;
 }
-
 @media(max-width:1200px){
 	.ImageWrapper{
 		height:100%;
 		width:95%;
 	}
-
 }
-
 @media(max-width:780px){
 	.heightImageWrapper{
 		display:flex;
@@ -149,7 +144,6 @@
 		border-radius:20px;
 	}
 }
-
 @media(max-width:550px){
 	.intro-bottom-container{
 		display:flex;
@@ -183,8 +177,8 @@
 		right:5px;
 	
 	}
-	
 	.twoImageContainer{
 		padding:5px;
 	}
 }
+

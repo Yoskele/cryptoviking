@@ -1,13 +1,7 @@
-
-
-
-
 // Update the price every minute.
 var intervalId = window.setInterval(function(){
   	getHistoricalPrice();
 }, 60 * 1000);
-
-
 
 const getHistoricalPrice = async event => {
 	let string = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cripple%2Ccardano%2Cpolkadot%2Cthe-sandbox%2Csolana%2Cdogecoin&vs_currencies=usd";
@@ -25,7 +19,6 @@ const getHistoricalPrice = async event => {
 		}
 	});
 }
-
 // Get the price when user enter the page.
 getHistoricalPrice();
 
