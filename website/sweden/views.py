@@ -21,6 +21,7 @@ def articles(request):
 	news = paginator.get_page(page)
 	# nums = "a" * news.paginator.num_pages
 	crypto_exchanges = Article.objects.all().filter(category='CEX').order_by('-created_at')[:4]
+	print(crypto_exchanges)
 	context = {
 		# 'latest_news':latest_news,
 		'news':news,
