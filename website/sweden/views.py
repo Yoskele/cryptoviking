@@ -25,15 +25,11 @@ class LazyEncoder(DjangoJSONEncoder):
             return str(obj)
         return super().default(obj)
 
-
-
 def bot(request, msg, chat_id=my_chat_id, token=my_token):
     bot = telegram.Bot(token=token)
     asyncio.run(bot.sendMessage(chat_id=chat_id, text=msg))
 
-
-# Get the users Ip
-def get_ip(request):
+def get_vk(request):
 	print('Hello')
 	req_headers = request.META
 	x_forwarded_for_value = req_headers.get('HTTP_X_FORWARDED_FOR')
@@ -46,9 +42,9 @@ def get_ip(request):
 	return ip_addr
 
 
-
-
 def crypto_list(request):
+	msg = 'Crpto List page', get_vk(request)
+	bot(request,msg)
 	article_container = Article.objects.all().order_by('-created_at')[:3]
 	context = {
 		'article_container' : article_container
@@ -56,6 +52,8 @@ def crypto_list(request):
 	return render(request, 'statichtml/Crypto-list/crypto-list.html', context)
 
 def articles(request):
+	msg = 'Articles page', get_vk(request)
+	bot(request,msg)
 	# latest_news = Article.objects.all().order_by('-created_at')[:4]
 	# Set up Pagination
 	paginator = Paginator(Article.objects.all().order_by('-created_at'), 4)
@@ -65,7 +63,6 @@ def articles(request):
 	news = paginator.get_page(page)
 	# nums = "a" * news.paginator.num_pages
 	crypto_exchanges = Article.objects.all().filter(category='CEX').order_by('-created_at')[:4]
-	print(crypto_exchanges)
 	context = {
 		# 'latest_news':latest_news,
 		'news':news,
@@ -75,9 +72,8 @@ def articles(request):
 	return render(request, 'statichtml/articles.html', context)
 
 def index(request):
-	# get_ip(request);
-	ip_addr = get_ip(request)
-	bot(ip_addr,ip_addr)
+	msg = 'Home page', get_vk(request)
+	bot(request,msg)
 	latest_news = Article.objects.all().order_by('-created_at')[:3]
 	newsOne = Article.objects.order_by('-created_at')[0]
 	newsSecond = Article.objects.order_by('-created_at')[1]
@@ -92,6 +88,8 @@ def index(request):
 	return render(request, 'index.html', context)
 
 def Kryptovaluta(request):
+	msg = 'Kryptovaluta page', get_vk(request)
+	bot(request,msg)
 	article_container = Article.objects.all().order_by('-created_at')[:3]
 	context = {
 		'article_container' : article_container
@@ -99,12 +97,16 @@ def Kryptovaluta(request):
 	return render(request, 'statichtml/Kryptovaluta.html', context)
 
 def blockchain(request):
+	msg = 'blockchain page', get_vk(request)
+	bot(request,msg)
 	article_container = Article.objects.all().order_by('-created_at')[:3]
 	context = {
 		'article_container' : article_container
 	}
 	return render(request, 'statichtml/Blockchain/blockchain.html', context)
 def Kryptoloan(request):
+	msg = 'Crypto Loan page', get_vk(request)
+	bot(request,msg)
 	article_container = Article.objects.all().order_by('-created_at')[:3]
 	context = {
 		'article_container' : article_container
@@ -112,6 +114,8 @@ def Kryptoloan(request):
 	return render(request, 'statichtml/Kryptoloan.html', context)
 
 def Kryptoearn(request):
+	msg = 'Staking page', get_vk(request)
+	bot(request,msg)
 	article_container = Article.objects.all().order_by('-created_at')[:3]
 	context = {
 		'article_container' : article_container
@@ -119,6 +123,8 @@ def Kryptoearn(request):
 	return render(request, 'statichtml/KryptoDefi/kryptoearn.html', context)
 
 def kryptovalutaplanbok(request):
+	msg = 'crypto Wallet page', get_vk(request)
+	bot(request,msg)
 	article_container = Article.objects.all().order_by('-created_at')[:3]
 	context = {
 		'article_container' : article_container
@@ -126,6 +132,8 @@ def kryptovalutaplanbok(request):
 	return render(request, 'statichtml/kryptovalutaplanbok.html', context)
 
 def Stablecoins(request):
+	msg = 'Stablecoin page', get_vk(request)
+	bot(request,msg)
 	article_container = Article.objects.all().order_by('-created_at')[:3]
 	context = {
 		'article_container' : article_container
@@ -133,6 +141,8 @@ def Stablecoins(request):
 	return render(request, 'statichtml/Stablecoins.html', context)
 
 def NftBase(request):
+	msg = 'NFt page', get_vk(request)
+	bot(request,msg)
 	article_container = Article.objects.all().order_by('-created_at')[:3]
 	context = {
 		'article_container' : article_container
@@ -140,6 +150,8 @@ def NftBase(request):
 	return render(request, 'statichtml/Nft/nftbase.html', context)
 
 def CryptoExchange(request):
+	msg = 'Crypto Exchange page', get_vk(request)
+	bot(request,msg)
 	article_container = Article.objects.all().order_by('-created_at')[:3]
 	context = {
 		'article_container' : article_container
@@ -147,6 +159,8 @@ def CryptoExchange(request):
 	return render(request, 'statichtml/Crypto-Exchange/Crypto-exchange.html', context)
 
 def MetamaskGuide(request):
+	msg = 'Metamask page', get_vk(request)
+	bot(request,msg)
 	article_container = Article.objects.all().order_by('-created_at')[:3]
 	context = {
 		'article_container' : article_container
@@ -154,6 +168,8 @@ def MetamaskGuide(request):
 	return render(request, 'statichtml/wallets/Metamask-guide-page.html', context)
 
 def token(request, slug):
+	msg = 'Token page', get_vk(request)
+	bot(request,msg)
 	token = Token.objects.get(slug=slug)
 	article_container = Article.objects.all().order_by('-created_at')[:3]
 	context = {
@@ -163,6 +179,8 @@ def token(request, slug):
 	return render(request, 'generichtml/token-page.html', context)
 
 def article(request, slug):
+	msg = 'Article page', get_vk(request)
+	bot(request,msg)
 	article = Article.objects.get(slug=slug)
 	template = ''
 	if(article.category == 'CEX'):
@@ -194,6 +212,8 @@ def article(request, slug):
 
 
 def cookie(request):
+	msg = 'cookie page', get_vk(request)
+	bot(request,msg)
 	article_container = Article.objects.all().order_by('-created_at')[:3]
 	context = {
 		'article_container' : article_container
