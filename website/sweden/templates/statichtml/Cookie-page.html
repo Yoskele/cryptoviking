@@ -2,23 +2,16 @@
 {% load static %}
 {% block extra_htmt_head %}
 
-<title>{{article.meta_title}}</title>
-<meta name="description" content="{{article.meta_description}}" />
+<title> Cookie page | Cryptoviking.se</title>
 
-<meta property="og:url" content="https://www.cryptoviking.se/{{article.get_category_display}}/{{article.slug}}" />
-<meta property="og:title" content="{{article.meta_title}}" />
-<meta property="og:description" content="{{article.meta_description}}">
+<meta property="og:title" content="Cookie page | Cryptoviking.se" />
+<meta property="og:url" content="https://www.cryptoviking.se/cookie-page" />
+<meta property="og:description" content="">
 
-<meta property="og:image" itemprop="image" content="{{article.cover_image.url}}">
-<link rel="canonical" href="https://www.cryptoviking.se/{{article.get_category_display}}/{{article.slug}}" />
-<link rel="stylesheet" href="{% static 'styleFolder/components/generic-pages/generic-pages-base.css' %}">
+<link rel="canonical" href="/cookie-page" />
+
 <link rel="stylesheet" href="{% static 'styleFolder/components/static-pages/static-pages-base.css' %}">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:creator" content="@CryptovikingSe">
-<meta name="twitter:title" content="{{article.meta_title}}">
-<meta name="twitter:description" content="{{article.meta_description}}">
-<meta name="twitter:image" content="https://www.cryptoviking.se{{article.cover_image.url}}">
 
 {% endblock %}
 {% load static %}
@@ -28,63 +21,73 @@
 	<div class="container-flex">
 		<div class="main-container">
 			<div class="container mt-3 pl-lg-5">
-				<div class="cover-image">
-					<div class="container d-flex justify-content-between">
-						<div class="">
-							<small style="font-style:italic;">
-								Krypto-Exchange
-							</small>
-						</div>
-						<div class="">
-							<small style="font-style:italic;">
-								Publicerad {{ article.publish_at | date:"M d Y H:i" }}
-							</small>
-						</div>
-					</div>
-					{% if article.cover_image.url %}
-					<img src="{{article.cover_image.url}}" alt="Krypto Exchange" class="rounded img-fluid" />
-					{% endif %}
-					<div 
-						class="fb-share-button m-0" 
-						data-href="https://www.cryptoviking.se/{{article.get_category_display}}/{{article.slug}}" 
-						data-layout="button" 
-						data-size="small"
-					>
-						<a 
-							target="_blank" 
-							href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.cryptoviking.se%https://www.cryptoviking.se/{{article.get_category_display}}/{{article.slug}}" 
-							class="fb-xfbml-parse-ignore"
-						>
-							Share
-						</a>
-					</div>
+				<!-- <div class="cover-image">
+					<img src="{% static 'images/cover-images/kryptovaluta.png' %}" alt="kryptovaluta" class="rounded img-fluid" />
+				</div> -->
+				<div class="container mt-4">
+					<b class="orange-viking-title"> Integritetspolicy</b>
+					<p class="pl-2">
+						Vi på Cryptoviking tar din integritet på allvar. 
+                        Denna integritetspolicy beskriver vilken typ av personlig information vi samlar in och hur vi använder den.
+					</p>
+                    <b>Skydd av personlig information</b>
+                    <p class="pl-2">
+                        Vi tar ditt privatliv på allvar och vidtar alla rimliga åtgärder för att skydda din personliga information. Vi delar inte din personliga information med tredje part. 
+                        För att övervaka och förbättra trafiken på vår webbplats använder vi Google Analytics och spårar även IP-adresser för att skydda oss mot DDoS-attacker.
+					</p>
+                    <b>Cookies</b>
+                    <p class="pl-2">
+						För att förbättra din upplevelse på webbplatsen och se hur du använder webbplatsen använder vi cookies. Du kan stänga av cookies i din webbläsare om du vill, 
+                        men detta kan påverka din funktionalitet av vår webbplats.
+					</p>
+                    <b>Ändringar i integritetspolicyn</b>
+                    <p class="pl-2">
+						Vi förbehåller oss rätten att ändra denna integritetspolicy när som helst. Eventuella ändringar publiceras på denna sida.
+					</p>
+                    <b>Kontakt</b>
+                    <p class="pl-2">
+						Om du har frågor om vår integritetspolicy, vänligen kontakta oss på cryptoviking.se@outlook.com
+					</p>
+                    <p class="pl-2">
+						
+					</p>
+                    <p class="pl-2">
+						
+					</p>
+                    <p class="pl-2">
+						
+					</p>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 				</div>
-				<div class="container mt-5">
-					<h1 class="orange-viking-title"> {{article.title}}</h1>
-					<div class="container">
-						{{ article.content|safe }}
-					</div>
-				</div>
-			</div>
-			<div class="container mt-5">
-				<a 
-					style="margin:10px;" 
-					data-size="small"
-					target="_blank" 
-					class="twitter-share-button"
-					data-href="https://www.cryptoviking.se/{{article.get_category_display}}/{{article.slug}}"
-				  	
-				  >
-					Tweet
-				</a>
-			</div>
-			<br>
-		</div>
+		    </div>
+        </div>
 		<div class="side-container">
 			{% include 'components/crypto-exchange/banners/Exchange-Banner-350-330.html' %}
 		</div>
 	</div>
+
 </div>
+
+{% include 'components/articles/article_container.html' %}
 <div class=" mt-5 text-center">
 <small style="color:white; color:#85bb65; font-style:italic;"> Decentralized E-wallets </small>
 </div>
@@ -116,7 +119,7 @@
 		</a>
 
 		<a href="https://crypto.com/app/kd26d8skzr" class="m-2 affiliate-cryptocom" target="_blank">
-			Handla krypto via Crypto.com
+			Handla krypto via crypto.com
 		</a>
 	</div>
 
@@ -138,16 +141,17 @@
 			Handla inte mer än vad du har råd att förlora.
 		</label>
 	</div>
-{% include 'components/articles/article_container.html' %}
+
+
+
 <div class="curved mt-3">
 	<svg viewBox="0 0 1440 319">
 		<path fill="rgb(85, 85, 85, 0.8)" fill-opacity="1" d="M0,32L48,80C96,128,192,224,288,224C384,224,480,128,576,90.7C672,53,768,75,864,96C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
 	</svg>
 </div>
 
+<script>
 
-<style type="text/css">
-
-</style>
+</script>
 {% endblock %}
 

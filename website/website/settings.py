@@ -15,8 +15,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['www.cryptoviking.se',
     '*'
-    ]
+]
 
+
+BOT_TOKEN = "6966961606:AAEZIp-lrNR1rZaVMS8D7j8RBDM-Rot7y2Y"
+BOT_URL = "https://api.telegram.org/bot{}/".format(BOT_TOKEN)
+BOT_CHAT_ID = "-1002072338537"
 
 # Application definition
 

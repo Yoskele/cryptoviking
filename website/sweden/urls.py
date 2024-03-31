@@ -24,6 +24,7 @@ urlpatterns = [
 	path('crypto-wallet/<slug>', views.article, name="crypto-wallet-article"),
 	path('centralized-crypto-exchange/<slug>', views.article, name="centralized-crypto-exchange"),
 	path('krypto-lista', views.crypto_list, name="crypto-list"),
+	path('cookie-page', views.cookie, name="cookie"),
 	# path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
 
 ]

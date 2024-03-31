@@ -1,7 +1,52 @@
 from django.shortcuts import render
 from sweden.models import Token, Article
-# Import Pagination 
+# Import Pagination to make a list with pages 1.2.3 
 from django.core.paginator import Paginator
+
+#impor Telegram bot
+import telegram
+from django.core.serializers.json import DjangoJSONEncoder
+from django.core.serializers import serialize
+# from ipware.ip import get_ip
+from django.conf import settings
+
+import asyncio
+from telegram import Bot
+
+
+
+URL=settings.BOT_URL
+my_token = settings.BOT_TOKEN
+my_chat_id = settings.BOT_CHAT_ID
+
+class LazyEncoder(DjangoJSONEncoder):
+    def default(self, obj):
+        if isinstance(obj.dict):
+            return str(obj)
+        return super().default(obj)
+
+
+
+def bot(request, msg, chat_id=my_chat_id, token=my_token):
+    bot = telegram.Bot(token=token)
+    asyncio.run(bot.sendMessage(chat_id=chat_id, text=msg))
+
+
+# Get the users Ip
+def get_ip(request):
+	print('Hello')
+	req_headers = request.META
+	x_forwarded_for_value = req_headers.get('HTTP_X_FORWARDED_FOR')
+	if x_forwarded_for_value:
+		ip_addr = x_forwarded_for_value.split(',')[-1].strip()
+		print('if ip_addr ', ip_addr)
+	else:
+		ip_addr = req_headers.get('REMOTE_ADDR')
+		print('else ip_addr ', ip_addr)
+	return ip_addr
+
+
+
 
 def crypto_list(request):
 	article_container = Article.objects.all().order_by('-created_at')[:3]
@@ -9,7 +54,6 @@ def crypto_list(request):
 		'article_container' : article_container
 	}
 	return render(request, 'statichtml/Crypto-list/crypto-list.html', context)
-
 
 def articles(request):
 	# latest_news = Article.objects.all().order_by('-created_at')[:4]
@@ -30,8 +74,10 @@ def articles(request):
 	}
 	return render(request, 'statichtml/articles.html', context)
 
-
 def index(request):
+	# get_ip(request);
+	ip_addr = get_ip(request)
+	bot(ip_addr,ip_addr)
 	latest_news = Article.objects.all().order_by('-created_at')[:3]
 	newsOne = Article.objects.order_by('-created_at')[0]
 	newsSecond = Article.objects.order_by('-created_at')[1]
@@ -147,3 +193,9 @@ def article(request, slug):
 	return render(request, template, context)
 
 
+def cookie(request):
+	article_container = Article.objects.all().order_by('-created_at')[:3]
+	context = {
+		'article_container' : article_container
+	}
+	return render(request, 'statichtml/Cookie-page.html', context)
