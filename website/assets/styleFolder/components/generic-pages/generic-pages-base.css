@@ -5,8 +5,7 @@ body{
 .container-wrapper{
 	background:rgb(85, 85, 85, 0.5);
 	color: white;
-	
-	border-radius:10px;
+	border-radius:0px;
 }
 .orange-viking-title{
 	font-family: "Almendra SC", serif;
