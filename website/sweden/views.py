@@ -52,8 +52,6 @@ def crypto_list(request):
 	return render(request, 'statichtml/Crypto-list/crypto-list.html', context)
 
 def articles(request):
-	msg = 'Articles page', get_vk(request)
-	bot(request,msg)
 	# latest_news = Article.objects.all().order_by('-created_at')[:4]
 	# Set up Pagination
 	paginator = Paginator(Article.objects.all().order_by('-created_at'), 4)

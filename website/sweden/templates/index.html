@@ -565,7 +565,6 @@ var ufo_alien = $('.ufo-alien');
 //our main animation "loop"
 
 ufo_alien.each(function foo() {
-
     //generate random values
     var top = (Math.random() * height) | 0;
     var left = (Math.random() * width) | 0;
@@ -580,38 +579,6 @@ ufo_alien.each(function foo() {
         top: top
     }, time, foo);
 });
-
-
-
-
-
-
-
-
-
-
-
-// function myMove() {
-// 	console.log('ge')
-//   let id = null;
-//   const elem = document.getElementById("space-ship-move");
-//   let pos = 0;
-//   clearInterval(id);
-//   id = setInterval(frame, 5);
-//   function frame() {
-//     if (pos == 350) {
-//       clearInterval(id);
-//     } else {
-//       pos++;
-//       elem.style.top = pos + 'px';
-//       elem.style.left = pos + 'px';
-//     }
-//   }
-// }
-
-
-
-
 
 
 
